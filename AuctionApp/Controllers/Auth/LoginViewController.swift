@@ -17,10 +17,6 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
     @IBAction func loginButtonTapped(_ sender: Any) {
         let userEmail = useremailTextField.text
         let userPassword = userPasswordTextField.text
