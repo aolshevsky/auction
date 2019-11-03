@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  SearchViewController.swift
 //  AuctionApp
 //
 //  Created by Alexey Olshevsky on 11/3/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UITabBarController {
+class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
