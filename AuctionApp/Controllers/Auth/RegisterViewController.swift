@@ -17,10 +17,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
 
     @IBAction func registerButtonTapped(_ sender: Any) {
         let userEmail = userEmailtextField.text
