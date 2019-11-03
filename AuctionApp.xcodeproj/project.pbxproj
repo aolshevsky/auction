@@ -70,11 +70,10 @@
 		0A95678B236F063900274A07 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0AF09D72236F184E00A3D820 /* Auth */,
 				0A956779236F033E00274A07 /* ViewController.swift */,
-				0A95678C236F066400274A07 /* AuthViewController.swift */,
 				0A95677B236F033E00274A07 /* Main.storyboard */,
 				0A956780236F033F00274A07 /* LaunchScreen.storyboard */,
-				0A95678F236F135000274A07 /* AuthViewController.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -87,6 +86,15 @@
 				0A95677E236F033F00274A07 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		0AF09D72236F184E00A3D820 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				0A95678C236F066400274A07 /* AuthViewController.swift */,
+				0A95678F236F135000274A07 /* AuthViewController.storyboard */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
