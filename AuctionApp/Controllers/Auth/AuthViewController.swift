@@ -18,6 +18,8 @@ class AuthViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        // Check if login -> mainView
+        
         self.performSegue(withIdentifier: "loginView", sender: self)
     }
 }
