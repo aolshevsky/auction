@@ -75,6 +75,15 @@
 			path = "Extensions-Utilities";
 			sourceTree = "<group>";
 		};
+		0A04502B23737C9100138964 /* AuctionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A0450242373629D00138964 /* AuctionTableViewCell.swift */,
+				0A0450252373629D00138964 /* AuctionTableViewCell.xib */,
+			);
+			path = AuctionCell;
+			sourceTree = "<group>";
+		};
 		0A1A618A23721B3C00E3477F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +150,7 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A04502B23737C9100138964 /* AuctionCell */,
 				0AF09D81236F504700A3D820 /* ItemInfo */,
 				0AF09D7C236F396C00A3D820 /* Menu */,
 				0AF09D72236F184E00A3D820 /* Auth */,
@@ -185,8 +195,6 @@
 				0AF09D86236F5AF600A3D820 /* MenuViewController.swift */,
 				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0A635560237302210068A57B /* MainViewController.swift */,
-				0A0450242373629D00138964 /* AuctionTableViewCell.swift */,
-				0A0450252373629D00138964 /* AuctionTableViewCell.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
