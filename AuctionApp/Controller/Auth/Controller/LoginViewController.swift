@@ -22,11 +22,21 @@ class LoginViewController: UIViewController {
         let userPassword = userPasswordTextField.text
         
         if checkUserByUserEmailPassword(email: userEmail!, password: userPassword!) {
-            displaySuccessMessage(vc: self, message: "You are authorized")
+                mainMenuRedirect()
+            }
+        }
+    
+    func mainMenuRedirect() {
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        let vc =  storyboard.instantiateInitialViewController() as? UITabBarController
+
+        if let vc = vc {
+            present(vc, animated: false)
         }
     }
-    
-    
+
+
+
     func checkUserByUserEmailPassword(email: String, password: String) -> Bool{
         return true;
     }

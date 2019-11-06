@@ -11,12 +11,33 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        window = UIWindow()
+//        window?.rootViewController = UIViewController()
+//        window?.makeKeyAndVisible()
         return true
     }
+    /*
+    func switchViewControllers() {
+        let storyboard = UIStoryboard.init(name: "Menu", bundle: nil)
+        let nav = storyboard.instantiateInitialViewController() as? MenuViewController
+        
+        self.window?.rootViewController = nav
+        
+    }
+
+    func switchBack() {
+        
+        // switch back to view controller 1
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav = storyboard.instantiateViewController(withIdentifier: "One")
+        
+        self.window?.rootViewController = nav
+    }
+  */
 
     // MARK: UISceneSession Lifecycle
 
