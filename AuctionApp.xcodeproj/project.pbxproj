@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A0450262373629D00138964 /* AuctionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0450242373629D00138964 /* AuctionTableViewCell.swift */; };
+		0A0450272373629D00138964 /* AuctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0450252373629D00138964 /* AuctionTableViewCell.xib */; };
+		0A04502A2373696A00138964 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0450292373696A00138964 /* Constants.swift */; };
+		0A1A618C23721B5100E3477F /* Auction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A618B23721B5100E3477F /* Auction.swift */; };
+		0A635561237302210068A57B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635560237302210068A57B /* MainViewController.swift */; };
 		0A956776236F033E00274A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956775236F033E00274A07 /* AppDelegate.swift */; };
 		0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956777236F033E00274A07 /* SceneDelegate.swift */; };
 		0A95677A236F033E00274A07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956779236F033E00274A07 /* ViewController.swift */; };
@@ -26,6 +31,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0A0450242373629D00138964 /* AuctionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionTableViewCell.swift; sourceTree = "<group>"; };
+		0A0450252373629D00138964 /* AuctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionTableViewCell.xib; sourceTree = "<group>"; };
+		0A0450292373696A00138964 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A1A618B23721B5100E3477F /* Auction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auction.swift; sourceTree = "<group>"; };
+		0A635560237302210068A57B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A956772236F033E00274A07 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A956775236F033E00274A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A956777236F033E00274A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +67,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A0450282373694700138964 /* Extensions-Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0A0450292373696A00138964 /* Constants.swift */,
+			);
+			path = "Extensions-Utilities";
+			sourceTree = "<group>";
+		};
+		0A1A618A23721B3C00E3477F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0A1A618B23721B5100E3477F /* Auction.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0A63555B2372F59C0068A57B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0A63555D2372F5D20068A57B /* Utils */,
+				0A95678C236F066400274A07 /* AuthViewController.swift */,
+				0AF09D75236F312D00A3D820 /* LoginViewController.swift */,
+				0AF09D73236F278B00A3D820 /* RegisterViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0A63555C2372F5C00068A57B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0A95678F236F135000274A07 /* AuthViewController.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0A63555D2372F5D20068A57B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0AF09D77236F350100A3D820 /* BaseAuth.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0A956769236F033E00274A07 = {
 			isa = PBXGroup;
 			children = (
@@ -76,14 +129,16 @@
 		0A956774236F033E00274A07 /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
-				0A95678B236F063900274A07 /* Controllers */,
+				0A0450282373694700138964 /* Extensions-Utilities */,
+				0A1A618A23721B3C00E3477F /* Model */,
+				0A95678B236F063900274A07 /* Controller */,
 				0A95678E236F0DBC00274A07 /* Resources */,
 				0A956783236F033F00274A07 /* Info.plist */,
 			);
 			path = AuctionApp;
 			sourceTree = "<group>";
 		};
-		0A95678B236F063900274A07 /* Controllers */ = {
+		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				0AF09D81236F504700A3D820 /* ItemInfo */,
@@ -92,7 +147,7 @@
 				0AF09D79236F38DB00A3D820 /* Main */,
 				0A956780236F033F00274A07 /* LaunchScreen.storyboard */,
 			);
-			path = Controllers;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		0A95678E236F0DBC00274A07 /* Resources */ = {
@@ -108,11 +163,8 @@
 		0AF09D72236F184E00A3D820 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				0AF09D77236F350100A3D820 /* BaseAuth.swift */,
-				0A95678C236F066400274A07 /* AuthViewController.swift */,
-				0AF09D75236F312D00A3D820 /* LoginViewController.swift */,
-				0AF09D73236F278B00A3D820 /* RegisterViewController.swift */,
-				0A95678F236F135000274A07 /* AuthViewController.storyboard */,
+				0A63555C2372F5C00068A57B /* View */,
+				0A63555B2372F59C0068A57B /* Controller */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -132,6 +184,9 @@
 				0AF09D7D236F39A900A3D820 /* Menu.storyboard */,
 				0AF09D86236F5AF600A3D820 /* MenuViewController.swift */,
 				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
+				0A635560237302210068A57B /* MainViewController.swift */,
+				0A0450242373629D00138964 /* AuctionTableViewCell.swift */,
+				0A0450252373629D00138964 /* AuctionTableViewCell.xib */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -209,6 +264,7 @@
 				0AF09D83236F507C00A3D820 /* ItemInfo.storyboard in Resources */,
 				0A95677F236F033F00274A07 /* Assets.xcassets in Resources */,
 				0A95677D236F033E00274A07 /* Main.storyboard in Resources */,
+				0A0450272373629D00138964 /* AuctionTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,11 +276,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				0AF09D89236F70B900A3D820 /* SearchViewController.swift in Sources */,
+				0A635561237302210068A57B /* MainViewController.swift in Sources */,
+				0A0450262373629D00138964 /* AuctionTableViewCell.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
+				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0AF09D85236F509800A3D820 /* ItemInfoViewController.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
 				0AF09D87236F5AF600A3D820 /* MenuViewController.swift in Sources */,
+				0A1A618C23721B5100E3477F /* Auction.swift in Sources */,
 				0A956776236F033E00274A07 /* AppDelegate.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,

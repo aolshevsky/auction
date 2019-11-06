@@ -37,6 +37,6 @@ class RegisterViewController: UIViewController {
         // Store data
         
         // Success
-        displaySuccessMessage(vc: self, message: "Registration is successful. Thank you!")
+       
     }
 }
