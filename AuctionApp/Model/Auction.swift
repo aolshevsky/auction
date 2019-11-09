@@ -14,17 +14,26 @@ class Auction {
     
     var image: UIImage
     var title: String
-    var price: Int
-    var raisers: [Raiser]!
+    var startPrice: Float
+    var endPrice: Float!
     var createDate: Date!
+    var endDate: Date!
     var description: String
-    var isStar: Bool
     
-    init(image: UIImage, title: String, price: Int, description: String = "", isStar: Bool) {
+    // Temp place
+    var isStar: Bool
+    // Addition One-to-many fields: creator, purchasedBy,
+    var raisers: [Raiser]!
+    
+    init(image: UIImage, title: String, price: Float, description: String = "", createDate: Date! = nil,
+         endDate: Date! = nil, endPrice: Float! = nil, isStar: Bool) {
         self.image = image
         self.title = title
-        self.price = price
+        self.startPrice = price
+        self.endPrice = endPrice
         self.description = description
+        self.createDate = createDate
+        self.endDate = endDate
         self.isStar = isStar
     }
 }
