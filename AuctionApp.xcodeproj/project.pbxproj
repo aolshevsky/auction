@@ -13,6 +13,63 @@
 		0A04502E23737E7A00138964 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502D23737E7A00138964 /* User.swift */; };
 		0A045030237386CD00138964 /* Raiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502F237386CD00138964 /* Raiser.swift */; };
 		0A1A618C23721B5100E3477F /* Auction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A618B23721B5100E3477F /* Auction.swift */; };
+		0A5B9FA7237728E70092DB1E /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F6F237728E70092DB1E /* Switch.json */; };
+		0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F70237728E70092DB1E /* TwitterHeart.json */; };
+		0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */; };
+		0A5B9FAA237728E70092DB1E /* MotionCorpse-Jrcanest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F72237728E70092DB1E /* MotionCorpse-Jrcanest.json */; };
+		0A5B9FAB237728E70092DB1E /* TwitterHeartButton.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F73237728E70092DB1E /* TwitterHeartButton.json */; };
+		0A5B9FAC237728E70092DB1E /* T.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F75237728E70092DB1E /* T.json */; };
+		0A5B9FAD237728E70092DB1E /* A.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F76237728E70092DB1E /* A.json */; };
+		0A5B9FAE237728E70092DB1E /* X.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F77237728E70092DB1E /* X.json */; };
+		0A5B9FAF237728E70092DB1E /* BlinkingCursor.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F78237728E70092DB1E /* BlinkingCursor.json */; };
+		0A5B9FB0237728E70092DB1E /* M.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F79237728E70092DB1E /* M.json */; };
+		0A5B9FB1237728E70092DB1E /* L.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F7A237728E70092DB1E /* L.json */; };
+		0A5B9FB2237728E70092DB1E /* Y.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F7B237728E70092DB1E /* Y.json */; };
+		0A5B9FB3237728E70092DB1E /* U.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F7C237728E70092DB1E /* U.json */; };
+		0A5B9FB4237728E70092DB1E /* K.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F7D237728E70092DB1E /* K.json */; };
+		0A5B9FB5237728E70092DB1E /* R.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F7E237728E70092DB1E /* R.json */; };
+		0A5B9FB6237728E70092DB1E /* G.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F7F237728E70092DB1E /* G.json */; };
+		0A5B9FB7237728E70092DB1E /* F.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F80237728E70092DB1E /* F.json */; };
+		0A5B9FB8237728E70092DB1E /* S.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F81237728E70092DB1E /* S.json */; };
+		0A5B9FB9237728E70092DB1E /* J.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F82237728E70092DB1E /* J.json */; };
+		0A5B9FBA237728E70092DB1E /* I.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F83237728E70092DB1E /* I.json */; };
+		0A5B9FBB237728E70092DB1E /* E.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F84237728E70092DB1E /* E.json */; };
+		0A5B9FBC237728E70092DB1E /* Apostrophe.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F85237728E70092DB1E /* Apostrophe.json */; };
+		0A5B9FBD237728E70092DB1E /* P.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F86237728E70092DB1E /* P.json */; };
+		0A5B9FBE237728E70092DB1E /* Q.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F87237728E70092DB1E /* Q.json */; };
+		0A5B9FBF237728E70092DB1E /* D.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F88237728E70092DB1E /* D.json */; };
+		0A5B9FC0237728E70092DB1E /* Colon.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F89237728E70092DB1E /* Colon.json */; };
+		0A5B9FC1237728E70092DB1E /* H.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F8A237728E70092DB1E /* H.json */; };
+		0A5B9FC2237728E70092DB1E /* C.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F8B237728E70092DB1E /* C.json */; };
+		0A5B9FC3237728E70092DB1E /* V.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F8C237728E70092DB1E /* V.json */; };
+		0A5B9FC4237728E70092DB1E /* Comma.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F8D237728E70092DB1E /* Comma.json */; };
+		0A5B9FC5237728E70092DB1E /* O.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F8E237728E70092DB1E /* O.json */; };
+		0A5B9FC6237728E70092DB1E /* Z.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F8F237728E70092DB1E /* Z.json */; };
+		0A5B9FC7237728E70092DB1E /* N.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F90237728E70092DB1E /* N.json */; };
+		0A5B9FC8237728E70092DB1E /* W.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F91237728E70092DB1E /* W.json */; };
+		0A5B9FC9237728E70092DB1E /* B.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F92237728E70092DB1E /* B.json */; };
+		0A5B9FCA237728E70092DB1E /* HamburgerArrow.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F93237728E70092DB1E /* HamburgerArrow.json */; };
+		0A5B9FCB237728E70092DB1E /* vcTransition1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F94237728E70092DB1E /* vcTransition1.json */; };
+		0A5B9FCC237728E70092DB1E /* LottieLogo2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F95237728E70092DB1E /* LottieLogo2.json */; };
+		0A5B9FCD237728E70092DB1E /* Boat_Loader.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F96237728E70092DB1E /* Boat_Loader.json */; };
+		0A5B9FCE237728E70092DB1E /* GeometryTransformTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F97237728E70092DB1E /* GeometryTransformTest.json */; };
+		0A5B9FCF237728E70092DB1E /* Watermelon.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F98237728E70092DB1E /* Watermelon.json */; };
+		0A5B9FD0237728E70092DB1E /* Keypath.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F99237728E70092DB1E /* Keypath.json */; };
+		0A5B9FD1237728E70092DB1E /* IconTransitions.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F9A237728E70092DB1E /* IconTransitions.json */; };
+		0A5B9FD2237728E70092DB1E /* vcTransition2.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F9B237728E70092DB1E /* vcTransition2.json */; };
+		0A5B9FD3237728E70092DB1E /* LottieLogo1.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F9C237728E70092DB1E /* LottieLogo1.json */; };
+		0A5B9FD4237728E70092DB1E /* base64Test.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F9D237728E70092DB1E /* base64Test.json */; };
+		0A5B9FD5237728E70092DB1E /* Switch_States.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F9E237728E70092DB1E /* Switch_States.json */; };
+		0A5B9FD6237728E70092DB1E /* FirstText.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F9F237728E70092DB1E /* FirstText.json */; };
+		0A5B9FD7237728E70092DB1E /* setValueTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA0237728E70092DB1E /* setValueTest.json */; };
+		0A5B9FD8237728E70092DB1E /* Zoom.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA1237728E70092DB1E /* Zoom.json */; };
+		0A5B9FD9237728E70092DB1E /* keypathTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA2237728E70092DB1E /* keypathTest.json */; };
+		0A5B9FDA237728E70092DB1E /* PinJump.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA3237728E70092DB1E /* PinJump.json */; };
+		0A5B9FDB237728E70092DB1E /* DisableNodesTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA4237728E70092DB1E /* DisableNodesTest.json */; };
+		0A5B9FDC237728E70092DB1E /* LottieLogo1_masked.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA5237728E70092DB1E /* LottieLogo1_masked.json */; };
+		0A5B9FDD237728E70092DB1E /* timeremap.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA6237728E70092DB1E /* timeremap.json */; };
+		0A5B9FDF237733240092DB1E /* star.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FDE237733240092DB1E /* star.json */; };
+		0A5B9FE1237736B00092DB1E /* sparkness.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE0237736B00092DB1E /* sparkness.json */; };
 		0A635561237302210068A57B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635560237302210068A57B /* MainViewController.swift */; };
 		0A956776236F033E00274A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956775236F033E00274A07 /* AppDelegate.swift */; };
 		0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956777236F033E00274A07 /* SceneDelegate.swift */; };
@@ -40,6 +97,63 @@
 		0A04502D23737E7A00138964 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0A04502F237386CD00138964 /* Raiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raiser.swift; sourceTree = "<group>"; };
 		0A1A618B23721B5100E3477F /* Auction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auction.swift; sourceTree = "<group>"; };
+		0A5B9F6F237728E70092DB1E /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
+		0A5B9F70237728E70092DB1E /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
+		0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
+		0A5B9F72237728E70092DB1E /* MotionCorpse-Jrcanest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "MotionCorpse-Jrcanest.json"; sourceTree = "<group>"; };
+		0A5B9F73237728E70092DB1E /* TwitterHeartButton.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeartButton.json; sourceTree = "<group>"; };
+		0A5B9F75237728E70092DB1E /* T.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = T.json; sourceTree = "<group>"; };
+		0A5B9F76237728E70092DB1E /* A.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = A.json; sourceTree = "<group>"; };
+		0A5B9F77237728E70092DB1E /* X.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = X.json; sourceTree = "<group>"; };
+		0A5B9F78237728E70092DB1E /* BlinkingCursor.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BlinkingCursor.json; sourceTree = "<group>"; };
+		0A5B9F79237728E70092DB1E /* M.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = M.json; sourceTree = "<group>"; };
+		0A5B9F7A237728E70092DB1E /* L.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = L.json; sourceTree = "<group>"; };
+		0A5B9F7B237728E70092DB1E /* Y.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Y.json; sourceTree = "<group>"; };
+		0A5B9F7C237728E70092DB1E /* U.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = U.json; sourceTree = "<group>"; };
+		0A5B9F7D237728E70092DB1E /* K.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = K.json; sourceTree = "<group>"; };
+		0A5B9F7E237728E70092DB1E /* R.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = R.json; sourceTree = "<group>"; };
+		0A5B9F7F237728E70092DB1E /* G.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = G.json; sourceTree = "<group>"; };
+		0A5B9F80237728E70092DB1E /* F.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = F.json; sourceTree = "<group>"; };
+		0A5B9F81237728E70092DB1E /* S.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = S.json; sourceTree = "<group>"; };
+		0A5B9F82237728E70092DB1E /* J.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = J.json; sourceTree = "<group>"; };
+		0A5B9F83237728E70092DB1E /* I.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = I.json; sourceTree = "<group>"; };
+		0A5B9F84237728E70092DB1E /* E.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = E.json; sourceTree = "<group>"; };
+		0A5B9F85237728E70092DB1E /* Apostrophe.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Apostrophe.json; sourceTree = "<group>"; };
+		0A5B9F86237728E70092DB1E /* P.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = P.json; sourceTree = "<group>"; };
+		0A5B9F87237728E70092DB1E /* Q.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Q.json; sourceTree = "<group>"; };
+		0A5B9F88237728E70092DB1E /* D.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = D.json; sourceTree = "<group>"; };
+		0A5B9F89237728E70092DB1E /* Colon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Colon.json; sourceTree = "<group>"; };
+		0A5B9F8A237728E70092DB1E /* H.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = H.json; sourceTree = "<group>"; };
+		0A5B9F8B237728E70092DB1E /* C.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = C.json; sourceTree = "<group>"; };
+		0A5B9F8C237728E70092DB1E /* V.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = V.json; sourceTree = "<group>"; };
+		0A5B9F8D237728E70092DB1E /* Comma.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Comma.json; sourceTree = "<group>"; };
+		0A5B9F8E237728E70092DB1E /* O.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = O.json; sourceTree = "<group>"; };
+		0A5B9F8F237728E70092DB1E /* Z.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Z.json; sourceTree = "<group>"; };
+		0A5B9F90237728E70092DB1E /* N.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = N.json; sourceTree = "<group>"; };
+		0A5B9F91237728E70092DB1E /* W.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = W.json; sourceTree = "<group>"; };
+		0A5B9F92237728E70092DB1E /* B.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = B.json; sourceTree = "<group>"; };
+		0A5B9F93237728E70092DB1E /* HamburgerArrow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = HamburgerArrow.json; sourceTree = "<group>"; };
+		0A5B9F94237728E70092DB1E /* vcTransition1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition1.json; sourceTree = "<group>"; };
+		0A5B9F95237728E70092DB1E /* LottieLogo2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo2.json; sourceTree = "<group>"; };
+		0A5B9F96237728E70092DB1E /* Boat_Loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Boat_Loader.json; sourceTree = "<group>"; };
+		0A5B9F97237728E70092DB1E /* GeometryTransformTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GeometryTransformTest.json; sourceTree = "<group>"; };
+		0A5B9F98237728E70092DB1E /* Watermelon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Watermelon.json; sourceTree = "<group>"; };
+		0A5B9F99237728E70092DB1E /* Keypath.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Keypath.json; sourceTree = "<group>"; };
+		0A5B9F9A237728E70092DB1E /* IconTransitions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IconTransitions.json; sourceTree = "<group>"; };
+		0A5B9F9B237728E70092DB1E /* vcTransition2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = vcTransition2.json; sourceTree = "<group>"; };
+		0A5B9F9C237728E70092DB1E /* LottieLogo1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1.json; sourceTree = "<group>"; };
+		0A5B9F9D237728E70092DB1E /* base64Test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = base64Test.json; sourceTree = "<group>"; };
+		0A5B9F9E237728E70092DB1E /* Switch_States.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch_States.json; sourceTree = "<group>"; };
+		0A5B9F9F237728E70092DB1E /* FirstText.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = FirstText.json; sourceTree = "<group>"; };
+		0A5B9FA0237728E70092DB1E /* setValueTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = setValueTest.json; sourceTree = "<group>"; };
+		0A5B9FA1237728E70092DB1E /* Zoom.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Zoom.json; sourceTree = "<group>"; };
+		0A5B9FA2237728E70092DB1E /* keypathTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = keypathTest.json; sourceTree = "<group>"; };
+		0A5B9FA3237728E70092DB1E /* PinJump.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PinJump.json; sourceTree = "<group>"; };
+		0A5B9FA4237728E70092DB1E /* DisableNodesTest.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DisableNodesTest.json; sourceTree = "<group>"; };
+		0A5B9FA5237728E70092DB1E /* LottieLogo1_masked.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = LottieLogo1_masked.json; sourceTree = "<group>"; };
+		0A5B9FA6237728E70092DB1E /* timeremap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeremap.json; sourceTree = "<group>"; };
+		0A5B9FDE237733240092DB1E /* star.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = star.json; sourceTree = "<group>"; };
+		0A5B9FE0237736B00092DB1E /* sparkness.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sparkness.json; sourceTree = "<group>"; };
 		0A635560237302210068A57B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A956772236F033E00274A07 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A956775236F033E00274A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,10 +226,83 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0A5B9F6E237728E70092DB1E /* TestAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B9F6F237728E70092DB1E /* Switch.json */,
+				0A5B9F70237728E70092DB1E /* TwitterHeart.json */,
+				0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */,
+				0A5B9F72237728E70092DB1E /* MotionCorpse-Jrcanest.json */,
+				0A5B9F73237728E70092DB1E /* TwitterHeartButton.json */,
+				0A5B9F74237728E70092DB1E /* TypeFace */,
+				0A5B9F93237728E70092DB1E /* HamburgerArrow.json */,
+				0A5B9F94237728E70092DB1E /* vcTransition1.json */,
+				0A5B9F95237728E70092DB1E /* LottieLogo2.json */,
+				0A5B9F96237728E70092DB1E /* Boat_Loader.json */,
+				0A5B9F97237728E70092DB1E /* GeometryTransformTest.json */,
+				0A5B9F98237728E70092DB1E /* Watermelon.json */,
+				0A5B9F99237728E70092DB1E /* Keypath.json */,
+				0A5B9F9A237728E70092DB1E /* IconTransitions.json */,
+				0A5B9F9B237728E70092DB1E /* vcTransition2.json */,
+				0A5B9F9C237728E70092DB1E /* LottieLogo1.json */,
+				0A5B9F9D237728E70092DB1E /* base64Test.json */,
+				0A5B9F9E237728E70092DB1E /* Switch_States.json */,
+				0A5B9F9F237728E70092DB1E /* FirstText.json */,
+				0A5B9FA0237728E70092DB1E /* setValueTest.json */,
+				0A5B9FA1237728E70092DB1E /* Zoom.json */,
+				0A5B9FA2237728E70092DB1E /* keypathTest.json */,
+				0A5B9FA3237728E70092DB1E /* PinJump.json */,
+				0A5B9FA4237728E70092DB1E /* DisableNodesTest.json */,
+				0A5B9FA5237728E70092DB1E /* LottieLogo1_masked.json */,
+				0A5B9FA6237728E70092DB1E /* timeremap.json */,
+				0A5B9FDE237733240092DB1E /* star.json */,
+				0A5B9FE0237736B00092DB1E /* sparkness.json */,
+			);
+			path = TestAnimations;
+			sourceTree = "<group>";
+		};
+		0A5B9F74237728E70092DB1E /* TypeFace */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B9F75237728E70092DB1E /* T.json */,
+				0A5B9F76237728E70092DB1E /* A.json */,
+				0A5B9F77237728E70092DB1E /* X.json */,
+				0A5B9F78237728E70092DB1E /* BlinkingCursor.json */,
+				0A5B9F79237728E70092DB1E /* M.json */,
+				0A5B9F7A237728E70092DB1E /* L.json */,
+				0A5B9F7B237728E70092DB1E /* Y.json */,
+				0A5B9F7C237728E70092DB1E /* U.json */,
+				0A5B9F7D237728E70092DB1E /* K.json */,
+				0A5B9F7E237728E70092DB1E /* R.json */,
+				0A5B9F7F237728E70092DB1E /* G.json */,
+				0A5B9F80237728E70092DB1E /* F.json */,
+				0A5B9F81237728E70092DB1E /* S.json */,
+				0A5B9F82237728E70092DB1E /* J.json */,
+				0A5B9F83237728E70092DB1E /* I.json */,
+				0A5B9F84237728E70092DB1E /* E.json */,
+				0A5B9F85237728E70092DB1E /* Apostrophe.json */,
+				0A5B9F86237728E70092DB1E /* P.json */,
+				0A5B9F87237728E70092DB1E /* Q.json */,
+				0A5B9F88237728E70092DB1E /* D.json */,
+				0A5B9F89237728E70092DB1E /* Colon.json */,
+				0A5B9F8A237728E70092DB1E /* H.json */,
+				0A5B9F8B237728E70092DB1E /* C.json */,
+				0A5B9F8C237728E70092DB1E /* V.json */,
+				0A5B9F8D237728E70092DB1E /* Comma.json */,
+				0A5B9F8E237728E70092DB1E /* O.json */,
+				0A5B9F8F237728E70092DB1E /* Z.json */,
+				0A5B9F90237728E70092DB1E /* N.json */,
+				0A5B9F91237728E70092DB1E /* W.json */,
+				0A5B9F92237728E70092DB1E /* B.json */,
+			);
+			path = TypeFace;
+			sourceTree = "<group>";
+		};
 		0A956769236F033E00274A07 = {
 			isa = PBXGroup;
 			children = (
 				0A956774236F033E00274A07 /* AuctionApp */,
+				0A5B9F6E237728E70092DB1E /* TestAnimations */,
 				0A956773236F033E00274A07 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -264,13 +451,70 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A5B9FC6237728E70092DB1E /* Z.json in Resources */,
+				0A5B9FD1237728E70092DB1E /* IconTransitions.json in Resources */,
+				0A5B9FB9237728E70092DB1E /* J.json in Resources */,
+				0A5B9FB4237728E70092DB1E /* K.json in Resources */,
+				0A5B9FD2237728E70092DB1E /* vcTransition2.json in Resources */,
+				0A5B9FCE237728E70092DB1E /* GeometryTransformTest.json in Resources */,
+				0A5B9FB2237728E70092DB1E /* Y.json in Resources */,
+				0A5B9FAC237728E70092DB1E /* T.json in Resources */,
+				0A5B9FDC237728E70092DB1E /* LottieLogo1_masked.json in Resources */,
 				0AF09D7E236F39A900A3D820 /* Menu.storyboard in Resources */,
+				0A5B9FB7237728E70092DB1E /* F.json in Resources */,
+				0A5B9FB8237728E70092DB1E /* S.json in Resources */,
+				0A5B9FC5237728E70092DB1E /* O.json in Resources */,
+				0A5B9FB5237728E70092DB1E /* R.json in Resources */,
+				0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */,
+				0A5B9FD8237728E70092DB1E /* Zoom.json in Resources */,
+				0A5B9FE1237736B00092DB1E /* sparkness.json in Resources */,
+				0A5B9FAD237728E70092DB1E /* A.json in Resources */,
+				0A5B9FC1237728E70092DB1E /* H.json in Resources */,
+				0A5B9FCC237728E70092DB1E /* LottieLogo2.json in Resources */,
+				0A5B9FAB237728E70092DB1E /* TwitterHeartButton.json in Resources */,
 				0A956782236F033F00274A07 /* LaunchScreen.storyboard in Resources */,
+				0A5B9FD3237728E70092DB1E /* LottieLogo1.json in Resources */,
+				0A5B9FCB237728E70092DB1E /* vcTransition1.json in Resources */,
+				0A5B9FB0237728E70092DB1E /* M.json in Resources */,
+				0A5B9FBE237728E70092DB1E /* Q.json in Resources */,
+				0A5B9FC2237728E70092DB1E /* C.json in Resources */,
+				0A5B9FDA237728E70092DB1E /* PinJump.json in Resources */,
+				0A5B9FC0237728E70092DB1E /* Colon.json in Resources */,
+				0A5B9FBA237728E70092DB1E /* I.json in Resources */,
+				0A5B9FC7237728E70092DB1E /* N.json in Resources */,
+				0A5B9FD9237728E70092DB1E /* keypathTest.json in Resources */,
 				0A956790236F135000274A07 /* AuthViewController.storyboard in Resources */,
+				0A5B9FAF237728E70092DB1E /* BlinkingCursor.json in Resources */,
+				0A5B9FC3237728E70092DB1E /* V.json in Resources */,
 				0AF09D83236F507C00A3D820 /* ItemInfo.storyboard in Resources */,
+				0A5B9FD5237728E70092DB1E /* Switch_States.json in Resources */,
+				0A5B9FDD237728E70092DB1E /* timeremap.json in Resources */,
+				0A5B9FBF237728E70092DB1E /* D.json in Resources */,
+				0A5B9FAA237728E70092DB1E /* MotionCorpse-Jrcanest.json in Resources */,
+				0A5B9FD7237728E70092DB1E /* setValueTest.json in Resources */,
+				0A5B9FBC237728E70092DB1E /* Apostrophe.json in Resources */,
 				0A95677F236F033F00274A07 /* Assets.xcassets in Resources */,
+				0A5B9FC8237728E70092DB1E /* W.json in Resources */,
+				0A5B9FC9237728E70092DB1E /* B.json in Resources */,
+				0A5B9FBD237728E70092DB1E /* P.json in Resources */,
+				0A5B9FD0237728E70092DB1E /* Keypath.json in Resources */,
+				0A5B9FDF237733240092DB1E /* star.json in Resources */,
+				0A5B9FAE237728E70092DB1E /* X.json in Resources */,
+				0A5B9FA7237728E70092DB1E /* Switch.json in Resources */,
+				0A5B9FD4237728E70092DB1E /* base64Test.json in Resources */,
+				0A5B9FCF237728E70092DB1E /* Watermelon.json in Resources */,
+				0A5B9FCD237728E70092DB1E /* Boat_Loader.json in Resources */,
+				0A5B9FB3237728E70092DB1E /* U.json in Resources */,
+				0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */,
+				0A5B9FD6237728E70092DB1E /* FirstText.json in Resources */,
 				0A95677D236F033E00274A07 /* Main.storyboard in Resources */,
+				0A5B9FB1237728E70092DB1E /* L.json in Resources */,
+				0A5B9FDB237728E70092DB1E /* DisableNodesTest.json in Resources */,
+				0A5B9FB6237728E70092DB1E /* G.json in Resources */,
 				0A0450272373629D00138964 /* AuctionTableViewCell.xib in Resources */,
+				0A5B9FBB237728E70092DB1E /* E.json in Resources */,
+				0A5B9FCA237728E70092DB1E /* HamburgerArrow.json in Resources */,
+				0A5B9FC4237728E70092DB1E /* Comma.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
