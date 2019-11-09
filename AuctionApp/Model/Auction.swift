@@ -15,12 +15,16 @@ class Auction {
     var image: UIImage
     var title: String
     var price: Int
+    var raisers: [Raiser]!
+    var createDate: Date!
+    var description: String
     var isStar: Bool
     
-    init(image: UIImage, title: String, price: Int, isStar: Bool) {
+    init(image: UIImage, title: String, price: Int, description: String = "", isStar: Bool) {
         self.image = image
         self.title = title
         self.price = price
+        self.description = description
         self.isStar = isStar
     }
 }
