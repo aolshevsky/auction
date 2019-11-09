@@ -32,9 +32,9 @@ class AuctionTableViewCell: UITableViewCell {
     
     func getAuctionStarImage(isStar: Bool) -> UIImage {
         if isStar {
-            return #imageLiteral(resourceName: "star")
+            return Images.star!
         }
-        return #imageLiteral(resourceName: "empty_star")
+        return Images.empty_star!
     }
     func setAuction(auction: Auction) {
         cellAuction = auction

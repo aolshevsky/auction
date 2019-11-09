@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		0A0450262373629D00138964 /* AuctionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0450242373629D00138964 /* AuctionTableViewCell.swift */; };
 		0A0450272373629D00138964 /* AuctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0450252373629D00138964 /* AuctionTableViewCell.xib */; };
 		0A04502A2373696A00138964 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0450292373696A00138964 /* Constants.swift */; };
+		0A04502E23737E7A00138964 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502D23737E7A00138964 /* User.swift */; };
+		0A045030237386CD00138964 /* Raiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502F237386CD00138964 /* Raiser.swift */; };
 		0A1A618C23721B5100E3477F /* Auction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A618B23721B5100E3477F /* Auction.swift */; };
 		0A635561237302210068A57B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635560237302210068A57B /* MainViewController.swift */; };
 		0A956776236F033E00274A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956775236F033E00274A07 /* AppDelegate.swift */; };
@@ -20,6 +22,7 @@
 		0A956782236F033F00274A07 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A956780236F033F00274A07 /* LaunchScreen.storyboard */; };
 		0A95678D236F066400274A07 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95678C236F066400274A07 /* AuthViewController.swift */; };
 		0A956790236F135000274A07 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A95678F236F135000274A07 /* AuthViewController.storyboard */; };
+		0A993AFF23771ADF0074D6AB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0A993AFE23771ADF0074D6AB /* Lottie */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
 		0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D75236F312D00A3D820 /* LoginViewController.swift */; };
 		0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D77236F350100A3D820 /* BaseAuth.swift */; };
@@ -34,6 +37,8 @@
 		0A0450242373629D00138964 /* AuctionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionTableViewCell.swift; sourceTree = "<group>"; };
 		0A0450252373629D00138964 /* AuctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionTableViewCell.xib; sourceTree = "<group>"; };
 		0A0450292373696A00138964 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		0A04502D23737E7A00138964 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0A04502F237386CD00138964 /* Raiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raiser.swift; sourceTree = "<group>"; };
 		0A1A618B23721B5100E3477F /* Auction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auction.swift; sourceTree = "<group>"; };
 		0A635560237302210068A57B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A956772236F033E00274A07 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A993AFF23771ADF0074D6AB /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,7 @@
 		0A0450282373694700138964 /* Extensions-Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0AF09D77236F350100A3D820 /* BaseAuth.swift */,
 				0A0450292373696A00138964 /* Constants.swift */,
 			);
 			path = "Extensions-Utilities";
@@ -84,39 +91,25 @@
 			path = AuctionCell;
 			sourceTree = "<group>";
 		};
-		0A1A618A23721B3C00E3477F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				0A1A618B23721B5100E3477F /* Auction.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		0A63555B2372F59C0068A57B /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				0A63555D2372F5D20068A57B /* Utils */,
-				0A95678C236F066400274A07 /* AuthViewController.swift */,
-				0AF09D75236F312D00A3D820 /* LoginViewController.swift */,
-				0AF09D73236F278B00A3D820 /* RegisterViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		0A63555C2372F5C00068A57B /* View */ = {
+		0A04502C23737D8300138964 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				0A95678F236F135000274A07 /* AuthViewController.storyboard */,
+				0A95677B236F033E00274A07 /* Main.storyboard */,
+				0AF09D7D236F39A900A3D820 /* Menu.storyboard */,
+				0A956780236F033F00274A07 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		0A63555D2372F5D20068A57B /* Utils */ = {
+		0A1A618A23721B3C00E3477F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0AF09D77236F350100A3D820 /* BaseAuth.swift */,
+				0A1A618B23721B5100E3477F /* Auction.swift */,
+				0A04502D23737E7A00138964 /* User.swift */,
+				0A04502F237386CD00138964 /* Raiser.swift */,
 			);
-			path = Utils;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		0A956769236F033E00274A07 = {
@@ -141,6 +134,7 @@
 				0A0450282373694700138964 /* Extensions-Utilities */,
 				0A1A618A23721B3C00E3477F /* Model */,
 				0A95678B236F063900274A07 /* Controller */,
+				0A04502C23737D8300138964 /* View */,
 				0A95678E236F0DBC00274A07 /* Resources */,
 				0A956783236F033F00274A07 /* Info.plist */,
 			);
@@ -150,12 +144,9 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0A04502B23737C9100138964 /* AuctionCell */,
-				0AF09D81236F504700A3D820 /* ItemInfo */,
 				0AF09D7C236F396C00A3D820 /* Menu */,
 				0AF09D72236F184E00A3D820 /* Auth */,
 				0AF09D79236F38DB00A3D820 /* Main */,
-				0A956780236F033F00274A07 /* LaunchScreen.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -173,8 +164,9 @@
 		0AF09D72236F184E00A3D820 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				0A63555C2372F5C00068A57B /* View */,
-				0A63555B2372F59C0068A57B /* Controller */,
+				0A95678C236F066400274A07 /* AuthViewController.swift */,
+				0AF09D75236F312D00A3D820 /* LoginViewController.swift */,
+				0AF09D73236F278B00A3D820 /* RegisterViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -182,7 +174,6 @@
 		0AF09D79236F38DB00A3D820 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				0A95677B236F033E00274A07 /* Main.storyboard */,
 				0A956779236F033E00274A07 /* ViewController.swift */,
 			);
 			path = Main;
@@ -191,7 +182,8 @@
 		0AF09D7C236F396C00A3D820 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0AF09D7D236F39A900A3D820 /* Menu.storyboard */,
+				0A04502B23737C9100138964 /* AuctionCell */,
+				0AF09D81236F504700A3D820 /* ItemInfo */,
 				0AF09D86236F5AF600A3D820 /* MenuViewController.swift */,
 				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0A635560237302210068A57B /* MainViewController.swift */,
@@ -224,6 +216,9 @@
 			dependencies = (
 			);
 			name = AuctionApp;
+			packageProductDependencies = (
+				0A993AFE23771ADF0074D6AB /* Lottie */,
+			);
 			productName = AuctionApp;
 			productReference = 0A956772236F033E00274A07 /* AuctionApp.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +247,9 @@
 				Base,
 			);
 			mainGroup = 0A956769236F033E00274A07;
+			packageReferences = (
+				0A993AFD23771ADF0074D6AB /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 0A956773236F033E00274A07 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,10 +289,12 @@
 				0AF09D85236F509800A3D820 /* ItemInfoViewController.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
+				0A04502E23737E7A00138964 /* User.swift in Sources */,
 				0AF09D87236F5AF600A3D820 /* MenuViewController.swift in Sources */,
 				0A1A618C23721B5100E3477F /* Auction.swift in Sources */,
 				0A956776236F033E00274A07 /* AppDelegate.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
+				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */,
 			);
@@ -492,6 +492,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0A993AFD23771ADF0074D6AB /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0A993AFE23771ADF0074D6AB /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0A993AFD23771ADF0074D6AB /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0A95676A236F033E00274A07 /* Project object */;
 }
