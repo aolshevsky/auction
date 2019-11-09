@@ -37,36 +37,36 @@
                         <color key="textColor" red="0.0" green="0.56904578210000001" blue="0.57461684940000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fTd-wZ-kRX">
-                        <rect key="frame" x="385" y="16" width="30" height="30"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTH-9V-GMN" customClass="AnimatedButton" customModule="Lottie">
+                        <rect key="frame" x="382" y="0.0" width="61" height="60"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="30" id="IlE-5o-iqa"/>
-                            <constraint firstAttribute="width" constant="30" id="tV2-3P-YZe"/>
+                            <constraint firstAttribute="width" constant="61" id="5tN-74-CoH"/>
+                            <constraint firstAttribute="height" constant="60" id="G0S-Qf-yjz"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="fTd-wZ-kRX" firstAttribute="trailing" secondItem="adD-2R-kvX" secondAttribute="trailing" id="0gQ-z4-sWc"/>
                     <constraint firstAttribute="trailingMargin" secondItem="enr-UX-AZo" secondAttribute="trailing" constant="-12" id="2Kz-NY-yCG"/>
                     <constraint firstItem="adD-2R-kvX" firstAttribute="trailing" secondItem="enr-UX-AZo" secondAttribute="trailing" id="2j0-Mf-TOm"/>
                     <constraint firstItem="adD-2R-kvX" firstAttribute="leading" secondItem="Yn9-dq-I4r" secondAttribute="trailing" constant="8" id="5wn-NT-Vxq"/>
+                    <constraint firstItem="vTH-9V-GMN" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="bottom" constant="-40" id="6rN-zE-tG1"/>
                     <constraint firstItem="Yn9-dq-I4r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="7Ml-WX-nol"/>
                     <constraint firstItem="enr-UX-AZo" firstAttribute="leading" secondItem="Yn9-dq-I4r" secondAttribute="trailing" constant="116" id="GBy-lm-JD6"/>
                     <constraint firstAttribute="bottomMargin" secondItem="enr-UX-AZo" secondAttribute="bottom" constant="8" id="GxF-fl-1GV"/>
-                    <constraint firstItem="fTd-wZ-kRX" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="top" id="MLm-AE-32J"/>
                     <constraint firstItem="enr-UX-AZo" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="bottom" constant="70" id="OnA-A4-qzR"/>
                     <constraint firstItem="Yn9-dq-I4r" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="top" id="cbm-RB-HaX"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vTH-9V-GMN" secondAttribute="trailing" constant="-17" id="hGU-Y6-NoA"/>
                     <constraint firstAttribute="bottomMargin" secondItem="Yn9-dq-I4r" secondAttribute="bottom" constant="2" id="nrk-lY-XKf"/>
                     <constraint firstItem="Yn9-dq-I4r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="qUi-CD-LdT"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="animView" destination="vTH-9V-GMN" id="knA-pn-d2N"/>
                 <outlet property="auctionImageView" destination="Yn9-dq-I4r" id="G3X-sH-Ghx"/>
                 <outlet property="priceLabel" destination="enr-UX-AZo" id="TMV-jE-Wcz"/>
-                <outlet property="starImageView" destination="fTd-wZ-kRX" id="gbB-WU-tuG"/>
                 <outlet property="titleLabel" destination="adD-2R-kvX" id="FS5-iO-J94"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="61.607142857142854"/>
+            <point key="canvasLocation" x="97.101449275362327" y="88.392857142857139"/>
         </tableViewCell>
     </objects>
 </document>
