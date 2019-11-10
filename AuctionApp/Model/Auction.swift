@@ -14,6 +14,7 @@ class Auction {
     
     var image: UIImage
     var title: String
+    var status: AuctionStatus
     var startPrice: Float
     var endPrice: Float!
     var createDate: Date!
@@ -26,7 +27,7 @@ class Auction {
     var raisers: [Raiser]!
     
     init(image: UIImage, title: String, price: Float, description: String = "", createDate: Date! = nil,
-         endDate: Date! = nil, endPrice: Float! = nil, isStar: Bool) {
+         endDate: Date! = nil, endPrice: Float! = nil, status: AuctionStatus = .active, isStar: Bool) {
         self.image = image
         self.title = title
         self.startPrice = price
@@ -34,6 +35,7 @@ class Auction {
         self.description = description
         self.createDate = createDate
         self.endDate = endDate
+        self.status = status
         self.isStar = isStar
     }
 }

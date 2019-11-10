@@ -34,7 +34,7 @@ class AuctionTableViewCell: UITableViewCell {
         cellAuction = auction
         auctionImageView.image = auction.image
         titleLabel.text = auction.title
-        priceLabel.text = String(auction.price) + " $"
+        priceLabel.text = String(auction.startPrice) + " $"
         setStarAnimation(state: auction.isStar)
     }
     
