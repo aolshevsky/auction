@@ -17,6 +17,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBAction func loginButtonTapped(_ sender: Any) {
         let userEmail = useremailTextField.text
         let userPassword = userPasswordTextField.text
@@ -34,8 +38,6 @@ class LoginViewController: UIViewController {
             present(vc, animated: false)
         }
     }
-
-
 
     func checkUserByUserEmailPassword(email: String, password: String) -> Bool{
         return true;
