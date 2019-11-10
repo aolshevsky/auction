@@ -13,7 +13,7 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var allAuctions: [Auction] = DataSource.sharedInstance.allAuctions
+    var allAuctions: [Auction] = []
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -22,6 +22,11 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "AuctionTableViewCell", bundle: nil), forCellReuseIdentifier: "AuctionTableViewCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        allAuctions = DataSource.sharedInstance.allAuctions
+        DispatchQueue.main.async { self.tableView.reloadData() }
     }
     
 }
