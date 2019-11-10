@@ -18,6 +18,11 @@ class FavouriteViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "AuctionTableViewCell", bundle: nil), forCellReuseIdentifier: "AuctionTableViewCell")
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        auctions = DataSource.sharedInstance.getFilterFavouritesAuctioun()
+        DispatchQueue.main.async { self.tableView.reloadData() }
+    }
 }
 
 
