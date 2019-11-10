@@ -87,6 +87,8 @@
 		0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4223776C8F002EB24F /* NumberUtils.swift */; };
 		0AAF5A4723777675002EB24F /* TempInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4523777675002EB24F /* TempInfoViewController.swift */; };
 		0AAF5A4823777675002EB24F /* TempInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4623777675002EB24F /* TempInfoViewController.xib */; };
+		0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */; };
+		0AAF5A512378629A002EB24F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A502378629A002EB24F /* DataSource.swift */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
 		0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D75236F312D00A3D820 /* LoginViewController.swift */; };
 		0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D77236F350100A3D820 /* BaseAuth.swift */; };
@@ -177,6 +179,8 @@
 		0AAF5A4223776C8F002EB24F /* NumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
 		0AAF5A4523777675002EB24F /* TempInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempInfoViewController.swift; sourceTree = "<group>"; };
 		0AAF5A4623777675002EB24F /* TempInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TempInfoViewController.xib; sourceTree = "<group>"; };
+		0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
+		0AAF5A502378629A002EB24F /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		0AF09D73236F278B00A3D820 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AF09D75236F312D00A3D820 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AF09D77236F350100A3D820 /* BaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuth.swift; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		0A5B9FE72377634A0092DB1E /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				0AAF5A502378629A002EB24F /* DataSource.swift */,
 			);
 			path = Mapper;
 			sourceTree = "<group>";
@@ -405,6 +410,7 @@
 				0AF09D86236F5AF600A3D820 /* MenuViewController.swift */,
 				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0A635560237302210068A57B /* MainViewController.swift */,
+				0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				0AF09D89236F70B900A3D820 /* SearchViewController.swift in Sources */,
 				0A635561237302210068A57B /* MainViewController.swift in Sources */,
 				0A0450262373629D00138964 /* AuctionTableViewCell.swift in Sources */,
+				0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
@@ -576,6 +583,7 @@
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
+				0AAF5A512378629A002EB24F /* DataSource.swift in Sources */,
 				0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

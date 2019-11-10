@@ -1,32 +1,27 @@
 //
-//  SearchViewController.swift
+//  FavouriteViewController.swift
 //  AuctionApp
 //
-//  Created by Alexey Olshevsky on 11/3/19.
+//  Created by Alexey Olshevsky on 11/10/19.
 //  Copyright © 2019 Alexey Olshevsky. All rights reserved.
 //
 
 import UIKit
 
+class FavouriteViewController: UIViewController {
 
-class SearchViewController: UIViewController {
-    
     @IBOutlet weak var tableView: UITableView!
     
-    var allAuctions: [Auction] = DataSource.sharedInstance.allAuctions
-    
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
+    var auctions: [Auction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "AuctionTableViewCell", bundle: nil), forCellReuseIdentifier: "AuctionTableViewCell")
     }
-    
 }
 
-extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
+
+extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -37,7 +32,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return allAuctions.count
+        return auctions.count
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -47,7 +42,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let auction = allAuctions[indexPath.section]
+        let auction = auctions[indexPath.section]
         let cell = tableView.dequeueReusableCell(withIdentifier: "AuctionTableViewCell") as! AuctionTableViewCell
         cell.setAuction(auction: auction)
         
@@ -62,7 +57,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let auction = allAuctions[indexPath.section]
+        let auction = auctions[indexPath.section]
         let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
         //vc.commonInit(auction: auction)
         vc.modalPresentationStyle = .formSheet
