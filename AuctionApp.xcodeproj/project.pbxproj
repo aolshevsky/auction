@@ -70,6 +70,10 @@
 		0A5B9FDD237728E70092DB1E /* timeremap.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FA6237728E70092DB1E /* timeremap.json */; };
 		0A5B9FDF237733240092DB1E /* star.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FDE237733240092DB1E /* star.json */; };
 		0A5B9FE1237736B00092DB1E /* sparkness.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE0237736B00092DB1E /* sparkness.json */; };
+		0A5B9FE52377582F0092DB1E /* AuctionInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE32377582F0092DB1E /* AuctionInfoViewController.swift */; };
+		0A5B9FE62377582F0092DB1E /* AuctionInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE42377582F0092DB1E /* AuctionInfoViewController.xib */; };
+		0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE8237766380092DB1E /* DateUtils.swift */; };
+		0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */; };
 		0A635561237302210068A57B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635560237302210068A57B /* MainViewController.swift */; };
 		0A956776236F033E00274A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956775236F033E00274A07 /* AppDelegate.swift */; };
 		0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956777236F033E00274A07 /* SceneDelegate.swift */; };
@@ -80,12 +84,13 @@
 		0A95678D236F066400274A07 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95678C236F066400274A07 /* AuthViewController.swift */; };
 		0A956790236F135000274A07 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A95678F236F135000274A07 /* AuthViewController.storyboard */; };
 		0A993AFF23771ADF0074D6AB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0A993AFE23771ADF0074D6AB /* Lottie */; };
+		0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4223776C8F002EB24F /* NumberUtils.swift */; };
+		0AAF5A4723777675002EB24F /* TempInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4523777675002EB24F /* TempInfoViewController.swift */; };
+		0AAF5A4823777675002EB24F /* TempInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4623777675002EB24F /* TempInfoViewController.xib */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
 		0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D75236F312D00A3D820 /* LoginViewController.swift */; };
 		0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D77236F350100A3D820 /* BaseAuth.swift */; };
 		0AF09D7E236F39A900A3D820 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF09D7D236F39A900A3D820 /* Menu.storyboard */; };
-		0AF09D83236F507C00A3D820 /* ItemInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF09D82236F507C00A3D820 /* ItemInfo.storyboard */; };
-		0AF09D85236F509800A3D820 /* ItemInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D84236F509800A3D820 /* ItemInfoViewController.swift */; };
 		0AF09D87236F5AF600A3D820 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D86236F5AF600A3D820 /* MenuViewController.swift */; };
 		0AF09D89236F70B900A3D820 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D88236F70B900A3D820 /* SearchViewController.swift */; };
 /* End PBXBuildFile section */
@@ -154,6 +159,10 @@
 		0A5B9FA6237728E70092DB1E /* timeremap.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = timeremap.json; sourceTree = "<group>"; };
 		0A5B9FDE237733240092DB1E /* star.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = star.json; sourceTree = "<group>"; };
 		0A5B9FE0237736B00092DB1E /* sparkness.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = sparkness.json; sourceTree = "<group>"; };
+		0A5B9FE32377582F0092DB1E /* AuctionInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionInfoViewController.swift; sourceTree = "<group>"; };
+		0A5B9FE42377582F0092DB1E /* AuctionInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionInfoViewController.xib; sourceTree = "<group>"; };
+		0A5B9FE8237766380092DB1E /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionStatusEnum.swift; sourceTree = "<group>"; };
 		0A635560237302210068A57B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0A956772236F033E00274A07 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A956775236F033E00274A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,12 +174,13 @@
 		0A956783236F033F00274A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A95678C236F066400274A07 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0A95678F236F135000274A07 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		0AAF5A4223776C8F002EB24F /* NumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
+		0AAF5A4523777675002EB24F /* TempInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempInfoViewController.swift; sourceTree = "<group>"; };
+		0AAF5A4623777675002EB24F /* TempInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TempInfoViewController.xib; sourceTree = "<group>"; };
 		0AF09D73236F278B00A3D820 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AF09D75236F312D00A3D820 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AF09D77236F350100A3D820 /* BaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuth.swift; sourceTree = "<group>"; };
 		0AF09D7D236F39A900A3D820 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		0AF09D82236F507C00A3D820 /* ItemInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ItemInfo.storyboard; sourceTree = "<group>"; };
-		0AF09D84236F509800A3D820 /* ItemInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInfoViewController.swift; sourceTree = "<group>"; };
 		0AF09D86236F5AF600A3D820 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AF09D88236F70B900A3D820 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +202,8 @@
 			children = (
 				0AF09D77236F350100A3D820 /* BaseAuth.swift */,
 				0A0450292373696A00138964 /* Constants.swift */,
+				0A5B9FE8237766380092DB1E /* DateUtils.swift */,
+				0AAF5A4223776C8F002EB24F /* NumberUtils.swift */,
 			);
 			path = "Extensions-Utilities";
 			sourceTree = "<group>";
@@ -222,6 +234,7 @@
 				0A1A618B23721B5100E3477F /* Auction.swift */,
 				0A04502D23737E7A00138964 /* User.swift */,
 				0A04502F237386CD00138964 /* Raiser.swift */,
+				0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -298,6 +311,13 @@
 			path = TypeFace;
 			sourceTree = "<group>";
 		};
+		0A5B9FE72377634A0092DB1E /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
 		0A956769236F033E00274A07 = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +338,7 @@
 		0A956774236F033E00274A07 /* AuctionApp */ = {
 			isa = PBXGroup;
 			children = (
+				0A5B9FE72377634A0092DB1E /* Mapper */,
 				0A0450282373694700138964 /* Extensions-Utilities */,
 				0A1A618A23721B3C00E3477F /* Model */,
 				0A95678B236F063900274A07 /* Controller */,
@@ -348,6 +369,15 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		0AAF5A4423777656002EB24F /* TempInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0AAF5A4523777675002EB24F /* TempInfoViewController.swift */,
+				0AAF5A4623777675002EB24F /* TempInfoViewController.xib */,
+			);
+			path = TempInfo;
+			sourceTree = "<group>";
+		};
 		0AF09D72236F184E00A3D820 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,8 +399,9 @@
 		0AF09D7C236F396C00A3D820 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0AAF5A4423777656002EB24F /* TempInfo */,
 				0A04502B23737C9100138964 /* AuctionCell */,
-				0AF09D81236F504700A3D820 /* ItemInfo */,
+				0AF09D81236F504700A3D820 /* AuctionInfo */,
 				0AF09D86236F5AF600A3D820 /* MenuViewController.swift */,
 				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0A635560237302210068A57B /* MainViewController.swift */,
@@ -378,13 +409,13 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
-		0AF09D81236F504700A3D820 /* ItemInfo */ = {
+		0AF09D81236F504700A3D820 /* AuctionInfo */ = {
 			isa = PBXGroup;
 			children = (
-				0AF09D82236F507C00A3D820 /* ItemInfo.storyboard */,
-				0AF09D84236F509800A3D820 /* ItemInfoViewController.swift */,
+				0A5B9FE32377582F0092DB1E /* AuctionInfoViewController.swift */,
+				0A5B9FE42377582F0092DB1E /* AuctionInfoViewController.xib */,
 			);
-			path = ItemInfo;
+			path = AuctionInfo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,6 +494,7 @@
 				0AF09D7E236F39A900A3D820 /* Menu.storyboard in Resources */,
 				0A5B9FB7237728E70092DB1E /* F.json in Resources */,
 				0A5B9FB8237728E70092DB1E /* S.json in Resources */,
+				0AAF5A4823777675002EB24F /* TempInfoViewController.xib in Resources */,
 				0A5B9FC5237728E70092DB1E /* O.json in Resources */,
 				0A5B9FB5237728E70092DB1E /* R.json in Resources */,
 				0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */,
@@ -486,7 +518,6 @@
 				0A956790236F135000274A07 /* AuthViewController.storyboard in Resources */,
 				0A5B9FAF237728E70092DB1E /* BlinkingCursor.json in Resources */,
 				0A5B9FC3237728E70092DB1E /* V.json in Resources */,
-				0AF09D83236F507C00A3D820 /* ItemInfo.storyboard in Resources */,
 				0A5B9FD5237728E70092DB1E /* Switch_States.json in Resources */,
 				0A5B9FDD237728E70092DB1E /* timeremap.json in Resources */,
 				0A5B9FBF237728E70092DB1E /* D.json in Resources */,
@@ -496,6 +527,7 @@
 				0A95677F236F033F00274A07 /* Assets.xcassets in Resources */,
 				0A5B9FC8237728E70092DB1E /* W.json in Resources */,
 				0A5B9FC9237728E70092DB1E /* B.json in Resources */,
+				0A5B9FE62377582F0092DB1E /* AuctionInfoViewController.xib in Resources */,
 				0A5B9FBD237728E70092DB1E /* P.json in Resources */,
 				0A5B9FD0237728E70092DB1E /* Keypath.json in Resources */,
 				0A5B9FDF237733240092DB1E /* star.json in Resources */,
@@ -525,20 +557,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AAF5A4723777675002EB24F /* TempInfoViewController.swift in Sources */,
 				0AF09D89236F70B900A3D820 /* SearchViewController.swift in Sources */,
 				0A635561237302210068A57B /* MainViewController.swift in Sources */,
 				0A0450262373629D00138964 /* AuctionTableViewCell.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
-				0AF09D85236F509800A3D820 /* ItemInfoViewController.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
 				0A04502E23737E7A00138964 /* User.swift in Sources */,
+				0A5B9FE52377582F0092DB1E /* AuctionInfoViewController.swift in Sources */,
 				0AF09D87236F5AF600A3D820 /* MenuViewController.swift in Sources */,
 				0A1A618C23721B5100E3477F /* Auction.swift in Sources */,
 				0A956776236F033E00274A07 /* AppDelegate.swift in Sources */,
+				0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
+				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
+				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */,
 			);
