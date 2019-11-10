@@ -15,6 +15,10 @@ class SearchViewController: UIViewController {
     
     var auctions: [Auction] = []
     
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         auctions = createAuctions()
@@ -48,7 +52,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 10
+        return 12
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,8 +72,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Cell UI
         cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
+        cell.layer.borderWidth = 0.3
+        cell.layer.cornerRadius = 25
         cell.clipsToBounds = true
         
         return cell
@@ -80,7 +84,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let auction = auctions[indexPath.section]
         let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
         //vc.commonInit(auction: auction)
-        vc.modalPresentationStyle = .overFullScreen
+        vc.modalPresentationStyle = .formSheet
         self.present(vc, animated: true, completion: nil)
         vc.commonInit(auction: auction)
 

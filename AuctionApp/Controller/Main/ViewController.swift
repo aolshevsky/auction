@@ -8,11 +8,6 @@
 
 import UIKit
 
-extension UIViewController{
-    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-}
 
 class ViewController: UIViewController {
 

@@ -26,7 +26,7 @@ class AuctionTableViewCell: UITableViewCell {
     }
     
     func setStarAnimation(state: Bool) {
-        addSwitchAnimation(filename: "star", state: state)
+        addSwitchAnimation(filename: "sparkness", state: state)
     }
     
     
