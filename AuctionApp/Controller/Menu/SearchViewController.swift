@@ -70,7 +70,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let auction = allAuctions[indexPath.section]
         let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
         //vc.commonInit(auction: auction)
-        vc.modalPresentationStyle = .formSheet
+        vc.modalPresentationStyle = .popover
         self.present(vc, animated: true, completion: nil)
         vc.commonInit(auction: auction)
 

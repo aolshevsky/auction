@@ -10,7 +10,7 @@
         <!--Profile-->
         <scene sceneID="kH5-zb-Tkf">
             <objects>
-                <viewController id="Dqk-T0-oGu" userLabel="Profile" sceneMemberID="viewController">
+                <viewController id="Dqk-T0-oGu" userLabel="Profile" customClass="ProfileViewController" customModule="AuctionApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IKG-Jv-xJK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,6 +34,11 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef4-63-m9G">
+                                <rect key="frame" x="184" y="641" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="gTY-vc-y5o"/>
@@ -41,6 +46,9 @@
                     <tabBarItem key="tabBarItem" title="Profile" image="person" catalog="system" selectedImage="person" id="3wt-Hq-Ffh">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="5"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="tapp" destination="Ef4-63-m9G" id="1as-lT-VrB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wep-xs-zBz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
