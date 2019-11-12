@@ -32,6 +32,9 @@ class Auction {
         self.title = title
         self.startPrice = price
         self.endPrice = endPrice
+        if endPrice == nil {
+            self.endPrice = price
+        }
         self.description = description
         self.createDate = createDate
         self.endDate = endDate
