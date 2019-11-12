@@ -88,6 +88,7 @@
 		0A95678D236F066400274A07 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A95678C236F066400274A07 /* AuthViewController.swift */; };
 		0A956790236F135000274A07 /* AuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A95678F236F135000274A07 /* AuthViewController.storyboard */; };
 		0A993AFF23771ADF0074D6AB /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 0A993AFE23771ADF0074D6AB /* Lottie */; };
+		0AA35CE8237B5BDC004A93DE /* AddAuctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA35CE7237B5BDC004A93DE /* AddAuctionViewController.swift */; };
 		0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4223776C8F002EB24F /* NumberUtils.swift */; };
 		0AAF5A4723777675002EB24F /* TempInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4523777675002EB24F /* TempInfoViewController.swift */; };
 		0AAF5A4823777675002EB24F /* TempInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4623777675002EB24F /* TempInfoViewController.xib */; };
@@ -184,6 +185,7 @@
 		0A956783236F033F00274A07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0A95678C236F066400274A07 /* AuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		0A95678F236F135000274A07 /* AuthViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthViewController.storyboard; sourceTree = "<group>"; };
+		0AA35CE7237B5BDC004A93DE /* AddAuctionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAuctionViewController.swift; sourceTree = "<group>"; };
 		0AAF5A4223776C8F002EB24F /* NumberUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberUtils.swift; sourceTree = "<group>"; };
 		0AAF5A4523777675002EB24F /* TempInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempInfoViewController.swift; sourceTree = "<group>"; };
 		0AAF5A4623777675002EB24F /* TempInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TempInfoViewController.xib; sourceTree = "<group>"; };
@@ -439,6 +441,7 @@
 				0A635560237302210068A57B /* MainViewController.swift */,
 				0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */,
 				0A82DF042379FC6700E864E8 /* ProfileViewController.swift */,
+				0AA35CE7237B5BDC004A93DE /* AddAuctionViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -614,6 +617,7 @@
 				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
+				0AA35CE8237B5BDC004A93DE /* AddAuctionViewController.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AAF5A512378629A002EB24F /* DataSource.swift in Sources */,
 				0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */,

@@ -9,7 +9,7 @@
 import Foundation
 
 class DateUtils {
-    private static func getDateFormatter() -> DateFormatter {
+    static func getDateFormatter() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         return formatter
