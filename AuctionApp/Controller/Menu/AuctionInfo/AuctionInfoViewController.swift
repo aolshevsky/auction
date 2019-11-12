@@ -22,7 +22,7 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeBetButton: UIButton!
     
-    
+    var vcAuction: Auction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +37,7 @@ class AuctionInfoViewController: UIViewController {
     
     @objc private func tappedBet() {
         let vc = PlaceBetViewController(nibName: "PlaceBetViewController", bundle: nil)
+        vc.commonInit(auction: self.vcAuction)
         vc.modalPresentationStyle = .popover
         let popOverVC = vc.popoverPresentationController
         popOverVC?.delegate = self
@@ -47,6 +48,7 @@ class AuctionInfoViewController: UIViewController {
     }    
     
     func commonInit(auction: Auction) {
+        self.vcAuction = auction
         self.titleTextField.text = auction.title
         self.createdDateTextField.text = DateUtils.dateToString(date: auction.createDate)
         self.endDateTextField.text = DateUtils.dateToString(date: auction.endDate)
