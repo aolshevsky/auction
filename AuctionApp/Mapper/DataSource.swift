@@ -21,7 +21,7 @@ class DataSource {
     private func createAuctions() -> [Auction] {
         var tempAuctions: [Auction] = []
         
-        let auction1 = Auction(image: #imageLiteral(resourceName: "audi"), title: "Audi TT", price: 450, isStar: true)
+        let auction1 = Auction(image: #imageLiteral(resourceName: "audi"), title: "Audi TT", price: 450, description: "sdfsfsdfsdfsdfer wefgwe fwfwef wefwe fwfw efwe f wef wef wef wefwe fwef we fwef wef wef we fwef wef aaaaaaaaaaaaa ferfkwe kfwkef wkef kofw ei efiwei", isStar: true)
         let auction2 = Auction(image: #imageLiteral(resourceName: "bugatti"), title: "Buggati-Veron", price: 4000, isStar: false)
         let auction3 = Auction(image: #imageLiteral(resourceName: "classic"), title: "Тачка деда", price: 100, isStar: false)
         let auction4 = Auction(image: #imageLiteral(resourceName: "merce"), title: "Тачка прадеда", price: 3220, isStar: true)
