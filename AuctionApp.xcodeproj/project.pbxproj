@@ -75,6 +75,10 @@
 		0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE8237766380092DB1E /* DateUtils.swift */; };
 		0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */; };
 		0A635561237302210068A57B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635560237302210068A57B /* MainViewController.swift */; };
+		0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF042379FC6700E864E8 /* ProfileViewController.swift */; };
+		0A82DF08237A0F1B00E864E8 /* PlaceBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */; };
+		0A82DF09237A0F1B00E864E8 /* PlaceBetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */; };
+		0A82DF0C237A13CC00E864E8 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF0B237A13CC00E864E8 /* UIStyle.swift */; };
 		0A956776236F033E00274A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956775236F033E00274A07 /* AppDelegate.swift */; };
 		0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956777236F033E00274A07 /* SceneDelegate.swift */; };
 		0A95677A236F033E00274A07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956779236F033E00274A07 /* ViewController.swift */; };
@@ -166,6 +170,10 @@
 		0A5B9FE8237766380092DB1E /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionStatusEnum.swift; sourceTree = "<group>"; };
 		0A635560237302210068A57B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0A82DF042379FC6700E864E8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetViewController.swift; sourceTree = "<group>"; };
+		0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceBetViewController.xib; sourceTree = "<group>"; };
+		0A82DF0B237A13CC00E864E8 /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
 		0A956772236F033E00274A07 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A956775236F033E00274A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A956777236F033E00274A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -204,6 +212,7 @@
 		0A0450282373694700138964 /* Extensions-Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				0A82DF0A237A137F00E864E8 /* UI */,
 				0AF09D77236F350100A3D820 /* BaseAuth.swift */,
 				0A0450292373696A00138964 /* Constants.swift */,
 				0A5B9FE8237766380092DB1E /* DateUtils.swift */,
@@ -323,6 +332,14 @@
 			path = Mapper;
 			sourceTree = "<group>";
 		};
+		0A82DF0A237A137F00E864E8 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				0A82DF0B237A13CC00E864E8 /* UIStyle.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		0A956769236F033E00274A07 = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +400,15 @@
 			path = TempInfo;
 			sourceTree = "<group>";
 		};
+		0AAF5A5223787ECB002EB24F /* PlaceBet */ = {
+			isa = PBXGroup;
+			children = (
+				0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */,
+				0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */,
+			);
+			path = PlaceBet;
+			sourceTree = "<group>";
+		};
 		0AF09D72236F184E00A3D820 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,6 +430,7 @@
 		0AF09D7C236F396C00A3D820 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0AAF5A5223787ECB002EB24F /* PlaceBet */,
 				0AAF5A4423777656002EB24F /* TempInfo */,
 				0A04502B23737C9100138964 /* AuctionCell */,
 				0AF09D81236F504700A3D820 /* AuctionInfo */,
@@ -411,6 +438,7 @@
 				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0A635560237302210068A57B /* MainViewController.swift */,
 				0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */,
+				0A82DF042379FC6700E864E8 /* ProfileViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -526,6 +554,7 @@
 				0A5B9FC3237728E70092DB1E /* V.json in Resources */,
 				0A5B9FD5237728E70092DB1E /* Switch_States.json in Resources */,
 				0A5B9FDD237728E70092DB1E /* timeremap.json in Resources */,
+				0A82DF09237A0F1B00E864E8 /* PlaceBetViewController.xib in Resources */,
 				0A5B9FBF237728E70092DB1E /* D.json in Resources */,
 				0A5B9FAA237728E70092DB1E /* MotionCorpse-Jrcanest.json in Resources */,
 				0A5B9FD7237728E70092DB1E /* setValueTest.json in Resources */,
@@ -568,7 +597,9 @@
 				0A635561237302210068A57B /* MainViewController.swift in Sources */,
 				0A0450262373629D00138964 /* AuctionTableViewCell.swift in Sources */,
 				0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */,
+				0A82DF0C237A13CC00E864E8 /* UIStyle.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
+				0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
@@ -576,6 +607,7 @@
 				0A5B9FE52377582F0092DB1E /* AuctionInfoViewController.swift in Sources */,
 				0AF09D87236F5AF600A3D820 /* MenuViewController.swift in Sources */,
 				0A1A618C23721B5100E3477F /* Auction.swift in Sources */,
+				0A82DF08237A0F1B00E864E8 /* PlaceBetViewController.swift in Sources */,
 				0A956776236F033E00274A07 /* AppDelegate.swift in Sources */,
 				0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
