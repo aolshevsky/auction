@@ -13,7 +13,7 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var titleTextField: UILabel!
     @IBOutlet weak var createdDateTextField: UILabel!
     @IBOutlet weak var statusTextField: UILabel!
-    @IBOutlet weak var descriptionTextField: UILabel!
+    //@IBOutlet weak var descriptionTextField: UILabel!
     @IBOutlet weak var startPriceTextField: UILabel!
     @IBOutlet weak var creatorTextField: UILabel!
     @IBOutlet weak var endPriceTextField: UILabel!
@@ -21,6 +21,7 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var endDateTextField: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeBetButton: UIButton!
+    @IBOutlet weak var descriptionTextView: UITextView!
     
     var vcAuction: Auction!
     
@@ -53,7 +54,7 @@ class AuctionInfoViewController: UIViewController {
         self.createdDateTextField.text = DateUtils.dateToString(date: auction.createDate)
         self.endDateTextField.text = DateUtils.dateToString(date: auction.endDate)
         self.statusTextField.text = auction.status.rawValue
-        self.descriptionTextField.text = auction.description
+        self.descriptionTextView.text = auction.description
         self.startPriceTextField.text = NumberUtils.convertFloatToString(value: auction.startPrice)
         self.endPriceTextField.text = NumberUtils.convertFloatToString(value: auction.endPrice)
         self.creatorTextField.text = "linked"
@@ -68,6 +69,17 @@ class AuctionInfoViewController: UIViewController {
         UIStyle.applyBaseLabelStyle(label: self.titleTextField, size: 22)
         UIStyle.applyBaseLabelStyle(label: self.statusTextField, size: 16)
         UIStyle.applyBaseLabelStyle(label: self.startPriceTextField, size: 20, color: .systemGreen)
+        //resizeDescriptionViewFrame()
+    }
+    
+    func resizeDescriptionViewFrame() {
+        //self.descriptionTextView?.delegate = self
+        
+        let fixedWidth = self.descriptionTextView.frame.size.width
+        let newSize: CGSize = self.descriptionTextView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat(MAXFLOAT)))
+        var newFrame = self.descriptionTextView.frame
+        newFrame.size = CGSize(width: CGFloat(fmaxf((Float(newSize.width)), Float(fixedWidth))), height: newSize.height)
+        self.descriptionTextView.frame = newFrame
     }
 }
 
