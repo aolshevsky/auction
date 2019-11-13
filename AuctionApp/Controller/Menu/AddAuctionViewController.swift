@@ -77,11 +77,21 @@ class AddAuctionViewController: UIViewController {
     }
     
     @objc func viewTapped(gestureRecognizer: UIGestureRecognizer) {
-        view.endEditing(true)
+        if self.datePicker!.date >= Date() {
+            view.endEditing(true)
+        } else {
+            let alert  = UIAlertController(title: "Warning", message: "Date must be greater than current date", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
     }
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         endDateTextField.text = DateUtils.getDateFormatter().string(from: datePicker.date)
+        endDateTextField.textColor = .black
+        if datePicker.date < Date() {
+            endDateTextField.textColor = .red
+        }
         // view.endEditing(true)
     }
 }
