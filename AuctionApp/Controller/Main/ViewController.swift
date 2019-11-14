@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 
 class ViewController: UIViewController {
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png")
     }
 
     @IBAction func moveButton(_ sender: Any) {

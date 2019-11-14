@@ -32,7 +32,7 @@ class AuctionTableViewCell: UITableViewCell {
     
     func setAuction(auction: Auction) {
         cellAuction = auction
-        auctionImageView.image = auction.image
+        auctionImageView.downloaded(from: auction.imageUrl)
         titleLabel.text = auction.title
         priceLabel.text = String(auction.startPrice) + " $"
         setStarAnimation(state: auction.isStar)
@@ -60,5 +60,30 @@ class AuctionTableViewCell: UITableViewCell {
         
     @objc func switchToggled(animatedSwitch: AnimatedSwitch) {
         cellAuction.isStar = !cellAuction.isStar
+    }
+}
+
+
+extension UIImageView {
+    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let _ = response?.mimeType,
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else {
+                    print("FFF")
+                    return }
+            DispatchQueue.main.async() {
+                print("DDD")
+                self.image = image
+            }
+        }.resume()
+    }
+    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloaded(from: url, contentMode: mode)
     }
 }

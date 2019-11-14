@@ -12,7 +12,7 @@ import UIKit
 
 class Auction {
     
-    var image: UIImage
+    //var image: UIImage
     var title: String
     var status: AuctionStatus
     var startPrice: Float
@@ -20,15 +20,16 @@ class Auction {
     var createDate: Date!
     var endDate: Date!
     var description: String
+    var imageUrl: String
     
     // Temp place
     var isStar: Bool
     // Addition One-to-many fields: creator, purchasedBy,
     var raisers: [Raiser]!
     
-    init(image: UIImage, title: String, price: Float, description: String = "", createDate: Date! = nil,
+    init(imageUrl: String, title: String, price: Float, description: String = "", createDate: Date! = nil,
          endDate: Date! = nil, endPrice: Float! = nil, status: AuctionStatus = .active, isStar: Bool) {
-        self.image = image
+        self.imageUrl = imageUrl
         self.title = title
         self.startPrice = price
         self.endPrice = endPrice
