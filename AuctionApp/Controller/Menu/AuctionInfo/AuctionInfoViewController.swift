@@ -59,7 +59,7 @@ class AuctionInfoViewController: UIViewController {
         self.endPriceTextField.text = NumberUtils.convertFloatToString(value: auction.endPrice)
         self.creatorTextField.text = "linked"
         self.purchasedByTextField.text = "linked"
-        self.imageView.image = auction.image
+        self.imageView.downloaded(from: auction.imageUrl)
         
         styleInit()
     }

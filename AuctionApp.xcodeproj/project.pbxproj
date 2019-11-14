@@ -94,15 +94,20 @@
 		0AAF5A4823777675002EB24F /* TempInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4623777675002EB24F /* TempInfoViewController.xib */; };
 		0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */; };
 		0AAF5A512378629A002EB24F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A502378629A002EB24F /* DataSource.swift */; };
+		0AB85B24237D25DC009F3D31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AB85B23237D25DC009F3D31 /* GoogleService-Info.plist */; };
+		0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F0237D32CC00CA2617 /* StorageService.swift */; };
+		0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F2237D35D700CA2617 /* PostService.swift */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
 		0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D75236F312D00A3D820 /* LoginViewController.swift */; };
 		0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D77236F350100A3D820 /* BaseAuth.swift */; };
 		0AF09D7E236F39A900A3D820 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0AF09D7D236F39A900A3D820 /* Menu.storyboard */; };
 		0AF09D87236F5AF600A3D820 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D86236F5AF600A3D820 /* MenuViewController.swift */; };
 		0AF09D89236F70B900A3D820 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D88236F70B900A3D820 /* SearchViewController.swift */; };
+		A38338F80D707CAD86460E96 /* Pods_AuctionApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415219B82CA30571DA7C0115 /* Pods_AuctionApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		09B4740684DE5BF9F616BC20 /* Pods-AuctionApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.release.xcconfig"; path = "Target Support Files/Pods-AuctionApp/Pods-AuctionApp.release.xcconfig"; sourceTree = "<group>"; };
 		0A0450242373629D00138964 /* AuctionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionTableViewCell.swift; sourceTree = "<group>"; };
 		0A0450252373629D00138964 /* AuctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionTableViewCell.xib; sourceTree = "<group>"; };
 		0A0450292373696A00138964 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -191,12 +196,17 @@
 		0AAF5A4623777675002EB24F /* TempInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TempInfoViewController.xib; sourceTree = "<group>"; };
 		0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		0AAF5A502378629A002EB24F /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		0AB85B23237D25DC009F3D31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0AD3C9F0237D32CC00CA2617 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
+		0AD3C9F2237D35D700CA2617 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		0AF09D73236F278B00A3D820 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AF09D75236F312D00A3D820 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AF09D77236F350100A3D820 /* BaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuth.swift; sourceTree = "<group>"; };
 		0AF09D7D236F39A900A3D820 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		0AF09D86236F5AF600A3D820 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		0AF09D88236F70B900A3D820 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		415219B82CA30571DA7C0115 /* Pods_AuctionApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AuctionApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E26380FAE9770959A253283C /* Pods-AuctionApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AuctionApp.debug.xcconfig"; path = "Target Support Files/Pods-AuctionApp/Pods-AuctionApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A993AFF23771ADF0074D6AB /* Lottie in Frameworks */,
+				A38338F80D707CAD86460E96 /* Pods_AuctionApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +340,7 @@
 		0A5B9FE72377634A0092DB1E /* Mapper */ = {
 			isa = PBXGroup;
 			children = (
+				0AD3C9EF237D32A900CA2617 /* FirebaseStorage */,
 				0AAF5A502378629A002EB24F /* DataSource.swift */,
 			);
 			path = Mapper;
@@ -348,6 +360,8 @@
 				0A956774236F033E00274A07 /* AuctionApp */,
 				0A5B9F6E237728E70092DB1E /* TestAnimations */,
 				0A956773236F033E00274A07 /* Products */,
+				E995A825EAEC2C6AE8B66D6F /* Pods */,
+				77662BFBB1E52BA4710DD423 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -386,6 +400,7 @@
 		0A95678E236F0DBC00274A07 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0AB85B23237D25DC009F3D31 /* GoogleService-Info.plist */,
 				0A956775236F033E00274A07 /* AppDelegate.swift */,
 				0A956777236F033E00274A07 /* SceneDelegate.swift */,
 				0A95677E236F033F00274A07 /* Assets.xcassets */,
@@ -409,6 +424,15 @@
 				0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */,
 			);
 			path = PlaceBet;
+			sourceTree = "<group>";
+		};
+		0AD3C9EF237D32A900CA2617 /* FirebaseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				0AD3C9F0237D32CC00CA2617 /* StorageService.swift */,
+				0AD3C9F2237D35D700CA2617 /* PostService.swift */,
+			);
+			path = FirebaseStorage;
 			sourceTree = "<group>";
 		};
 		0AF09D72236F184E00A3D820 /* Auth */ = {
@@ -455,6 +479,23 @@
 			path = AuctionInfo;
 			sourceTree = "<group>";
 		};
+		77662BFBB1E52BA4710DD423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				415219B82CA30571DA7C0115 /* Pods_AuctionApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E995A825EAEC2C6AE8B66D6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E26380FAE9770959A253283C /* Pods-AuctionApp.debug.xcconfig */,
+				09B4740684DE5BF9F616BC20 /* Pods-AuctionApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -462,9 +503,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0A956786236F033F00274A07 /* Build configuration list for PBXNativeTarget "AuctionApp" */;
 			buildPhases = (
+				9CF8900B2E6B3CEB2A4CDB0E /* [CP] Check Pods Manifest.lock */,
 				0A95676E236F033E00274A07 /* Sources */,
 				0A95676F236F033E00274A07 /* Frameworks */,
 				0A956770236F033E00274A07 /* Resources */,
+				29EC43BAABB55FA14D2D609E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -547,6 +590,7 @@
 				0A5B9FB0237728E70092DB1E /* M.json in Resources */,
 				0A5B9FBE237728E70092DB1E /* Q.json in Resources */,
 				0A5B9FC2237728E70092DB1E /* C.json in Resources */,
+				0AB85B24237D25DC009F3D31 /* GoogleService-Info.plist in Resources */,
 				0A5B9FDA237728E70092DB1E /* PinJump.json in Resources */,
 				0A5B9FC0237728E70092DB1E /* Colon.json in Resources */,
 				0A5B9FBA237728E70092DB1E /* I.json in Resources */,
@@ -590,6 +634,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		29EC43BAABB55FA14D2D609E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuctionApp/Pods-AuctionApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AuctionApp/Pods-AuctionApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AuctionApp/Pods-AuctionApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CF8900B2E6B3CEB2A4CDB0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AuctionApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0A95676E236F033E00274A07 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -602,6 +688,7 @@
 				0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */,
 				0A82DF0C237A13CC00E864E8 /* UIStyle.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
+				0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */,
 				0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
@@ -617,6 +704,7 @@
 				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
+				0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */,
 				0AA35CE8237B5BDC004A93DE /* AddAuctionViewController.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AAF5A512378629A002EB24F /* DataSource.swift in Sources */,
@@ -762,6 +850,7 @@
 		};
 		0A956787236F033F00274A07 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E26380FAE9770959A253283C /* Pods-AuctionApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -779,6 +868,7 @@
 		};
 		0A956788236F033F00274A07 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09B4740684DE5BF9F616BC20 /* Pods-AuctionApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
