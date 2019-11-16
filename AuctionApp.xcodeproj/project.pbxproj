@@ -13,6 +13,7 @@
 		0A04502E23737E7A00138964 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502D23737E7A00138964 /* User.swift */; };
 		0A045030237386CD00138964 /* Raiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502F237386CD00138964 /* Raiser.swift */; };
 		0A1A618C23721B5100E3477F /* Auction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A618B23721B5100E3477F /* Auction.swift */; };
+		0A1E34D3237FDDC300C4D9A4 /* UIIMageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34D2237FDDC300C4D9A4 /* UIIMageViewExtension.swift */; };
 		0A5B9FA7237728E70092DB1E /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F6F237728E70092DB1E /* Switch.json */; };
 		0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F70237728E70092DB1E /* TwitterHeart.json */; };
 		0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */; };
@@ -114,6 +115,7 @@
 		0A04502D23737E7A00138964 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0A04502F237386CD00138964 /* Raiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raiser.swift; sourceTree = "<group>"; };
 		0A1A618B23721B5100E3477F /* Auction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auction.swift; sourceTree = "<group>"; };
+		0A1E34D2237FDDC300C4D9A4 /* UIIMageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIMageViewExtension.swift; sourceTree = "<group>"; };
 		0A5B9F6F237728E70092DB1E /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		0A5B9F70237728E70092DB1E /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				0A82DF0B237A13CC00E864E8 /* UIStyle.swift */,
+				0A1E34D2237FDDC300C4D9A4 /* UIIMageViewExtension.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -709,6 +712,7 @@
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AAF5A512378629A002EB24F /* DataSource.swift in Sources */,
 				0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */,
+				0A1E34D3237FDDC300C4D9A4 /* UIIMageViewExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,10 +12,11 @@ import FirebaseStorage
 
 struct StorageService {
 
-    static func uploadImage(image: UIImage, at reference: StorageReference) {
+    static func uploadImage(image: UIImage, at reference: StorageReference) -> URL? {
 
+        var resUrl: URL?
         guard let imageData = image.jpegData(compressionQuality: 0.1) else {
-            return
+            return nil
         }
 
         reference.putData(imageData, metadata: nil, completion: { (metadata, error) in
@@ -29,9 +30,11 @@ struct StorageService {
                     assertionFailure(error.localizedDescription)
                     return
                 }
-                print(url as Any)
+                //print(url as Any)
+                resUrl = url
             })
         })
+        return resUrl
     }
     
     static func downloadImage(imageView: UIImageView, reference: StorageReference) {
