@@ -70,6 +70,7 @@ class AddAuctionViewController: UIViewController {
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
+        datePicker?.date = Date()
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
@@ -77,19 +78,20 @@ class AddAuctionViewController: UIViewController {
     }
     
     @objc func viewTapped(gestureRecognizer: UIGestureRecognizer) {
-        if self.datePicker!.date >= Date() {
+        if self.datePicker!.date >= Calendar.current.date(byAdding: .day, value: -1, to: Date())! {
             view.endEditing(true)
         } else {
             let alert  = UIAlertController(title: "Warning", message: "Date must be greater than current date", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
+        dateChanged(datePicker: self.datePicker!)
     }
     
     @objc func dateChanged(datePicker: UIDatePicker) {
         endDateTextField.text = DateUtils.getDateFormatter().string(from: datePicker.date)
         endDateTextField.textColor = .black
-        if datePicker.date < Date() {
+        if datePicker.date < Calendar.current.date(byAdding: .day, value: -1, to: Date())! {
             endDateTextField.textColor = .red
         }
         // view.endEditing(true)
