@@ -12,6 +12,6 @@ import FirebaseStorage
 struct PostStorage {
     static func uploadImage(for image: UIImage, child: String) {
         let imageRef = Storage.storage().reference().child(child)
-        StorageService.uploadImage(image: image, at: imageRef)
+        print("Image Path:", StorageService.uploadImage(image: image, at: imageRef) as Any)
     }
 }
