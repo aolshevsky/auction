@@ -7,19 +7,58 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class AddAuctionViewController: UIViewController {
 
     @IBOutlet weak var endDateTextField: UITextField!
     @IBOutlet weak var auctionImageView: UIImageView!
+    @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var titleTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var descriptionTextField: UITextField!
     
     private var datePicker: UIDatePicker?
     private var imagePicker = UIImagePickerController()
+    private var isSetImage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
         setupImagePicker()
+        setupStyle()
+        setupAddGestures()
+    }
+    
+    private func setupStyle() {
+        UIStyle.applyCornerRadius(button: self.addButton)
+    }
+    
+    private func setupAddGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedAddAuction))
+        tapGesture.numberOfTapsRequired = 1
+        self.addButton.addGestureRecognizer(tapGesture)
+    }
+    
+    private func validateNewAuction()  -> Bool {
+        // validation
+        if let title = titleTextField.text, let price = priceTextField.text, let description = descriptionTextField.text, title.isEmpty || price.isEmpty || description.isEmpty || !self.isSetImage {
+            displayAlertMessage(vc: self, message: "All fields are required")
+            return false
+        }
+        
+        return true
+    }
+    
+    @objc private func tappedAddAuction() {
+        if !validateNewAuction() { return }
+        let storagePath = Images.auctionDatabasePath + self.titleTextField.text! + Images.auctionImageType
+        if let image = self.auctionImageView.image {
+            PostStorage.uploadImage(for: image, child: storagePath, completion: { (imageUrl) in
+                let auction: Auction = Auction(imageUrl: imageUrl, title: self.titleTextField.text!, price: NumberUtils.convetStringToFloat(value: self.priceTextField.text)!, isStar: false)
+                print("Url:", auction.imageUrl)
+            })
+        }
     }
     
     private func setupImagePicker() {
@@ -43,12 +82,14 @@ class AddAuctionViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
     
+    // MARK: Select image
     private func openCamera() {
         if(UIImagePickerController .isSourceTypeAvailable(UIImagePickerController.SourceType.camera))
         {
             imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
+            self.isSetImage = true
         }
         else
         {
@@ -64,6 +105,7 @@ class AddAuctionViewController: UIViewController {
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+        self.isSetImage = true
     }
     
     private func setupDatePicker() {

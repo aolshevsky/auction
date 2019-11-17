@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png")
+        PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png", completion: {(val) in print("Finish")})
     }
 
     @IBAction func moveButton(_ sender: Any) {

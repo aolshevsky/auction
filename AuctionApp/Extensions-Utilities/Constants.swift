@@ -12,4 +12,6 @@ struct Images {
     static let star = UIImage(named: "star")
     static let empty_star = UIImage(named: "empty_star")
     static let base_user = UIImage(named: "base_user")
+    static let auctionDatabasePath: String = "auctions/"
+    static let auctionImageType: String = ".png"
 }
