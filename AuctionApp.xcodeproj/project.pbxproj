@@ -14,6 +14,10 @@
 		0A045030237386CD00138964 /* Raiser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A04502F237386CD00138964 /* Raiser.swift */; };
 		0A1A618C23721B5100E3477F /* Auction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1A618B23721B5100E3477F /* Auction.swift */; };
 		0A1E34D3237FDDC300C4D9A4 /* UIIMageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34D2237FDDC300C4D9A4 /* UIIMageViewExtension.swift */; };
+		0A1E34D72381AD4D00C4D9A4 /* CreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34D52381AD4D00C4D9A4 /* CreatorTableViewCell.swift */; };
+		0A1E34D82381AD4D00C4D9A4 /* CreatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34D62381AD4D00C4D9A4 /* CreatorTableViewCell.xib */; };
+		0A1E34DC2381C9DD00C4D9A4 /* RaiserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34DA2381C9DD00C4D9A4 /* RaiserTableViewCell.swift */; };
+		0A1E34DD2381C9DD00C4D9A4 /* RaiserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34DB2381C9DD00C4D9A4 /* RaiserTableViewCell.xib */; };
 		0A5B9FA7237728E70092DB1E /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F6F237728E70092DB1E /* Switch.json */; };
 		0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F70237728E70092DB1E /* TwitterHeart.json */; };
 		0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */; };
@@ -116,6 +120,10 @@
 		0A04502F237386CD00138964 /* Raiser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raiser.swift; sourceTree = "<group>"; };
 		0A1A618B23721B5100E3477F /* Auction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auction.swift; sourceTree = "<group>"; };
 		0A1E34D2237FDDC300C4D9A4 /* UIIMageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIIMageViewExtension.swift; sourceTree = "<group>"; };
+		0A1E34D52381AD4D00C4D9A4 /* CreatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatorTableViewCell.swift; sourceTree = "<group>"; };
+		0A1E34D62381AD4D00C4D9A4 /* CreatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorTableViewCell.xib; sourceTree = "<group>"; };
+		0A1E34DA2381C9DD00C4D9A4 /* RaiserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaiserTableViewCell.swift; sourceTree = "<group>"; };
+		0A1E34DB2381C9DD00C4D9A4 /* RaiserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaiserTableViewCell.xib; sourceTree = "<group>"; };
 		0A5B9F6F237728E70092DB1E /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		0A5B9F70237728E70092DB1E /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
@@ -267,6 +275,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		0A1E34D42381ACF200C4D9A4 /* CreatorCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E34D52381AD4D00C4D9A4 /* CreatorTableViewCell.swift */,
+				0A1E34D62381AD4D00C4D9A4 /* CreatorTableViewCell.xib */,
+			);
+			path = CreatorCell;
+			sourceTree = "<group>";
+		};
+		0A1E34D92381C98400C4D9A4 /* RaiserCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E34DA2381C9DD00C4D9A4 /* RaiserTableViewCell.swift */,
+				0A1E34DB2381C9DD00C4D9A4 /* RaiserTableViewCell.xib */,
+			);
+			path = RaiserCell;
+			sourceTree = "<group>";
+		};
 		0A5B9F6E237728E70092DB1E /* TestAnimations */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,6 +419,8 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E34D92381C98400C4D9A4 /* RaiserCell */,
+				0A1E34D42381ACF200C4D9A4 /* CreatorCell */,
 				0AF09D7C236F396C00A3D820 /* Menu */,
 				0AF09D72236F184E00A3D820 /* Auth */,
 				0AF09D79236F38DB00A3D820 /* Main */,
@@ -584,6 +612,7 @@
 				0A5B9FD8237728E70092DB1E /* Zoom.json in Resources */,
 				0A5B9FE1237736B00092DB1E /* sparkness.json in Resources */,
 				0A5B9FAD237728E70092DB1E /* A.json in Resources */,
+				0A1E34DD2381C9DD00C4D9A4 /* RaiserTableViewCell.xib in Resources */,
 				0A5B9FC1237728E70092DB1E /* H.json in Resources */,
 				0A5B9FCC237728E70092DB1E /* LottieLogo2.json in Resources */,
 				0A5B9FAB237728E70092DB1E /* TwitterHeartButton.json in Resources */,
@@ -625,6 +654,7 @@
 				0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */,
 				0A5B9FD6237728E70092DB1E /* FirstText.json in Resources */,
 				0A95677D236F033E00274A07 /* Main.storyboard in Resources */,
+				0A1E34D82381AD4D00C4D9A4 /* CreatorTableViewCell.xib in Resources */,
 				0A5B9FB1237728E70092DB1E /* L.json in Resources */,
 				0A5B9FDB237728E70092DB1E /* DisableNodesTest.json in Resources */,
 				0A5B9FB6237728E70092DB1E /* G.json in Resources */,
@@ -692,6 +722,7 @@
 				0A82DF0C237A13CC00E864E8 /* UIStyle.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
 				0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */,
+				0A1E34D72381AD4D00C4D9A4 /* CreatorTableViewCell.swift in Sources */,
 				0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
@@ -705,6 +736,7 @@
 				0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
 				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
+				0A1E34DC2381C9DD00C4D9A4 /* RaiserTableViewCell.swift in Sources */,
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
 				0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */,

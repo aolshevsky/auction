@@ -23,11 +23,16 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var placeBetButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var creatorTableView: UITableView!
+    
     var vcAuction: Auction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestures()
+        creatorTableView.register(UINib(nibName: "CreatorTableViewCell", bundle: nil), forCellReuseIdentifier: "CreatorTableViewCell")
+        creatorTableView.delegate = self;
+        creatorTableView.dataSource = self;
     }
 
     private func setupGestures() {
@@ -55,8 +60,8 @@ class AuctionInfoViewController: UIViewController {
         self.endDateTextField.text = DateUtils.dateToString(date: auction.endDate)
         self.statusTextField.text = auction.status.rawValue
         self.descriptionTextView.text = auction.description
-        self.startPriceTextField.text = NumberUtils.convertFloatToString(value: auction.startPrice)
-        self.endPriceTextField.text = NumberUtils.convertFloatToString(value: auction.endPrice)
+        self.startPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
+        self.endPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.endPrice)
         self.creatorTextField.text = "linked"
         self.purchasedByTextField.text = "linked"
         self.imageView.downloaded(from: auction.imageUrl)
@@ -65,10 +70,11 @@ class AuctionInfoViewController: UIViewController {
     }
     
     private func styleInit() {
-        UIStyle.applyCornerRadius(button: self.placeBetButton)
+        UIStyle.applyCornerRadius(view: self.placeBetButton, radius: 5)
         UIStyle.applyBaseLabelStyle(label: self.titleTextField, size: 22)
         UIStyle.applyBaseLabelStyle(label: self.statusTextField, size: 16)
-        UIStyle.applyBaseLabelStyle(label: self.startPriceTextField, size: 20, color: .systemGreen)
+        UIStyle.applyBaseLabelStyle(label: self.startPriceTextField, size: 17, color: .lightGray)
+        UIStyle.applyCornerRadius(view: self.imageView, radius: 20)
         //resizeDescriptionViewFrame()
     }
     
@@ -86,5 +92,30 @@ class AuctionInfoViewController: UIViewController {
 extension AuctionInfoViewController: UIPopoverPresentationControllerDelegate {
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return .none
+    }
+}
+
+extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
+        view.backgroundColor = .white
+        return view
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let user = User(email: "olshevsky.aleksey@gmail.com", name: "Aleksey", surname: "Olshevsky", phone: "228", age: 20, cardNumber: "12-12-12")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CreatorTableViewCell") as! CreatorTableViewCell
+        cell.setUser(user: user)
+        
+        // Cell UI
+//        cell.layer.borderColor = UIColor.lightGray.cgColor
+//        cell.layer.borderWidth = 0.3
+//        cell.layer.cornerRadius = 25
+//        cell.clipsToBounds = true
+        return cell
     }
 }

@@ -44,6 +44,6 @@ class PlaceBetViewController: UIViewController {
     
     func styleInit() {
         setNewPrice(newPrice: calculateNewPrice(percent: slider.value))
-        UIStyle.applyCornerRadius(button: self.betButton)
+        UIStyle.applyCornerRadius(view: self.betButton)
     }
 }
