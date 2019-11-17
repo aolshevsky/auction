@@ -14,25 +14,35 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var createdDateTextField: UILabel!
     @IBOutlet weak var statusTextField: UILabel!
     //@IBOutlet weak var descriptionTextField: UILabel!
-    @IBOutlet weak var startPriceTextField: UILabel!
-    @IBOutlet weak var creatorTextField: UILabel!
-    @IBOutlet weak var endPriceTextField: UILabel!
-    @IBOutlet weak var purchasedByTextField: UILabel!
+    @IBOutlet weak var currentPriceTextField: UILabel!
     @IBOutlet weak var endDateTextField: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeBetButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBOutlet weak var creatorTableView: UITableView!
+    @IBOutlet weak var raiserTableView: UITableView!
     
     var vcAuction: Auction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupGestures()
+        setupCreatorTableView()
+        setupRaiserTableView()
+    }
+    
+    
+    private func setupCreatorTableView() {
         creatorTableView.register(UINib(nibName: "CreatorTableViewCell", bundle: nil), forCellReuseIdentifier: "CreatorTableViewCell")
-        creatorTableView.delegate = self;
-        creatorTableView.dataSource = self;
+        creatorTableView.delegate = self
+        creatorTableView.dataSource = self
+    }
+    
+    private func setupRaiserTableView() {
+        raiserTableView.register(UINib(nibName: "RaiserTableViewCell", bundle: nil), forCellReuseIdentifier: "RaiserTableViewCell")
+        raiserTableView.delegate = self
+        raiserTableView.dataSource = self
     }
 
     private func setupGestures() {
@@ -60,10 +70,7 @@ class AuctionInfoViewController: UIViewController {
         self.endDateTextField.text = DateUtils.dateToString(date: auction.endDate)
         self.statusTextField.text = auction.status.rawValue
         self.descriptionTextView.text = auction.description
-        self.startPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
-        self.endPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.endPrice)
-        self.creatorTextField.text = "linked"
-        self.purchasedByTextField.text = "linked"
+        self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.endPrice)
         self.imageView.downloaded(from: auction.imageUrl)
         
         styleInit()
@@ -73,7 +80,7 @@ class AuctionInfoViewController: UIViewController {
         UIStyle.applyCornerRadius(view: self.placeBetButton, radius: 5)
         UIStyle.applyBaseLabelStyle(label: self.titleTextField, size: 22)
         UIStyle.applyBaseLabelStyle(label: self.statusTextField, size: 16)
-        UIStyle.applyBaseLabelStyle(label: self.startPriceTextField, size: 17, color: .lightGray)
+        UIStyle.applyBaseLabelStyle(label: self.currentPriceTextField, size: 17, color: .lightGray)
         UIStyle.applyCornerRadius(view: self.imageView, radius: 20)
         //resizeDescriptionViewFrame()
     }
@@ -97,7 +104,12 @@ extension AuctionInfoViewController: UIPopoverPresentationControllerDelegate {
 
 extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if tableView == creatorTableView {
+            return 1
+        } else if tableView == raiserTableView {
+            return DataSource.sharedInstance.allRaisers.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -107,15 +119,18 @@ extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource 
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let user = User(email: "olshevsky.aleksey@gmail.com", name: "Aleksey", surname: "Olshevsky", phone: "228", age: 20, cardNumber: "12-12-12")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CreatorTableViewCell") as! CreatorTableViewCell
-        cell.setUser(user: user)
-        
-        // Cell UI
-//        cell.layer.borderColor = UIColor.lightGray.cgColor
-//        cell.layer.borderWidth = 0.3
-//        cell.layer.cornerRadius = 25
-//        cell.clipsToBounds = true
-        return cell
+        // TODO: Get from database
+        if tableView == creatorTableView {
+            let user = DataSource.sharedInstance.allUsers[0]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CreatorTableViewCell") as! CreatorTableViewCell
+            cell.setUser(user: user)
+            return cell
+        } else if tableView == raiserTableView {
+            let raiser = DataSource.sharedInstance.allRaisers[indexPath.section]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RaiserTableViewCell") as! RaiserTableViewCell
+            cell.setRaiser(raiser: raiser)
+            return cell
+        }
+        return UITableViewCell()
     }
 }

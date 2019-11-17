@@ -14,9 +14,28 @@ class DataSource {
     
     private init () {
         allAuctions = createAuctions()
+        allUsers = createUsers()
+        allRaisers = createRaisers()
     }
     
     var allAuctions: [Auction] = []
+    var allRaisers: [Raiser] = []
+    var allUsers: [User] = []
+    
+    private func createUsers() -> [User] {
+        var tempUsers: [User] = []
+        let user1 = User(email: "olshevsky.aleksey@gmail.com", name: "Aleksey", surname: "Olshevsky", phone: "228", age: 20, cardNumber: "12-12-12")
+        tempUsers.append(user1)
+        return tempUsers
+    }
+    
+    private func createRaisers() -> [Raiser] {
+        var tempRaisers: [Raiser] = []
+        for _ in 0...2 {
+            tempRaisers.append(Raiser(user: allUsers[0], count: Int.random(in: 10 ... 100), date: Date()))
+        }
+        return tempRaisers
+    }
     
     private func createAuctions() -> [Auction] {
         var tempAuctions: [Auction] = []
