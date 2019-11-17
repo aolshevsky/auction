@@ -11,9 +11,9 @@ import Foundation
 
 class NumberUtils {
     
-    static func convertFloatToString(value: Float!) -> String {
+    static func convertFloatPriceToString(value: Float!) -> String {
         if let value = value {
-            return NSString(format: "%.1f $", value) as String
+            return NSString(format: "%d $", Int(value)) as String
         } else {
             return ""
         }

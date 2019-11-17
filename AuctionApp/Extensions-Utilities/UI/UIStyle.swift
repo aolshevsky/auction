@@ -16,7 +16,7 @@ class UIStyle {
         label.textColor = color
     }
     
-    static func applyCornerRadius(button: UIButton!) {
-        button.layer.cornerRadius = 15
+    static func applyCornerRadius(view: UIView!, radius: CGFloat = 15) {
+        view.layer.cornerRadius = radius
     }
 }

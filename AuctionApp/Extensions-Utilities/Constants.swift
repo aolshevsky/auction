@@ -10,8 +10,12 @@ import UIKit
 
 struct Images {
     static let star = UIImage(named: "star")
-    static let empty_star = UIImage(named: "empty_star")
-    static let base_user = UIImage(named: "base_user")
+    static let emptyStar = UIImage(named: "empty_star")
+    static let baseUser = UIImage(named: "base_user")
+    static let man = UIImage(named: "man")
+    static let man1 = UIImage(named: "man_1")
+    static let man2 = UIImage(named: "man_2")
+    static let userBaseImages = Set(arrayLiteral: Images.man, Images.man1, Images.man2)
     static let auctionDatabasePath: String = "auctions/"
     static let auctionImageType: String = ".png"
 }

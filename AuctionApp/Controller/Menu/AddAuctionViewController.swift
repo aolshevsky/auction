@@ -31,7 +31,7 @@ class AddAuctionViewController: UIViewController {
     }
     
     private func setupStyle() {
-        UIStyle.applyCornerRadius(button: self.addButton)
+        UIStyle.applyCornerRadius(view: self.addButton)
     }
     
     private func setupAddGestures() {

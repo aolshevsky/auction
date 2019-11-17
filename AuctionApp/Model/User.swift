@@ -11,7 +11,8 @@ import UIKit
 
 class User {
     
-    //var image: UIImage
+    var imageUrl: String
+    var image: UIImage
     var email: String
     var name: String
     var surname: String
@@ -20,7 +21,8 @@ class User {
     var cardNumber: String
     
     init (email: String, name: String, surname: String, phone: String, age: Int, cardNumber: String) {
-        //self.image = image
+        self.imageUrl = String()
+        self.image = Images.userBaseImages.randomElement()!!
         self.email = email
         self.name = name
         self.surname = surname
@@ -29,4 +31,7 @@ class User {
         self.cardNumber = cardNumber
     }
     
+    func getFullName() -> String {
+        return "\(self.name) \(self.surname)"
+    }
 }

@@ -34,7 +34,7 @@ class AuctionTableViewCell: UITableViewCell {
         cellAuction = auction
         auctionImageView.downloaded(from: auction.imageUrl)
         titleLabel.text = auction.title
-        priceLabel.text = String(auction.startPrice) + " $"
+        priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
         setStarAnimation(state: auction.isStar)
         auctionImageView.layer.cornerRadius = 40
     }
