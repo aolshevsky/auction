@@ -10,8 +10,18 @@ import Foundation
 import FirebaseStorage
 
 struct PostStorage {
-    static func uploadImage(for image: UIImage, child: String) {
-        let imageRef = Storage.storage().reference().child(child)
-        print("Image Path:", StorageService.uploadImage(image: image, at: imageRef) as Any)
+    
+    static func getImageRef(path: String) -> StorageReference{
+        Storage.storage().reference().child(path)
+    }
+    
+    static func uploadImage(for image: UIImage, child: String, completion: @escaping (String) -> ()) {
+        DispatchQueue.main.async {
+            let imageRef = Storage.storage().reference().child(child)
+            StorageService.uploadImage(image: image, at: imageRef, completion: { (url) in
+                print("A ny ka", url as Any)
+                completion(url!)
+            })
+        }
     }
 }

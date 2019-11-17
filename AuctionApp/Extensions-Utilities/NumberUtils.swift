@@ -18,4 +18,12 @@ class NumberUtils {
             return ""
         }
     }
+    
+    static func convetStringToFloat(value: String!) -> Float? {
+        if let value = value {
+            return (value as NSString).floatValue
+        } else {
+            return nil
+        }
+    }
 }

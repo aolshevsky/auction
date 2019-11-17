@@ -160,14 +160,27 @@
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="19"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIR-EP-0HC">
+                                <rect key="frame" x="143" y="686" width="128" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="21"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" red="1" green="0.99998790029999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Xbz-0E-OpJ"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add" image="plus" catalog="system" selectedImage="plus" id="O0S-o8-FpU"/>
                     <connections>
+                        <outlet property="addButton" destination="cIR-EP-0HC" id="Zfv-9b-6k7"/>
                         <outlet property="auctionImageView" destination="TLc-Kw-9yw" id="sc6-ic-z4P"/>
+                        <outlet property="descriptionTextField" destination="dVM-eP-1gp" id="DR3-pz-eGf"/>
                         <outlet property="endDateTextField" destination="Nmo-Vq-pnH" id="Odd-jc-CTb"/>
+                        <outlet property="priceTextField" destination="8y9-Su-2JR" id="C5T-jT-hjv"/>
+                        <outlet property="titleTextField" destination="bYA-bG-0EX" id="Ntw-BX-hyD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bZx-e1-ZUz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
