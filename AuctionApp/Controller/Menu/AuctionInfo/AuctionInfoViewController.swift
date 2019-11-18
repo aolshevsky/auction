@@ -150,4 +150,18 @@ extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource 
         }
         return UITableViewCell()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var user: User!
+        if tableView == creatorTableView {
+            user = DataSource.sharedInstance.allUsers[0]
+        } else if tableView == raiserTableView {
+            user = DataSource.sharedInstance.allRaisers[indexPath.section].user
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = UserInfoViewController(nibName: "UserInfoViewController", bundle: nil)
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true, completion: nil)
+        vc.setupUser(user: user)
+    }
 }

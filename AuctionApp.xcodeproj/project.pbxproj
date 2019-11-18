@@ -88,6 +88,8 @@
 		0A82DF08237A0F1B00E864E8 /* PlaceBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */; };
 		0A82DF09237A0F1B00E864E8 /* PlaceBetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */; };
 		0A82DF0C237A13CC00E864E8 /* UIStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF0B237A13CC00E864E8 /* UIStyle.swift */; };
+		0A90CE7C23834B12009A12DD /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A90CE7A23834B12009A12DD /* UserInfoViewController.swift */; };
+		0A90CE7D23834B12009A12DD /* UserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A90CE7B23834B12009A12DD /* UserInfoViewController.xib */; };
 		0A956776236F033E00274A07 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956775236F033E00274A07 /* AppDelegate.swift */; };
 		0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956777236F033E00274A07 /* SceneDelegate.swift */; };
 		0A95677A236F033E00274A07 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A956779236F033E00274A07 /* ViewController.swift */; };
@@ -198,6 +200,8 @@
 		0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetViewController.swift; sourceTree = "<group>"; };
 		0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceBetViewController.xib; sourceTree = "<group>"; };
 		0A82DF0B237A13CC00E864E8 /* UIStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStyle.swift; sourceTree = "<group>"; };
+		0A90CE7A23834B12009A12DD /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
+		0A90CE7B23834B12009A12DD /* UserInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserInfoViewController.xib; sourceTree = "<group>"; };
 		0A956772236F033E00274A07 /* AuctionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuctionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A956775236F033E00274A07 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A956777236F033E00274A07 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -409,11 +413,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		0A90CE7723834A61009A12DD /* New Group */ = {
+		0A90CE7723834A61009A12DD /* UserInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0A90CE7A23834B12009A12DD /* UserInfoViewController.swift */,
+				0A90CE7B23834B12009A12DD /* UserInfoViewController.xib */,
 			);
-			path = "New Group";
+			path = UserInfo;
 			sourceTree = "<group>";
 		};
 		0A956769236F033E00274A07 = {
@@ -452,7 +458,7 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0A90CE7723834A61009A12DD /* New Group */,
+				0A90CE7723834A61009A12DD /* UserInfo */,
 				0A1E34E32382050B00C4D9A4 /* ActiveAuctionCell */,
 				0A1E34D92381C98400C4D9A4 /* RaiserCell */,
 				0A1E34D42381ACF200C4D9A4 /* CreatorCell */,
@@ -650,6 +656,7 @@
 				0A5B9FAD237728E70092DB1E /* A.json in Resources */,
 				0A1E34DD2381C9DD00C4D9A4 /* RaiserTableViewCell.xib in Resources */,
 				0A1E34E22381EABB00C4D9A4 /* AuctionDateInfoViewController.xib in Resources */,
+				0A90CE7D23834B12009A12DD /* UserInfoViewController.xib in Resources */,
 				0A5B9FC1237728E70092DB1E /* H.json in Resources */,
 				0A5B9FCC237728E70092DB1E /* LottieLogo2.json in Resources */,
 				0A5B9FAB237728E70092DB1E /* TwitterHeartButton.json in Resources */,
@@ -761,6 +768,7 @@
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
 				0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */,
 				0A1E34D72381AD4D00C4D9A4 /* CreatorTableViewCell.swift in Sources */,
+				0A90CE7C23834B12009A12DD /* UserInfoViewController.swift in Sources */,
 				0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */,
 				0A1E34E12381EABB00C4D9A4 /* AuctionDateInfoViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
