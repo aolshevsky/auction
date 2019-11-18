@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png", completion: {(val) in print("Finish")})
+        RequestBuilder.inst.getAllAuctions()
     }
 
     @IBAction func moveButton(_ sender: Any) {
