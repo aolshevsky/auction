@@ -409,6 +409,13 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
+		0A90CE7723834A61009A12DD /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		0A956769236F033E00274A07 = {
 			isa = PBXGroup;
 			children = (
@@ -445,6 +452,7 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A90CE7723834A61009A12DD /* New Group */,
 				0A1E34E32382050B00C4D9A4 /* ActiveAuctionCell */,
 				0A1E34D92381C98400C4D9A4 /* RaiserCell */,
 				0A1E34D42381ACF200C4D9A4 /* CreatorCell */,

@@ -22,7 +22,7 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var creatorTableView: UITableView!
     @IBOutlet weak var raiserTableView: UITableView!
     
-    var vcAuction: Auction!
+    var auction: Auction!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ class AuctionInfoViewController: UIViewController {
     
     @objc private func tappedDateInfo() {
         let vc = AuctionDateInfoViewController(nibName: "AuctionDateInfoViewController", bundle: nil)
-        vc.setupDates(from: self.vcAuction.createDate, to: self.vcAuction.endDate)
+        vc.setupDates(from: self.auction.createDate, to: self.auction.endDate)
         vc.modalPresentationStyle = .popover
         let popOverVC = vc.popoverPresentationController
         popOverVC?.delegate = self
@@ -68,7 +68,7 @@ class AuctionInfoViewController: UIViewController {
     
     @objc private func tappedBet() {
         let vc = PlaceBetViewController(nibName: "PlaceBetViewController", bundle: nil)
-        vc.commonInit(auction: self.vcAuction)
+        vc.commonInit(auction: self.auction)
         vc.modalPresentationStyle = .popover
         let popOverVC = vc.popoverPresentationController
         popOverVC?.delegate = self
@@ -79,7 +79,7 @@ class AuctionInfoViewController: UIViewController {
     }    
     
     func commonInit(auction: Auction) {
-        self.vcAuction = auction
+        self.auction = auction
         self.titleTextField.text = auction.title
         self.statusTextField.text = auction.status.rawValue
         self.descriptionTextView.text = auction.description
@@ -91,6 +91,10 @@ class AuctionInfoViewController: UIViewController {
     
     private func styleInit() {
         UIStyle.applyCornerRadius(view: self.placeBetButton, radius: 5)
+        if self.auction.status == AuctionStatus.completed {
+            self.placeBetButton.backgroundColor = .lightGray
+            self.placeBetButton.isEnabled = false
+        }
         UIStyle.applyBaseLabelStyle(label: self.titleTextField, size: 22)
         UIStyle.applyBaseLabelStyle(label: self.statusTextField, size: 16)
         UIStyle.applyBaseLabelStyle(label: self.currentPriceTextField, size: 17, color: .lightGray)
