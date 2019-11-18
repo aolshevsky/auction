@@ -19,6 +19,7 @@ class CreatorTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        styleInit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -32,6 +33,9 @@ class CreatorTableViewCell: UITableViewCell {
         self.creatorImageView.image = user.image
         self.fullNameTextField.text = user.getFullName()
         self.descriptionTextField.text = user.email
+    }
+    
+    private func styleInit() {
         UIStyle.applyCornerRadius(view: self.creatorImageView, radius: 25)
     }
     

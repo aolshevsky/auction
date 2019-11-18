@@ -11,13 +11,12 @@ import UIKit
 class AuctionInfoViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UILabel!
-    @IBOutlet weak var createdDateTextField: UILabel!
     @IBOutlet weak var statusTextField: UILabel!
     //@IBOutlet weak var descriptionTextField: UILabel!
     @IBOutlet weak var currentPriceTextField: UILabel!
-    @IBOutlet weak var endDateTextField: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeBetButton: UIButton!
+    @IBOutlet weak var dateInfoButton: UIButton!
     @IBOutlet weak var descriptionTextView: UITextView!
     
     @IBOutlet weak var creatorTableView: UITableView!
@@ -46,9 +45,25 @@ class AuctionInfoViewController: UIViewController {
     }
 
     private func setupGestures() {
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBet))
-        tapGesture.numberOfTapsRequired = 1
-        self.placeBetButton.addGestureRecognizer(tapGesture)
+        let tapBetGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBet))
+        tapBetGesture.numberOfTapsRequired = 1
+        self.placeBetButton.addGestureRecognizer(tapBetGesture)
+        
+        let tapDateInfoGesture = UITapGestureRecognizer(target: self, action: #selector(tappedDateInfo))
+        tapDateInfoGesture.numberOfTapsRequired = 1
+        self.dateInfoButton.addGestureRecognizer(tapDateInfoGesture)
+    }
+    
+    @objc private func tappedDateInfo() {
+        let vc = AuctionDateInfoViewController(nibName: "AuctionDateInfoViewController", bundle: nil)
+        vc.setupDates(from: self.vcAuction.createDate, to: self.vcAuction.endDate)
+        vc.modalPresentationStyle = .popover
+        let popOverVC = vc.popoverPresentationController
+        popOverVC?.delegate = self
+        popOverVC?.sourceView = self.dateInfoButton
+        popOverVC?.sourceRect = CGRect(x: self.dateInfoButton.bounds.midX, y: self.dateInfoButton.bounds.minY, width: 0, height: self.dateInfoButton.bounds.height)
+        vc.preferredContentSize = CGSize(width: 175, height: 75)
+        self.present(vc, animated: true)
     }
     
     @objc private func tappedBet() {
@@ -59,15 +74,13 @@ class AuctionInfoViewController: UIViewController {
         popOverVC?.delegate = self
         popOverVC?.sourceView = self.placeBetButton
         popOverVC?.sourceRect = CGRect(x: self.placeBetButton.bounds.midX, y: self.placeBetButton.bounds.minY, width: 0, height: self.placeBetButton.bounds.height)
-        vc.preferredContentSize = CGSize(width: 230, height: 230)
+        vc.preferredContentSize = CGSize(width: 210, height: 230)
         self.present(vc, animated: true)
     }    
     
     func commonInit(auction: Auction) {
         self.vcAuction = auction
         self.titleTextField.text = auction.title
-        self.createdDateTextField.text = DateUtils.dateToString(date: auction.createDate)
-        self.endDateTextField.text = DateUtils.dateToString(date: auction.endDate)
         self.statusTextField.text = auction.status.rawValue
         self.descriptionTextView.text = auction.description
         self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.endPrice)
@@ -82,7 +95,7 @@ class AuctionInfoViewController: UIViewController {
         UIStyle.applyBaseLabelStyle(label: self.statusTextField, size: 16)
         UIStyle.applyBaseLabelStyle(label: self.currentPriceTextField, size: 17, color: .lightGray)
         UIStyle.applyCornerRadius(view: self.imageView, radius: 20)
-        //resizeDescriptionViewFrame()
+        resizeDescriptionViewFrame()
     }
     
     func resizeDescriptionViewFrame() {
