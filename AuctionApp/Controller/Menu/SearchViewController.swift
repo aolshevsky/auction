@@ -72,6 +72,5 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         vc.modalPresentationStyle = .popover
         self.present(vc, animated: true, completion: nil)
         vc.commonInit(auction: auction)
-
     }
 }
