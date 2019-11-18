@@ -31,6 +31,7 @@ class AddAuctionViewController: UIViewController {
     }
     
     private func setupStyle() {
+        UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 25)
         UIStyle.applyCornerRadius(view: self.addButton)
     }
     
