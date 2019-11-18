@@ -27,8 +27,8 @@ class Auction {
     // Addition One-to-many fields: creator, purchasedBy,
     var raisers: [Raiser]!
     
-    init(imageUrl: String, title: String, price: Float, description: String = "", createDate: Date! = nil,
-         endDate: Date! = nil, endPrice: Float! = nil, status: AuctionStatus = .active, isStar: Bool) {
+    init(imageUrl: String, title: String, price: Float, description: String = "", createDate: Date! = Date(),
+         endDate: Date! = Date(), endPrice: Float! = nil, status: AuctionStatus = .active, isStar: Bool) {
         self.imageUrl = imageUrl
         self.title = title
         self.startPrice = price

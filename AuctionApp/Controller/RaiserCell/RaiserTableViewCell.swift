@@ -18,6 +18,7 @@ class RaiserTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        styleInit()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,6 +32,9 @@ class RaiserTableViewCell: UITableViewCell {
         self.raiserImageView.image = raiser.user.image
         self.fullNameTextField.text = raiser.user.getFullName()
         self.raiseCountTextField.text = NumberUtils.convertFloatPriceToString(value: Float(raiser.count))
+    }
+    
+    private func styleInit() {
         UIStyle.applyCornerRadius(view: self.raiserImageView, radius: 20)
     }
     

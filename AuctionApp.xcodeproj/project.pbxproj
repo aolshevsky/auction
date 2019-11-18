@@ -18,6 +18,10 @@
 		0A1E34D82381AD4D00C4D9A4 /* CreatorTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34D62381AD4D00C4D9A4 /* CreatorTableViewCell.xib */; };
 		0A1E34DC2381C9DD00C4D9A4 /* RaiserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34DA2381C9DD00C4D9A4 /* RaiserTableViewCell.swift */; };
 		0A1E34DD2381C9DD00C4D9A4 /* RaiserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34DB2381C9DD00C4D9A4 /* RaiserTableViewCell.xib */; };
+		0A1E34E12381EABB00C4D9A4 /* AuctionDateInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34DF2381EABB00C4D9A4 /* AuctionDateInfoViewController.swift */; };
+		0A1E34E22381EABB00C4D9A4 /* AuctionDateInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34E02381EABB00C4D9A4 /* AuctionDateInfoViewController.xib */; };
+		0A1E34E62382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34E42382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift */; };
+		0A1E34E72382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34E52382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib */; };
 		0A5B9FA7237728E70092DB1E /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F6F237728E70092DB1E /* Switch.json */; };
 		0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F70237728E70092DB1E /* TwitterHeart.json */; };
 		0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */; };
@@ -124,6 +128,10 @@
 		0A1E34D62381AD4D00C4D9A4 /* CreatorTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreatorTableViewCell.xib; sourceTree = "<group>"; };
 		0A1E34DA2381C9DD00C4D9A4 /* RaiserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaiserTableViewCell.swift; sourceTree = "<group>"; };
 		0A1E34DB2381C9DD00C4D9A4 /* RaiserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RaiserTableViewCell.xib; sourceTree = "<group>"; };
+		0A1E34DF2381EABB00C4D9A4 /* AuctionDateInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionDateInfoViewController.swift; sourceTree = "<group>"; };
+		0A1E34E02381EABB00C4D9A4 /* AuctionDateInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionDateInfoViewController.xib; sourceTree = "<group>"; };
+		0A1E34E42382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUserAuctionTableViewCell.swift; sourceTree = "<group>"; };
+		0A1E34E52382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveUserAuctionTableViewCell.xib; sourceTree = "<group>"; };
 		0A5B9F6F237728E70092DB1E /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		0A5B9F70237728E70092DB1E /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
@@ -293,6 +301,24 @@
 			path = RaiserCell;
 			sourceTree = "<group>";
 		};
+		0A1E34DE2381EA7900C4D9A4 /* InfoDate */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E34DF2381EABB00C4D9A4 /* AuctionDateInfoViewController.swift */,
+				0A1E34E02381EABB00C4D9A4 /* AuctionDateInfoViewController.xib */,
+			);
+			path = InfoDate;
+			sourceTree = "<group>";
+		};
+		0A1E34E32382050B00C4D9A4 /* ActiveAuctionCell */ = {
+			isa = PBXGroup;
+			children = (
+				0A1E34E42382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift */,
+				0A1E34E52382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib */,
+			);
+			path = ActiveAuctionCell;
+			sourceTree = "<group>";
+		};
 		0A5B9F6E237728E70092DB1E /* TestAnimations */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,6 +445,7 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0A1E34E32382050B00C4D9A4 /* ActiveAuctionCell */,
 				0A1E34D92381C98400C4D9A4 /* RaiserCell */,
 				0A1E34D42381ACF200C4D9A4 /* CreatorCell */,
 				0AF09D7C236F396C00A3D820 /* Menu */,
@@ -487,7 +514,6 @@
 		0AF09D7C236F396C00A3D820 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0AAF5A5223787ECB002EB24F /* PlaceBet */,
 				0AAF5A4423777656002EB24F /* TempInfo */,
 				0A04502B23737C9100138964 /* AuctionCell */,
 				0AF09D81236F504700A3D820 /* AuctionInfo */,
@@ -504,6 +530,8 @@
 		0AF09D81236F504700A3D820 /* AuctionInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0AAF5A5223787ECB002EB24F /* PlaceBet */,
+				0A1E34DE2381EA7900C4D9A4 /* InfoDate */,
 				0A5B9FE32377582F0092DB1E /* AuctionInfoViewController.swift */,
 				0A5B9FE42377582F0092DB1E /* AuctionInfoViewController.xib */,
 			);
@@ -613,6 +641,7 @@
 				0A5B9FE1237736B00092DB1E /* sparkness.json in Resources */,
 				0A5B9FAD237728E70092DB1E /* A.json in Resources */,
 				0A1E34DD2381C9DD00C4D9A4 /* RaiserTableViewCell.xib in Resources */,
+				0A1E34E22381EABB00C4D9A4 /* AuctionDateInfoViewController.xib in Resources */,
 				0A5B9FC1237728E70092DB1E /* H.json in Resources */,
 				0A5B9FCC237728E70092DB1E /* LottieLogo2.json in Resources */,
 				0A5B9FAB237728E70092DB1E /* TwitterHeartButton.json in Resources */,
@@ -632,6 +661,7 @@
 				0A5B9FAF237728E70092DB1E /* BlinkingCursor.json in Resources */,
 				0A5B9FC3237728E70092DB1E /* V.json in Resources */,
 				0A5B9FD5237728E70092DB1E /* Switch_States.json in Resources */,
+				0A1E34E72382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib in Resources */,
 				0A5B9FDD237728E70092DB1E /* timeremap.json in Resources */,
 				0A82DF09237A0F1B00E864E8 /* PlaceBetViewController.xib in Resources */,
 				0A5B9FBF237728E70092DB1E /* D.json in Resources */,
@@ -724,6 +754,7 @@
 				0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */,
 				0A1E34D72381AD4D00C4D9A4 /* CreatorTableViewCell.swift in Sources */,
 				0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */,
+				0A1E34E12381EABB00C4D9A4 /* AuctionDateInfoViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
@@ -737,6 +768,7 @@
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
 				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
 				0A1E34DC2381C9DD00C4D9A4 /* RaiserTableViewCell.swift in Sources */,
+				0A1E34E62382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift in Sources */,
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
 				0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */,
