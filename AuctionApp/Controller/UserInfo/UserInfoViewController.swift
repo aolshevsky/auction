@@ -72,15 +72,15 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        var auction: Auction!
-        if tableView == createdAuctionTableView {
-            auction = allAuctions[indexPath.section]
-        }
-        tableView.deselectRow(at: indexPath, animated: true)
-        let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
-        vc.modalPresentationStyle = .popover
-        self.present(vc, animated: true, completion: nil)
-        vc.commonInit(auction: auction)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        var auction: Auction!
+//        if tableView == createdAuctionTableView {
+//            auction = allAuctions[indexPath.section]
+//        }
+//        tableView.deselectRow(at: indexPath, animated: true)
+//        let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
+//        vc.modalPresentationStyle = .popover
+//        self.present(vc, animated: true, completion: nil)
+//        vc.commonInit(auction: auction)
+//    }
 }
