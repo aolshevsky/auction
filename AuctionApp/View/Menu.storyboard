@@ -75,33 +75,6 @@
             </objects>
             <point key="canvasLocation" x="544.92753623188412" y="-246.42857142857142"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="oxK-EG-Y6n">
-            <objects>
-                <viewController id="6S0-Kn-WrD" userLabel="Home" customClass="MainViewController" customModule="AuctionApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="kRe-nn-BFM">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main Page" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fwz-Z5-3uM">
-                                <rect key="frame" x="153" y="157" width="108" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="GC3-B9-6IR"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" selectedImage="house" id="cHi-Xa-LLD" userLabel="Home">
-                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Ik-E8-Mep" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="544.92753623188412" y="398.4375"/>
-        </scene>
         <!--Tab bar manager-->
         <scene sceneID="k7b-iM-e0t">
             <objects>
@@ -113,10 +86,9 @@
                         <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6S0-Kn-WrD" kind="relationship" relationship="viewControllers" id="8Yl-QF-N9w"/>
-                        <segue destination="Dqk-T0-oGu" kind="relationship" relationship="viewControllers" id="0vX-PF-NIm"/>
-                        <segue destination="nN2-63-not" kind="relationship" relationship="viewControllers" id="QyH-wD-DQG"/>
                         <segue destination="aBj-oy-HPJ" kind="relationship" relationship="viewControllers" id="f1d-ze-D7Y"/>
+                        <segue destination="nN2-63-not" kind="relationship" relationship="viewControllers" id="QyH-wD-DQG"/>
+                        <segue destination="Dqk-T0-oGu" kind="relationship" relationship="viewControllers" id="0vX-PF-NIm"/>
                         <segue destination="Ug8-TW-i8F" kind="relationship" relationship="viewControllers" id="Ysx-S8-dv8"/>
                     </connections>
                 </tabBarController>
@@ -264,7 +236,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="u5k-gC-tFz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="magnifyingglass" catalog="system" id="k23-eJ-eUe"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="house" catalog="system" id="k23-eJ-eUe"/>
                     <connections>
                         <outlet property="tableView" destination="zcN-Gd-AZi" id="gQ6-vD-U2v"/>
                     </connections>
@@ -315,7 +287,6 @@
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="house" catalog="system" width="64" height="54"/>
         <image name="icons8-admin-settings-male-64" width="64" height="64"/>
-        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="plus" catalog="system" width="64" height="56"/>
         <image name="plus.rectangle.on.rectangle" catalog="system" width="64" height="48"/>

@@ -67,6 +67,7 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
             let auction = allAuctions[indexPath.section]
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveUserAuctionTableViewCell") as! ActiveUserAuctionTableViewCell
             cell.setUserAuction(auction: auction)
+            cell.selectionStyle = .none
             return cell
         }
         return UITableViewCell()
