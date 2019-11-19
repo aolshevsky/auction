@@ -9,51 +9,113 @@
 import Foundation
 
 
+struct RequestResult {
+    var code: Int?
+    var message: String
+    var status: String
+    var result: [[String: Any]]
+    
+    init(code: Int?, message: String, status: String, result: [[String: AnyObject]]) {
+        self.code = code
+        self.message = message
+        self.status = status
+        self.result = result
+    }
+}
+
 class Request {
     
     static let inst: Request = Request()
     
     let hostName: String = "https://25f7648b.ngrok.io"
-    var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiMzMyZmZhMTUtYzk2ZC00NTg0LTlhNzAtZDg0YjYzMDg4NDEwIiwiaWF0IjoiMTEvMTgvMjAxOSAyMzo0NTo1MyIsIm5iZiI6MTU3NDEyMDc1MywiZXhwIjoxNjEwMTIwNzUzLCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.s5FCj7zWv3FtVxfeh8-QHyE-d0ASeDvPPzOBYYeF7_Q"
+    var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiMjQ0ODY4N2ItZTI2Yi00ZjA2LTk0NjMtZWYwMGQyYjUwMjYyIiwiaWF0IjoiMTEvMTkvMjAxOSAyMTo1ODowNCIsIm5iZiI6MTU3NDIwMDY4NCwiZXhwIjoxNjEwMjAwNjg0LCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.A1viwWpPGcsyaFiaZcVqv-CdsUk9MYwNIs1OwPolaRU"
     
-//    func getToken(username: String, password: String) -> String {
-//        let data = ["username": username, "password": password]
-//        let url: String = "\(hostName)api/auth/token"
-//        return getRequest(url: url, withHeader: false)
-//    }
+    func initToken(username: String, password: String) {
+        let params = ["username": username, "password": password]
+        let url: String = "\(hostName)/api/auth/token"
+        DispatchQueue.main.async {
+            self.httpRequest(url: url, params: params, httpMethod: "POST", isAuth: false, completion: { (data) in
+                let json = self.parseRequestData(data: data)
+                print("Token: ", json!)
+                if let json = json {
+                    self.token = json.result[0]["token"] as! String
+                    print("INIT TOKEN: ", self.token)
+                }
+            })
+        }
+    }
     
     private func getBearerAuthHeader() -> String {
         return "Bearer \(token)"
     }
     
     private init () {
-        // token = getRequest(url: <#T##String#>, withHeader: <#T##Bool#>)
+        initToken(username: "admin", password: "123qweA!")
     }
     
-    func getRequest(url: String, withHeader: Bool) {
-        guard let url = URL(string: url) else { return }
-        var urlRequest = URLRequest(url: url)
+    func parseRequestData(data: Data, debug: Bool=false) -> RequestResult? {
+        do {
+            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
+            if debug == true {
+                print("Response: ", json)
+            }
+            var resultJson: [[String: AnyObject]]?
+            if let result = (json["result"] as? [String: AnyObject]) {
+                resultJson = [result]
+            } else {
+                resultJson = (json["result"] as! [[String: AnyObject]])
+            }
+            return RequestResult(code: (json["code"] as! Int), message: json["message"] as! String, status: json["status"] as! String, result: resultJson!)
+        } catch {
+            print("Error")
+            return nil
+        }
+    }
+     
+    private func createRequestBody(params: [String: String]) -> Data {
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else { return Data()}
+        return httpBody
+    }
+    
+    func getRequest(url: String, isAuth: Bool=true, completion: @escaping (Data) -> ()) {
+        guard let url = URL(string: url) else { return completion(Data()) }
+        var request = URLRequest(url: url)
         
-        if withHeader {
-            urlRequest.setValue(getBearerAuthHeader(), forHTTPHeaderField: "Authorization")
+        if isAuth {
+            request.setValue(getBearerAuthHeader(), forHTTPHeaderField: "Authorization")
         }
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
-            if let response = response {
-                print(response)
-            }
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//            if let response = response {
+//                print(response)
+//            }
             guard let data = data,
             let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-            error == nil else { return }
+            error == nil else { return completion(Data())}
 
-            do {
-              let json = try JSONSerialization.jsonObject(with: data, options: [])
-                print("Response: ", json)
-            } catch {
-                print("Error: ", error)
-            }
+            return completion(data)
         }.resume()
     }
     
-    func postRequest() {}
+    func httpRequest(url: String, params: [String: String], httpMethod: String = "POST", isAuth: Bool=true, completion: @escaping (Data) -> ()) {
+        guard let url = URL(string: url) else { return completion(Data())}
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        request.httpBody = createRequestBody(params: params)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        if isAuth {
+            request.setValue(getBearerAuthHeader(), forHTTPHeaderField: "Authorization")
+        }
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+//           if let response = response {
+//               print(response)
+//           }
+           guard let data = data,
+           let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+           error == nil else { return completion(Data())}
+
+           return completion(data)
+        }.resume()
+    }
 }
