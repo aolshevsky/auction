@@ -18,25 +18,22 @@ struct StorageService {
         guard let imageData = image.jpegData(compressionQuality: 0.1) else {
             return completion(nil)
         }
-
-        DispatchQueue.main.async() {
-            reference.putData(imageData, metadata: nil, completion: { (metadata, error) in
+        reference.putData(imageData, metadata: nil, completion: { (metadata, error) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return completion(nil)
+            }
+            
+            reference.downloadURL(completion: { (url, error) in
                 if let error = error {
                     assertionFailure(error.localizedDescription)
-                    return
+                    return completion(nil)
                 }
-                
-                reference.downloadURL(completion: { (url, error) in
-                    if let error = error {
-                        assertionFailure(error.localizedDescription)
-                        return
-                    }
-                    print("Download url:", url as Any)
-                    resUrl = url
-                    completion(resUrl?.absoluteString)
-                })
+                print("Download url:", url as Any)
+                resUrl = url
+                completion(resUrl?.absoluteString)
             })
-        }
+        })
     }
     
     static func downloadImage(imageView: UIImageView, reference: StorageReference) {
