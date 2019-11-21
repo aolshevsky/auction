@@ -16,8 +16,10 @@ class DataSource {
         allAuctions = createAuctions()
         allUsers = createUsers()
         allRaisers = createRaisers()
+        currentUser = nil
     }
     
+    var currentUser: User!
     var allAuctions: [Auction] = []
     var allRaisers: [Raiser] = []
     var allUsers: [User] = []
@@ -29,7 +31,7 @@ class DataSource {
     
     private func createUsers() -> [User] {
         var tempUsers: [User] = []
-        let user1 = User(email: "olshevsky.aleksey@gmail.com", firstName: "Aleksey", lastName: "Olshevsky", phone: "228", age: 20, cardNumber: "12-12-12")
+        let user1 = User(username: "alesha", email: "olshevsky.aleksey@gmail.com", firstName: "Aleksey", lastName: "Olshevsky", phone: "228", birhday: Date(), cardNumber: "12-12-12", address: "Platonova 228")
         tempUsers.append(user1)
         return tempUsers
     }

@@ -9,7 +9,7 @@
 import UIKit
 
 
-class User: Decodable {
+class User: Codable {
     
     var id: String
     
@@ -20,26 +20,37 @@ class User: Decodable {
     var lastName: String
     
     var email: String
+    var username: String
     var phone: String
-    var age: Int
+    var address: String
     var cardNumber: String
+    
     var birthday: Date
     
-    init (email: String, firstName: String, lastName: String, phone: String, age: Int, cardNumber: String) {
+    var registrationDate: Date
+    
+    init (username: String, email: String, firstName: String, lastName: String, phone: String, birhday: Date, cardNumber: String, address: String) {
+        self.id = ""
         self.imageUrl = String()
         self.image = Images.userBaseImages.randomElement()!!
         self.email = email
+        self.username = username
         self.firstName = firstName
         self.lastName = lastName
         self.phone = phone
-        self.age = age
         self.cardNumber = cardNumber
-        self.id = ""
+        self.address = address
         self.birthday = Date()
+        self.registrationDate = Date()
     }
     
     func getFullName() -> String {
         return "\(self.firstName) \(self.lastName)"
+    }
+    
+    func getAge() -> Int {
+        let calendar = Calendar.current
+        return calendar.dateComponents([.year], from: birthday, to: Date()).year!
     }
     
     enum CodingKeys: String, CodingKey {
@@ -49,21 +60,39 @@ class User: Decodable {
         case lastName
         case phone = "phoneNumber"
         case birthday
+        case address
+        case imageUrl
+        case username
+        case registrationDate
+        case cardNumber
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+        try container.encode(self.firstName, forKey: .firstName)
+        try container.encode(self.lastName, forKey: .firstName)
+        try container.encode(self.imageUrl, forKey: .imageUrl)
+        try container.encode(DateUtils.dateToString(date: self.birthday), forKey: .birthday)
+        try container.encode(self.address, forKey: .address)
+        try container.encode(self.phone, forKey: .phone)
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.email = try container.decode(String.self, forKey: .email)
+        self.username = try container.decode(String.self, forKey: .username)
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.lastName = try container.decode(String.self, forKey: .lastName)
         self.phone = try container.decode(String.self, forKey: .phone)
-        let strBirth = try container.decode(String.self, forKey: .birthday)
-        self.birthday = DateUtils.get8601DateFormatter().date(from: strBirth)!
+        let decodeBirth = try container.decode(String.self, forKey: .birthday)
+        self.birthday = DateUtils.getDateFormatter().date(from: decodeBirth)!
+        self.imageUrl = try container.decode(String.self, forKey: .imageUrl)
+        self.address = try container.decode(String.self, forKey: .address)
+        let decodeRegDate = try container.decode(String.self, forKey: .registrationDate)
+        self.registrationDate = DateUtils.getDateFormatter().date(from: decodeRegDate)!
+        self.cardNumber = try container.decode(String.self, forKey: .cardNumber)
         // missing
-        self.imageUrl = ""
         self.image = UIImage()
-        self.age = 15
-        self.cardNumber = ""
     }
 }

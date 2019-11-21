@@ -44,7 +44,7 @@ class RequestBuilder {
         }
     }
     
-    func getToken() {
+    func getToken(completion: @escaping () -> ()) {
         let params = ["username": "admin", "password": "123qweA!"]
         let url: String = "\(request.hostName)/api/auth/token"
         baseHTTPRequest(url: url, httpMethod: "POST", params: request.createRequestBody(params: params), completion: { (data) in
@@ -52,6 +52,7 @@ class RequestBuilder {
             guard let token = data?.result?.token else { return }
             self.request.token = token
             print("Token: ", token)
+            completion()
         })
     }
     
@@ -73,8 +74,8 @@ class RequestBuilder {
     }
 
     func postAuction(auction: Auction, completion: @escaping (Auction) -> ()) {
-        let jsonData = try! JSONEncoder().encode(auction)
-        baseHTTPRequest(url: "\(request.hostName)/api/auctions/", httpMethod: "POST", params: jsonData, completion: { (data) in
+        let auctionData = try! JSONEncoder().encode(auction)
+        baseHTTPRequest(url: "\(request.hostName)/api/auctions/", httpMethod: "POST", params: auctionData, completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<Auction>.self, from: data) ?? nil
             guard let auction = data?.result else { return }
             completion(auction)
@@ -115,12 +116,15 @@ class RequestBuilder {
         baseGetRequest(url: "\(request.hostName)/api/me/", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<User>.self, from: data) ?? nil
             guard let user = data?.result else { return }
+            DataSource.shared.currentUser = user
             print("User: ", user)
         })
     }
 
-    func putProfile(user: User) {
-        baseHTTPRequest(url: "\(request.hostName)/api/me/", httpMethod: "PUT")
+    func updateProfile(user: User) {
+        user.firstName = "alesha"
+        let userData = try! JSONEncoder().encode(user)
+        baseHTTPRequest(url: "\(request.hostName)/api/me/", httpMethod: "PUT", params: userData, completion: { (data) in })
     }
     
 }

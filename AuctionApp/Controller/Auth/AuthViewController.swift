@@ -23,7 +23,9 @@ class AuthViewController: UIViewController {
 //            RequestBuilder.shared.postAuction(auction: auction)
 //        })
         
-        RequestBuilder.shared.deleteAuction(id: "4ea68e95-871c-41fe-d276-08d76ec06630")
+        // RequestBuilder.shared.deleteAuction(id: "4ea68e95-871c-41fe-d276-08d76ec06630")
+        print("user: ", DataSource.shared.currentUser)
+        RequestBuilder.shared.updateProfile(user: DataSource.shared.currentUser)
     }
     
     override func viewDidAppear(_ animated: Bool) {
