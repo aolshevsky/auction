@@ -63,5 +63,4 @@ class User: Decodable {
         self.age = 15
         self.cardNumber = ""
     }
-
 }
