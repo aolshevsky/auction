@@ -36,9 +36,10 @@ class Auction: Codable {
         self.id = id
         self.title = title
         self.startPrice = price
-        self.currentPrice = currentPrice
         if currentPrice == nil {
             self.currentPrice = price
+        } else {
+            self.currentPrice = currentPrice
         }
         self.description = description
         self.createDate = createDate

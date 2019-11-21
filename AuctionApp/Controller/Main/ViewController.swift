@@ -15,7 +15,8 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        RequestBuilder.shared.getToken()
+        RequestBuilder.shared.getToken(completion: { () in RequestBuilder.shared.getProfile() })
+
         PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png", completion: {(val) in print("Finish")})
         //Request.inst.initToken(username: "admin", password: "123qweA!", completion: { () in })
     }

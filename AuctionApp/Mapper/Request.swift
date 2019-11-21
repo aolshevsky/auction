@@ -63,10 +63,9 @@ class Request {
             request.setValue(getBearerAuthHeader(), forHTTPHeaderField: "Authorization")
         }
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-           if let response = response {
-               print(response)
-           }
-            print(data)
+//           if let response = response {
+//               print(response)
+//           }
            guard let data = data,
            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
            error == nil else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
