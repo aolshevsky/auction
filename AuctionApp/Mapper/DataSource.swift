@@ -15,14 +15,14 @@ class DataSource {
     private init () {
         allAuctions = createAuctions()
         allUsers = createUsers()
-        allRaisers = createRaisers()
         currentUser = nil
     }
     
     var currentUser: User!
+    var allUsers: [User] = []
+    var allFavouriteAuctions: [Auction] = []
     var allAuctions: [Auction] = []
     var allRaisers: [Raiser] = []
-    var allUsers: [User] = []
     
     func getUserById(id: String) -> User {
         let res = allUsers.filter{ a in a.id == id }
@@ -39,8 +39,7 @@ class DataSource {
     private func createRaisers() -> [Raiser] {
         var tempRaisers: [Raiser] = []
         for _ in 0...2 {
-            let user = allUsers[0]
-            tempRaisers.append(Raiser(user: user, startPrice: 10, endPrice: 10 + Int.random(in: 10 ... 100), date: Date()))
+            tempRaisers.append(Raiser(startPrice: 10, endPrice: 10 + Int.random(in: 10 ... 100), date: Date()))
         }
         return tempRaisers
     }
