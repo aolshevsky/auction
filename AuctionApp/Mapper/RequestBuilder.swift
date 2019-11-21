@@ -61,6 +61,7 @@ class RequestBuilder {
         baseGetRequest(url: "\(request.hostName)/api/auctions", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
             guard let auctions = data?.result else { return }
+            DataSource.shared.allAuctions = auctions
             completion(auctions)
         })
     }
@@ -85,12 +86,22 @@ class RequestBuilder {
     func deleteAuction(id: String) {
         baseHTTPRequest(url: "\(request.hostName)/api/auctions/\(id)", httpMethod: "DELETE", completion: { (data) in })
     }
+    
+    func postRaiseAuction(auctionId: String, raiser: Raiser) {
+        let raiserData = try! JSONEncoder().encode(raiser)
+        baseHTTPRequest(url: "\(request.hostName)/api/auctions/\(auctionId)/raise", httpMethod: "POST", params: raiserData, completion: { (data) in })
+    }
 
-//    // MARK: Favorites
-//    func getAllFavorites() {
-//        baseGetRequest(url: "\(request.hostName)/api/favorites/all")
-//    }
-//
+    // MARK: Favorites
+    func getAllFavorites(completion: @escaping ([Auction]) -> ()) {
+        baseGetRequest(url: "\(request.hostName)/api/favorites", completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
+            guard let auctions = data?.result else { return }
+            DataSource.shared.allFavouriteAuctions = auctions
+            completion(auctions)
+        })
+    }
+
 //    func getFavorites() {
 //        baseGetRequest(url: "\(request.hostName)/api/favorites/")
 //    }
@@ -117,7 +128,6 @@ class RequestBuilder {
             let data = self.decodeJSON(type: RequestResult<User>.self, from: data) ?? nil
             guard let user = data?.result else { return }
             DataSource.shared.currentUser = user
-            print("User: ", user)
         })
     }
 

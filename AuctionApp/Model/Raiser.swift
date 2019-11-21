@@ -16,11 +16,11 @@ class Raiser: Codable {
     var endPrice: Int
     var date: Date
     
-    init(user: User, startPrice: Int, endPrice: Int, date: Date) {
+    init(startPrice: Int, endPrice: Int, date: Date) {
         self.startPrice = startPrice
         self.endPrice = endPrice
         self.date = date
-        self.userId = user.id
+        self.userId = DataSource.shared.currentUser.id
     }
     
     func getCount() -> Int {
