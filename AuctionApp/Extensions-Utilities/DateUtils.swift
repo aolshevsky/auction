@@ -15,6 +15,12 @@ class DateUtils {
         return formatter
     }
     
+    static func get8601DateFormatter() -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+        return formatter
+    }
+    
     static func dateToString(date: Date?) -> String {
         if let date = date {
             return getDateFormatter().string(from: date)

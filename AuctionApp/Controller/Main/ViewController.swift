@@ -15,10 +15,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        RequestBuilder.inst.getToken()
         PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png", completion: {(val) in print("Finish")})
-        Request.inst
-        RequestBuilder.inst.getAllAuctions()
+        //Request.inst.initToken(username: "admin", password: "123qweA!", completion: { () in })
     }
 
     @IBAction func moveButton(_ sender: Any) {
