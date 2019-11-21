@@ -9,76 +9,31 @@
 import Foundation
 
 
-struct RequestResult {
-    var code: Int?
-    var message: String
-    var status: String
-    var result: [[String: Any]]
-    
-    init(code: Int?, message: String, status: String, result: [[String: AnyObject]]) {
-        self.code = code
-        self.message = message
-        self.status = status
-        self.result = result
-    }
-}
+typealias SingleJson = [String: AnyObject]
+typealias ArrayJson = [[String: AnyObject]]
+typealias ParamsDict = [String: String]
+
 
 class Request {
     
     static let inst: Request = Request()
     
     let hostName: String = "https://25f7648b.ngrok.io"
-    var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiMjQ0ODY4N2ItZTI2Yi00ZjA2LTk0NjMtZWYwMGQyYjUwMjYyIiwiaWF0IjoiMTEvMTkvMjAxOSAyMTo1ODowNCIsIm5iZiI6MTU3NDIwMDY4NCwiZXhwIjoxNjEwMjAwNjg0LCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.A1viwWpPGcsyaFiaZcVqv-CdsUk9MYwNIs1OwPolaRU"
-    
-    func initToken(username: String, password: String) {
-        let params = ["username": username, "password": password]
-        let url: String = "\(hostName)/api/auth/token"
-        DispatchQueue.main.async {
-            self.httpRequest(url: url, params: params, httpMethod: "POST", isAuth: false, completion: { (data) in
-                let json = self.parseRequestData(data: data)
-                print("Token: ", json!)
-                if let json = json {
-                    self.token = json.result[0]["token"] as! String
-                    print("INIT TOKEN: ", self.token)
-                }
-            })
-        }
-    }
+    var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiYTg1OWRlODEtYjkxZC00ODZmLThmM2MtYmMzOGY2NzkxYzIzIiwiaWF0IjoiMTEvMjAvMjAxOSAxOToxMjoyMCIsIm5iZiI6MTU3NDI3NzE0MCwiZXhwIjoxNjEwMjc3MTQwLCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.EwMhARyWIKP32DVF9VBgztWxpb7O4FTuAsv17rPI5Xk"
     
     private func getBearerAuthHeader() -> String {
         return "Bearer \(token)"
     }
     
-    private init () {
-        initToken(username: "admin", password: "123qweA!")
-    }
-    
-    func parseRequestData(data: Data, debug: Bool=false) -> RequestResult? {
-        do {
-            let json = try JSONSerialization.jsonObject(with: data, options: []) as! [String: AnyObject]
-            if debug == true {
-                print("Response: ", json)
-            }
-            var resultJson: [[String: AnyObject]]?
-            if let result = (json["result"] as? [String: AnyObject]) {
-                resultJson = [result]
-            } else {
-                resultJson = (json["result"] as! [[String: AnyObject]])
-            }
-            return RequestResult(code: (json["code"] as! Int), message: json["message"] as! String, status: json["status"] as! String, result: resultJson!)
-        } catch {
-            print("Error")
-            return nil
-        }
-    }
+    private init () {}
      
-    private func createRequestBody(params: [String: String]) -> Data {
+    private func createRequestBody(params: ParamsDict) -> Data {
         guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else { return Data()}
         return httpBody
     }
     
-    func getRequest(url: String, isAuth: Bool=true, completion: @escaping (Data) -> ()) {
-        guard let url = URL(string: url) else { return completion(Data()) }
+    func getRequest(url: String, isAuth: Bool=true, completion: @escaping (Int, Data) -> ()) {
+        guard let url = URL(string: url) else { return completion(400, Data()) }
         var request = URLRequest(url: url)
         
         if isAuth {
@@ -91,14 +46,14 @@ class Request {
 //            }
             guard let data = data,
             let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-            error == nil else { return completion(Data())}
+                error == nil else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
 
-            return completion(data)
+            return completion(httpURLResponse.statusCode, data)
         }.resume()
     }
     
-    func httpRequest(url: String, params: [String: String], httpMethod: String = "POST", isAuth: Bool=true, completion: @escaping (Data) -> ()) {
-        guard let url = URL(string: url) else { return completion(Data())}
+    func httpRequest(url: String, params: ParamsDict, httpMethod: String = "POST", isAuth: Bool=true, completion: @escaping (Int, Data) -> ()) {
+        guard let url = URL(string: url) else { return completion(400, Data())}
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
         request.httpBody = createRequestBody(params: params)
@@ -113,9 +68,9 @@ class Request {
 //           }
            guard let data = data,
            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-           error == nil else { return completion(Data())}
+           error == nil else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
 
-           return completion(data)
+            return completion(httpURLResponse.statusCode, data)
         }.resume()
     }
 }

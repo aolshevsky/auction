@@ -22,6 +22,8 @@
 		0A1E34E22381EABB00C4D9A4 /* AuctionDateInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34E02381EABB00C4D9A4 /* AuctionDateInfoViewController.xib */; };
 		0A1E34E62382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1E34E42382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift */; };
 		0A1E34E72382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A1E34E52382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib */; };
+		0A4A214D2384A67B00983AAF /* RequestResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4A214C2384A67B00983AAF /* RequestResult.swift */; };
+		0A5741262385FB7500F2DC60 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5741252385FB7500F2DC60 /* Token.swift */; };
 		0A5B9FA7237728E70092DB1E /* Switch.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F6F237728E70092DB1E /* Switch.json */; };
 		0A5B9FA8237728E70092DB1E /* TwitterHeart.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F70237728E70092DB1E /* TwitterHeart.json */; };
 		0A5B9FA9237728E70092DB1E /* 9squares-AlBoardman.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */; };
@@ -136,6 +138,8 @@
 		0A1E34E02381EABB00C4D9A4 /* AuctionDateInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AuctionDateInfoViewController.xib; sourceTree = "<group>"; };
 		0A1E34E42382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveUserAuctionTableViewCell.swift; sourceTree = "<group>"; };
 		0A1E34E52382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveUserAuctionTableViewCell.xib; sourceTree = "<group>"; };
+		0A4A214C2384A67B00983AAF /* RequestResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestResult.swift; sourceTree = "<group>"; };
+		0A5741252385FB7500F2DC60 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		0A5B9F6F237728E70092DB1E /* Switch.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Switch.json; sourceTree = "<group>"; };
 		0A5B9F70237728E70092DB1E /* TwitterHeart.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TwitterHeart.json; sourceTree = "<group>"; };
 		0A5B9F71237728E70092DB1E /* 9squares-AlBoardman.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "9squares-AlBoardman.json"; sourceTree = "<group>"; };
@@ -283,8 +287,9 @@
 		0A1A618A23721B3C00E3477F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0A1A618B23721B5100E3477F /* Auction.swift */,
+				0A5741272385FB8E00F2DC60 /* Request */,
 				0A04502D23737E7A00138964 /* User.swift */,
+				0A1A618B23721B5100E3477F /* Auction.swift */,
 				0A04502F237386CD00138964 /* Raiser.swift */,
 				0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */,
 			);
@@ -325,6 +330,15 @@
 				0A1E34E52382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.xib */,
 			);
 			path = ActiveAuctionCell;
+			sourceTree = "<group>";
+		};
+		0A5741272385FB8E00F2DC60 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				0A4A214C2384A67B00983AAF /* RequestResult.swift */,
+				0A5741252385FB7500F2DC60 /* Token.swift */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		0A5B9F6E237728E70092DB1E /* TestAnimations */ = {
@@ -780,6 +794,7 @@
 				0A1E34E12381EABB00C4D9A4 /* AuctionDateInfoViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
+				0A5741262385FB7500F2DC60 /* Token.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
 				0A04502E23737E7A00138964 /* User.swift in Sources */,
 				0A5B9FE52377582F0092DB1E /* AuctionInfoViewController.swift in Sources */,
@@ -789,6 +804,7 @@
 				0A956776236F033E00274A07 /* AppDelegate.swift in Sources */,
 				0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
+				0A4A214D2384A67B00983AAF /* RequestResult.swift in Sources */,
 				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
 				0A1E34DC2381C9DD00C4D9A4 /* RaiserTableViewCell.swift in Sources */,
 				0A1E34E62382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift in Sources */,
@@ -945,7 +961,9 @@
 			baseConfigurationReference = E26380FAE9770959A253283C /* Pods-AuctionApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AuctionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -953,6 +971,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AuctionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -963,7 +982,9 @@
 			baseConfigurationReference = 09B4740684DE5BF9F616BC20 /* Pods-AuctionApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AuctionApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -971,6 +992,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.AuctionApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -13,8 +13,8 @@ class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        RequestBuilder.inst.getProfile()
+        //RequestBuilder.inst.deleteAuction(id: "57542e1a-c586-40e8-24b6-08d76c77666b", )
     }
     
     override func viewDidAppear(_ animated: Bool) {

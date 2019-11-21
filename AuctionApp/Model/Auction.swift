@@ -17,18 +17,18 @@ class Auction {
     var status: AuctionStatus
     var startPrice: Float
     var endPrice: Float!
-    var createDate: Date!
-    var endDate: Date!
+    var createDate: Date
+    var endDate: Date
     var description: String
     var imageUrl: String
     
     // Temp place
-    var isStar: Bool
+    var isLiked: Bool
     // Addition One-to-many fields: creator, purchasedBy,
     var raisers: [Raiser]!
     
-    init(imageUrl: String, title: String, price: Float, description: String = "", createDate: Date! = Date(),
-         endDate: Date! = Date(), endPrice: Float! = nil, status: AuctionStatus = .active, isStar: Bool) {
+    init(imageUrl: String, title: String, price: Float, description: String = "", createDate: Date = Date(),
+         endDate: Date = Date(), endPrice: Float! = nil, status: AuctionStatus = .opened, isLiked: Bool = false) {
         self.imageUrl = imageUrl
         self.title = title
         self.startPrice = price
@@ -40,6 +40,6 @@ class Auction {
         self.createDate = createDate
         self.endDate = endDate
         self.status = status
-        self.isStar = isStar
+        self.isLiked = isLiked
     }
 }

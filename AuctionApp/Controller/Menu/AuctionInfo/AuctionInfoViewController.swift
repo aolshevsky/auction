@@ -91,7 +91,7 @@ class AuctionInfoViewController: UIViewController {
     
     private func styleInit() {
         UIStyle.applyCornerRadius(view: self.placeBetButton, radius: 5)
-        if self.auction.status == AuctionStatus.completed {
+        if self.auction.status == AuctionStatus.closed {
             self.placeBetButton.backgroundColor = .lightGray
             self.placeBetButton.isEnabled = false
         }

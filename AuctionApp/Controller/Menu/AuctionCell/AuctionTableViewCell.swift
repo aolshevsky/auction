@@ -35,7 +35,7 @@ class AuctionTableViewCell: UITableViewCell {
         auctionImageView.downloaded(from: auction.imageUrl)
         titleLabel.text = auction.title
         priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
-        setStarAnimation(state: auction.isStar)
+        setStarAnimation(state: auction.isLiked)
         auctionImageView.layer.cornerRadius = 40
     }
     
@@ -60,6 +60,6 @@ class AuctionTableViewCell: UITableViewCell {
     }
         
     @objc func switchToggled(animatedSwitch: AnimatedSwitch) {
-        cellAuction.isStar = !cellAuction.isStar
+        cellAuction.isLiked = !cellAuction.isLiked
     }
 }
