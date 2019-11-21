@@ -11,12 +11,15 @@ import UIKit
 
 class User: Decodable {
     
+    var id: String
+    
     var imageUrl: String
     var image: UIImage
-    var id: String
-    var email: String
+    
     var firstName: String
     var lastName: String
+    
+    var email: String
     var phone: String
     var age: Int
     var cardNumber: String

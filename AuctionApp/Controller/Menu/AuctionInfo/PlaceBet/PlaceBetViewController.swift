@@ -30,7 +30,7 @@ class PlaceBetViewController: UIViewController {
     }
     
     func commonInit(auction: Auction) {
-        self.price = auction.endPrice
+        self.price = auction.currentPrice
     }
     
     // move from here

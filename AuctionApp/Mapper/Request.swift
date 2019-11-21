@@ -16,9 +16,9 @@ typealias ParamsDict = [String: String]
 
 class Request {
     
-    static let inst: Request = Request()
+    static let shared: Request = Request()
     
-    let hostName: String = "https://25f7648b.ngrok.io"
+    let hostName: String = "https://390dad1b.ngrok.io"
     var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiYTg1OWRlODEtYjkxZC00ODZmLThmM2MtYmMzOGY2NzkxYzIzIiwiaWF0IjoiMTEvMjAvMjAxOSAxOToxMjoyMCIsIm5iZiI6MTU3NDI3NzE0MCwiZXhwIjoxNjEwMjc3MTQwLCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.EwMhARyWIKP32DVF9VBgztWxpb7O4FTuAsv17rPI5Xk"
     
     private func getBearerAuthHeader() -> String {
@@ -27,7 +27,7 @@ class Request {
     
     private init () {}
      
-    private func createRequestBody(params: ParamsDict) -> Data {
+    func createRequestBody(params: ParamsDict) -> Data {
         guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else { return Data()}
         return httpBody
     }
@@ -52,20 +52,21 @@ class Request {
         }.resume()
     }
     
-    func httpRequest(url: String, params: ParamsDict, httpMethod: String = "POST", isAuth: Bool=true, completion: @escaping (Int, Data) -> ()) {
+    func httpRequest(url: String, params: Data, httpMethod: String = "POST", isAuth: Bool=true, completion: @escaping (Int, Data) -> ()) {
         guard let url = URL(string: url) else { return completion(400, Data())}
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
-        request.httpBody = createRequestBody(params: params)
+        request.httpBody = params
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
         if isAuth {
             request.setValue(getBearerAuthHeader(), forHTTPHeaderField: "Authorization")
         }
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-//           if let response = response {
-//               print(response)
-//           }
+           if let response = response {
+               print(response)
+           }
+            print(data)
            guard let data = data,
            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
            error == nil else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}

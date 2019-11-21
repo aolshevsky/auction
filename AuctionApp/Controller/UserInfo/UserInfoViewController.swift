@@ -20,7 +20,7 @@ class UserInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.allAuctions = DataSource.sharedInstance.allAuctions
+        self.allAuctions = DataSource.shared.allAuctions
         styleInit()
         setupCreatedAuctionTableView()
     }

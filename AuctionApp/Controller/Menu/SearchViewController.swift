@@ -25,7 +25,7 @@ class SearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        allAuctions = DataSource.sharedInstance.allAuctions
+        allAuctions = DataSource.shared.allAuctions
         DispatchQueue.main.async { self.tableView.reloadData() }
     }
     

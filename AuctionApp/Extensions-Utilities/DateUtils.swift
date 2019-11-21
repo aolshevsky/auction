@@ -21,9 +21,9 @@ class DateUtils {
         return formatter
     }
     
-    static func dateToString(date: Date?) -> String {
+    static func dateToString(date: Date?, formatter: () -> DateFormatter = getDateFormatter) -> String {
         if let date = date {
-            return getDateFormatter().string(from: date)
+            return formatter().string(from: date)
         } else {
             return ""
         }

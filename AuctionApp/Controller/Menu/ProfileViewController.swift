@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.allAuctions = DataSource.sharedInstance.allAuctions
+        self.allAuctions = DataSource.shared.allAuctions
         styleInit()
         setupUser()
         setupActiveAuctionsTableView()
@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
     func setupUser() {
         // TODO
         // self.imageView.downloaded(from: user.imageUrl)
-        let user: User = DataSource.sharedInstance.allUsers[0]
+        let user: User = DataSource.shared.allUsers[0]
         self.imageView.image = user.image
         self.userFullNameLabel.text = user.getFullName()
     }

@@ -30,7 +30,7 @@ class ActiveUserAuctionTableViewCell: UITableViewCell {
         cellAuction = auction
         self.auctionImageView.downloaded(from: auction.imageUrl)
         self.titleLabel.text = auction.title
-        self.priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.endPrice)
+        self.priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.currentPrice)
         
     }
     
