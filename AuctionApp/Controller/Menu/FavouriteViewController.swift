@@ -20,7 +20,7 @@ class FavouriteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        auctions = DataSource.sharedInstance.getFilterFavouritesAuctioun()
+        auctions = DataSource.shared.getFilterFavouritesAuctioun()
         DispatchQueue.main.async { self.tableView.reloadData() }
     }
 }

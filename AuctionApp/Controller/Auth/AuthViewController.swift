@@ -13,8 +13,17 @@ class AuthViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        RequestBuilder.inst.getProfile()
-        //RequestBuilder.inst.deleteAuction(id: "57542e1a-c586-40e8-24b6-08d76c77666b", )
+        //RequestBuilder.inst.getProfile()
+//        RequestBuilder.shared.getAuctions(completion: { (auctions) in
+//            print("Auction: ", auctions.count)
+//        })
+        
+//        RequestBuilder.shared.getAuction(id: "08037ef3-9ab3-491e-76f4-08d76dd848b1", completion: { (auction) in
+//            print("Auction: ", auction.title)
+//            RequestBuilder.shared.postAuction(auction: auction)
+//        })
+        
+        RequestBuilder.shared.deleteAuction(id: "4ea68e95-871c-41fe-d276-08d76ec06630")
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Raiser: Decodable {
+class Raiser: Codable {
     
     var userId: String
     var startPrice: Int
@@ -31,6 +31,7 @@ class Raiser: Decodable {
         case userId = "raisedUserId"
         case startPrice
         case endPrice
+        case date
     }
     
     required init(from decoder: Decoder) throws {
@@ -38,7 +39,7 @@ class Raiser: Decodable {
         self.userId = try container.decode(String.self, forKey: .userId)
         self.startPrice = try container.decode(Int.self, forKey: .startPrice)
         self.endPrice = try container.decode(Int.self, forKey: .endPrice)
-        // missing
-        self.date = Date()
+        let decodeDate = try container.decode(String.self, forKey: .date)
+        self.date = DateUtils.getDateFormatter().date(from: decodeDate)!
     }
 }

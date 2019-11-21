@@ -81,9 +81,9 @@ class AuctionInfoViewController: UIViewController {
     func commonInit(auction: Auction) {
         self.auction = auction
         self.titleTextField.text = auction.title
-        self.statusTextField.text = auction.status.rawValue
+        self.statusTextField.text = auction.status
         self.descriptionTextView.text = auction.description
-        self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.endPrice)
+        self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.currentPrice)
         self.imageView.downloaded(from: auction.imageUrl)
         
         styleInit()
@@ -91,7 +91,7 @@ class AuctionInfoViewController: UIViewController {
     
     private func styleInit() {
         UIStyle.applyCornerRadius(view: self.placeBetButton, radius: 5)
-        if self.auction.status == AuctionStatus.closed {
+        if self.auction.status == AuctionStatus.closed.rawValue {
             self.placeBetButton.backgroundColor = .lightGray
             self.placeBetButton.isEnabled = false
         }
@@ -124,7 +124,7 @@ extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource 
         if tableView == creatorTableView {
             return 1
         } else if tableView == raiserTableView {
-            return DataSource.sharedInstance.allRaisers.count
+            return DataSource.shared.allRaisers.count
         }
         return 0
     }
@@ -138,12 +138,12 @@ extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO: Get from database
         if tableView == creatorTableView {
-            let user = DataSource.sharedInstance.allUsers[0]
+            let user = DataSource.shared.allUsers[0]
             let cell = tableView.dequeueReusableCell(withIdentifier: "CreatorTableViewCell") as! CreatorTableViewCell
             cell.setUser(user: user)
             return cell
         } else if tableView == raiserTableView {
-            let raiser = DataSource.sharedInstance.allRaisers[indexPath.section]
+            let raiser = DataSource.shared.allRaisers[indexPath.section]
             let cell = tableView.dequeueReusableCell(withIdentifier: "RaiserTableViewCell") as! RaiserTableViewCell
             cell.setRaiser(raiser: raiser)
             return cell
@@ -154,9 +154,9 @@ extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var user: User!
         if tableView == creatorTableView {
-            user = DataSource.sharedInstance.allUsers[0]
+            user = DataSource.shared.allUsers[0]
         } else if tableView == raiserTableView {
-            user = DataSource.sharedInstance.allRaisers[indexPath.section].user
+            user = DataSource.shared.getUserById(id: DataSource.shared.allRaisers[indexPath.section].userId)
         }
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = UserInfoViewController(nibName: "UserInfoViewController", bundle: nil)
