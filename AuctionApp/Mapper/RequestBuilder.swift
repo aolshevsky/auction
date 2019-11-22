@@ -136,9 +136,20 @@ class RequestBuilder {
     // MARK: User
     func getAllUsers() {
         baseGetRequest(url: "\(request.hostName)/api/users", completion: { (data) in
+            print("Data: ", data)
             let data = self.decodeJSON(type: RequestResult<[User]>.self, from: data) ?? nil
+            print("Result data ", data)
             guard let users = data?.result else { return }
             DataSource.shared.allUsers = users
+            print("Users count: ", users.count)
+        })
+    }
+    
+    func getUser(id: String, completion: @escaping (User) -> ()) {
+        baseGetRequest(url: "\(request.hostName)/api/users/\(id)", completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<User>.self, from: data) ?? nil
+            guard let user = data?.result else { return }
+            completion(user)
         })
     }
     
