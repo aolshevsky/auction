@@ -66,16 +66,14 @@ class DataSource {
     }
     
     func setupFavoriteAuctions(auctions: [Auction]) {
-        for auction in auctions {
-            if let auction = allAuctions.first(where: { a in a.id == auction.id }) {
-                auction.isLiked = !auction.isLiked
-            }
-        }
+        auctions.forEach { a in updateFavoriteAuction(auctionId: a.id)}
     }
     
     func updateFavoriteAuction(auctionId: String) {
-        let auction = allAuctions.first{ a in a.id == auctionId }
-        auction?.isLiked = !auction!.isLiked
+        if let auction = allAuctions.first(where: { a in a.id == auctionId }) {
+            print("Change all auction liked!")
+            auction.isLiked = !auction.isLiked
+        }
     }
     
     func getFilterFavouritesAuctioun() -> [Auction] {

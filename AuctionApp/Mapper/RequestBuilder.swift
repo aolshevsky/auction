@@ -24,10 +24,6 @@ class RequestBuilder {
     // completionRes: @escaping (Result<[ResultT], Error>) -> ()
     private func baseGetRequest(url: String, completion: @escaping (Data?) -> ()) {
         request.getRequest(url: url, completion: { (statusCode, data) in
-            // print("From data: ", data)
-            //let data = self.decodeJSON(type: RequestResult<ResultT>.self, from: data) ?? nil
-            // print("Status code: ", statusCode)
-            // print("Data: ", data)
             completion(data)
         })
     }
@@ -35,10 +31,6 @@ class RequestBuilder {
     private func baseHTTPRequest(url: String, httpMethod: String="POST", isAuth: Bool=true, params: Data=Data(), completion: @escaping (Data?) -> ()) {
         DispatchQueue.main.async {
             self.request.httpRequest(url: url, params: params, httpMethod: httpMethod, isAuth: isAuth, completion: { (statusCode, data) in
-                // print("From data: ", data)
-                //let data = self.decodeJSON(type: RequestResult<ResultT>.self, from: data) ?? nil
-                // print("Status code: ", statusCode)
-                // print("Data: ", data)
                 completion(data)
             })
         }
@@ -99,6 +91,7 @@ class RequestBuilder {
             let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
             guard let auctions = data?.result else { return }
             DataSource.shared.allFavouriteAuctions = auctions
+            DataSource.shared.setupFavoriteAuctions(auctions: auctions)
             completion(auctions)
         })
     }
@@ -136,9 +129,7 @@ class RequestBuilder {
     // MARK: User
     func getAllUsers() {
         baseGetRequest(url: "\(request.hostName)/api/users", completion: { (data) in
-            print("Data: ", data)
             let data = self.decodeJSON(type: RequestResult<[User]>.self, from: data) ?? nil
-            print("Result data ", data)
             guard let users = data?.result else { return }
             DataSource.shared.allUsers = users
             print("Users count: ", users.count)
