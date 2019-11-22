@@ -101,27 +101,28 @@ class RequestBuilder {
             completion(auctions)
         })
     }
-
-//    func getFavorites() {
-//        baseGetRequest(url: "\(request.hostName)/api/favorites/")
-//    }
-//
+    
 //    func getFavorites(id: String) {
 //        baseGetRequest(url: "\(request.hostName)/api/favorites/\(id)")
 //    }
-//
-//    func getAllFavorites(id: String) {
-//        baseGetRequest(url: "\(request.hostName)/api/favorites/all\(id)")
-//    }
-//
-//    func deleteFavorites(id: String) {
-//        baseHTTPRequest(url: "\(request.hostName)/api/favorites/\(id)", httpMethod: "DELETE")
-//    }
-//
+
+    func postFavorite(auctionId: String) {
+        let params = ["auctionId": auctionId]
+        baseHTTPRequest(url: "\(request.hostName)/api/favorites", params: request.createRequestBody(params: params), completion: { (data) in
+            DataSource.shared.updateFavoriteAuction(auctionId: auctionId)
+        })
+    }
+
+    func deleteFavorite(auctionId: String) {
+        baseHTTPRequest(url: "\(request.hostName)/api/favorites/\(auctionId)", httpMethod: "DELETE", completion: { (data) in
+            DataSource.shared.updateFavoriteAuction(auctionId: auctionId)
+        })
+    }
+
 //    func deleteAllFavorites(id: String) {
 //        baseHTTPRequest(url: "\(request.hostName)/api/favorites/all/\(id)", httpMethod: "DELETE")
 //    }
-//
+    
     // MARK: Profile
     func getProfile() {
         baseGetRequest(url: "\(request.hostName)/api/me/", completion: { (data) in

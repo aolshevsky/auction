@@ -13,7 +13,6 @@ class DataSource {
     static let shared: DataSource = DataSource()
     
     private init () {
-        allAuctions = createAuctions()
         allUsers = createUsers()
         currentUser = nil
     }
@@ -67,6 +66,19 @@ class DataSource {
 //        }
 
         return tempAuctions
+    }
+    
+    func setupFavoriteAuctions(auctions: [Auction]) {
+        for auction in auctions {
+            if let auction = allAuctions.first(where: { a in a.id == auction.id }) {
+                auction.isLiked = !auction.isLiked
+            }
+        }
+    }
+    
+    func updateFavoriteAuction(auctionId: String) {
+        let auction = allAuctions.first{ a in a.id == auctionId }
+        auction?.isLiked = !auction!.isLiked
     }
     
     func getFilterFavouritesAuctioun() -> [Auction] {

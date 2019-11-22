@@ -99,5 +99,6 @@ class Auction: Codable {
         self.raisers = try container.decode([Raiser].self, forKey: .raisers)
         // missing
         self.isLiked = false
+        self.imageUrl = "https://firebasestorage.googleapis.com/v0/b/auction-42d96.appspot.com/o/auction_1?alt=media&token=32f6df94-31d1-4a17-bfa2-184487b14cde"
     }
 }
