@@ -89,7 +89,11 @@ class User: Codable {
         self.address = try container.decode(String.self, forKey: .address)
         let decodeRegDate = try container.decode(String.self, forKey: .registrationDate)
         self.registrationDate = DateUtils.getDateFormatter().date(from: decodeRegDate)!
-        self.cardNumber = try container.decode(String.self, forKey: .cardNumber)
+        do {
+            self.cardNumber = try container.decode(String.self, forKey: .cardNumber)
+        } catch {
+            self.cardNumber = ""
+        }
         // missing
         self.imageUrl = "https://firebasestorage.googleapis.com/v0/b/auction-42d96.appspot.com/o/users%2Fade4cd46-cf09-4533-adc8-ed773563bf71.png?alt=media&token=4f09175e-f867-42c7-b6d8-cb98f396f0b7"
     }

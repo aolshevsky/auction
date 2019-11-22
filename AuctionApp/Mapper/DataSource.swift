@@ -29,10 +29,7 @@ class DataSource {
     }
     
     private func createUsers() -> [User] {
-        var tempUsers: [User] = []
-        let user1 = User(username: "alesha", email: "olshevsky.aleksey@gmail.com", firstName: "Aleksey", lastName: "Olshevsky", phone: "228", birhday: Date(), cardNumber: "12-12-12", address: "Platonova 228")
-        tempUsers.append(user1)
-        return tempUsers
+        return [User(username: "alesha", email: "olshevsky.aleksey@gmail.com", firstName: "Aleksey", lastName: "Olshevsky", phone: "228", birhday: Date(), cardNumber: "12-12-12", address: "Platonova 228")]
     }
     
     private func createRaisers() -> [Raiser] {
