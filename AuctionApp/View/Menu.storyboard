@@ -68,6 +68,7 @@
                         <outlet property="activeAuctionsTableView" destination="utC-Bg-XMP" id="yv2-bE-v3K"/>
                         <outlet property="closedAuctionsTableView" destination="KEb-Oa-mg7" id="0Fq-uo-KNc"/>
                         <outlet property="imageView" destination="ksL-FL-fN6" id="fy8-5Y-tSo"/>
+                        <outlet property="settingsButton" destination="EkE-WO-Teb" id="jbU-dZ-sNE"/>
                         <outlet property="userFullNameLabel" destination="qWj-8y-LfU" id="A4g-eo-50q"/>
                     </connections>
                 </viewController>
