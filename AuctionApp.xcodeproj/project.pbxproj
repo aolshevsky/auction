@@ -110,6 +110,16 @@
 		0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */; };
 		0AAF5A512378629A002EB24F /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AAF5A502378629A002EB24F /* DataSource.swift */; };
 		0AB85B24237D25DC009F3D31 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0AB85B23237D25DC009F3D31 /* GoogleService-Info.plist */; };
+		0ABA2B7523888F5000902A9E /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA2B7323888F5000902A9E /* UserSettingsViewController.swift */; };
+		0ABA2B7623888F5000902A9E /* UserSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA2B7423888F5000902A9E /* UserSettingsViewController.xib */; };
+		0ABA2B7A2388A08300902A9E /* UserSettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA2B782388A08300902A9E /* UserSettingsTableViewCell.swift */; };
+		0ABA2B7B2388A08300902A9E /* UserSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA2B792388A08300902A9E /* UserSettingsTableViewCell.xib */; };
+		0ABA2B7F2388A6C100902A9E /* MainInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA2B7D2388A6C100902A9E /* MainInfoViewController.swift */; };
+		0ABA2B802388A6C100902A9E /* MainInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA2B7E2388A6C100902A9E /* MainInfoViewController.xib */; };
+		0ABA2B842388A6DD00902A9E /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA2B822388A6DD00902A9E /* ChangePasswordViewController.swift */; };
+		0ABA2B852388A6DD00902A9E /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA2B832388A6DD00902A9E /* ChangePasswordViewController.xib */; };
+		0ABA2B892388A70C00902A9E /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA2B872388A70C00902A9E /* CardViewController.swift */; };
+		0ABA2B8A2388A70C00902A9E /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA2B882388A70C00902A9E /* CardViewController.xib */; };
 		0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F0237D32CC00CA2617 /* StorageService.swift */; };
 		0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F2237D35D700CA2617 /* PostService.swift */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
@@ -227,6 +237,16 @@
 		0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewController.swift; sourceTree = "<group>"; };
 		0AAF5A502378629A002EB24F /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		0AB85B23237D25DC009F3D31 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0ABA2B7323888F5000902A9E /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		0ABA2B7423888F5000902A9E /* UserSettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSettingsViewController.xib; sourceTree = "<group>"; };
+		0ABA2B782388A08300902A9E /* UserSettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsTableViewCell.swift; sourceTree = "<group>"; };
+		0ABA2B792388A08300902A9E /* UserSettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		0ABA2B7D2388A6C100902A9E /* MainInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInfoViewController.swift; sourceTree = "<group>"; };
+		0ABA2B7E2388A6C100902A9E /* MainInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainInfoViewController.xib; sourceTree = "<group>"; };
+		0ABA2B822388A6DD00902A9E /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		0ABA2B832388A6DD00902A9E /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		0ABA2B872388A70C00902A9E /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		0ABA2B882388A70C00902A9E /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		0AD3C9F0237D32CC00CA2617 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		0AD3C9F2237D35D700CA2617 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		0AF09D73236F278B00A3D820 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -478,6 +498,7 @@
 		0A95678B236F063900274A07 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0ABA2B7223888E3200902A9E /* UserSettings */,
 				0A90CE7723834A61009A12DD /* UserInfo */,
 				0A1E34E32382050B00C4D9A4 /* ActiveAuctionCell */,
 				0A1E34D92381C98400C4D9A4 /* RaiserCell */,
@@ -527,6 +548,55 @@
 			path = Info;
 			sourceTree = "<group>";
 		};
+		0ABA2B7223888E3200902A9E /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA2B862388A6ED00902A9E /* Card */,
+				0ABA2B812388A6C600902A9E /* ChangePassword */,
+				0ABA2B7C2388A68300902A9E /* MainInfo */,
+				0ABA2B772388A05200902A9E /* UserSettingsCell */,
+				0ABA2B7323888F5000902A9E /* UserSettingsViewController.swift */,
+				0ABA2B7423888F5000902A9E /* UserSettingsViewController.xib */,
+			);
+			path = UserSettings;
+			sourceTree = "<group>";
+		};
+		0ABA2B772388A05200902A9E /* UserSettingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA2B782388A08300902A9E /* UserSettingsTableViewCell.swift */,
+				0ABA2B792388A08300902A9E /* UserSettingsTableViewCell.xib */,
+			);
+			path = UserSettingsCell;
+			sourceTree = "<group>";
+		};
+		0ABA2B7C2388A68300902A9E /* MainInfo */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA2B7D2388A6C100902A9E /* MainInfoViewController.swift */,
+				0ABA2B7E2388A6C100902A9E /* MainInfoViewController.xib */,
+			);
+			path = MainInfo;
+			sourceTree = "<group>";
+		};
+		0ABA2B812388A6C600902A9E /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA2B822388A6DD00902A9E /* ChangePasswordViewController.swift */,
+				0ABA2B832388A6DD00902A9E /* ChangePasswordViewController.xib */,
+			);
+			path = ChangePassword;
+			sourceTree = "<group>";
+		};
+		0ABA2B862388A6ED00902A9E /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA2B872388A70C00902A9E /* CardViewController.swift */,
+				0ABA2B882388A70C00902A9E /* CardViewController.xib */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		0AD3C9EF237D32A900CA2617 /* FirebaseStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,8 +631,8 @@
 				0A04502B23737C9100138964 /* AuctionCell */,
 				0AF09D81236F504700A3D820 /* AuctionInfo */,
 				0AF09D86236F5AF600A3D820 /* MenuViewController.swift */,
-				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0A635560237302210068A57B /* MainViewController.swift */,
+				0AF09D88236F70B900A3D820 /* SearchViewController.swift */,
 				0AAF5A4E2378601F002EB24F /* FavouriteViewController.swift */,
 				0A82DF042379FC6700E864E8 /* ProfileViewController.swift */,
 				0AA35CE7237B5BDC004A93DE /* AddAuctionViewController.swift */,
@@ -667,6 +737,8 @@
 				0A5B9FD1237728E70092DB1E /* IconTransitions.json in Resources */,
 				0A5B9FB9237728E70092DB1E /* J.json in Resources */,
 				0A5B9FB4237728E70092DB1E /* K.json in Resources */,
+				0ABA2B8A2388A70C00902A9E /* CardViewController.xib in Resources */,
+				0ABA2B802388A6C100902A9E /* MainInfoViewController.xib in Resources */,
 				0A5B9FD2237728E70092DB1E /* vcTransition2.json in Resources */,
 				0A5B9FCE237728E70092DB1E /* GeometryTransformTest.json in Resources */,
 				0A5B9FB2237728E70092DB1E /* Y.json in Resources */,
@@ -696,8 +768,10 @@
 				0A5B9FC2237728E70092DB1E /* C.json in Resources */,
 				0AB85B24237D25DC009F3D31 /* GoogleService-Info.plist in Resources */,
 				0A5B9FDA237728E70092DB1E /* PinJump.json in Resources */,
+				0ABA2B852388A6DD00902A9E /* ChangePasswordViewController.xib in Resources */,
 				0A5B9FC0237728E70092DB1E /* Colon.json in Resources */,
 				0A5B9FBA237728E70092DB1E /* I.json in Resources */,
+				0ABA2B7B2388A08300902A9E /* UserSettingsTableViewCell.xib in Resources */,
 				0A5B9FC7237728E70092DB1E /* N.json in Resources */,
 				0A5B9FD9237728E70092DB1E /* keypathTest.json in Resources */,
 				0A956790236F135000274A07 /* AuthViewController.storyboard in Resources */,
@@ -716,6 +790,7 @@
 				0A5B9FC9237728E70092DB1E /* B.json in Resources */,
 				0A5B9FE62377582F0092DB1E /* AuctionInfoViewController.xib in Resources */,
 				0A5B9FBD237728E70092DB1E /* P.json in Resources */,
+				0ABA2B7623888F5000902A9E /* UserSettingsViewController.xib in Resources */,
 				0A5B9FD0237728E70092DB1E /* Keypath.json in Resources */,
 				0A5B9FDF237733240092DB1E /* star.json in Resources */,
 				0A5B9FAE237728E70092DB1E /* X.json in Resources */,
@@ -795,10 +870,12 @@
 				0AAF5A4F2378601F002EB24F /* FavouriteViewController.swift in Sources */,
 				0A82DF0C237A13CC00E864E8 /* UIStyle.swift in Sources */,
 				0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */,
+				0ABA2B7F2388A6C100902A9E /* MainInfoViewController.swift in Sources */,
 				0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */,
 				0A1E34D72381AD4D00C4D9A4 /* CreatorTableViewCell.swift in Sources */,
 				0A90CE7C23834B12009A12DD /* UserInfoViewController.swift in Sources */,
 				0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */,
+				0ABA2B892388A70C00902A9E /* CardViewController.swift in Sources */,
 				0A1E34E12381EABB00C4D9A4 /* AuctionDateInfoViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
@@ -813,8 +890,10 @@
 				0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */,
 				0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */,
 				0A4A214D2384A67B00983AAF /* RequestResult.swift in Sources */,
+				0ABA2B842388A6DD00902A9E /* ChangePasswordViewController.swift in Sources */,
 				0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */,
 				0A1E34DC2381C9DD00C4D9A4 /* RaiserTableViewCell.swift in Sources */,
+				0ABA2B7523888F5000902A9E /* UserSettingsViewController.swift in Sources */,
 				0A1E34E62382057F00C4D9A4 /* ActiveUserAuctionTableViewCell.swift in Sources */,
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
@@ -823,6 +902,7 @@
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AAF5A512378629A002EB24F /* DataSource.swift in Sources */,
 				0A90CE7F23835897009A12DD /* Request.swift in Sources */,
+				0ABA2B7A2388A08300902A9E /* UserSettingsTableViewCell.swift in Sources */,
 				0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */,
 				0A1E34D3237FDDC300C4D9A4 /* UIIMageViewExtension.swift in Sources */,
 			);

@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var activeAuctionsTableView: UITableView!
     @IBOutlet weak var closedAuctionsTableView: UITableView!
+    @IBOutlet weak var settingsButton: UIButton!
     
     var allAuctions: [Auction] = []
     
@@ -24,13 +25,26 @@ class ProfileViewController: UIViewController {
         setupUser()
         setupActiveAuctionsTableView()
         setupClosedAuctionsTableView()
+        setupSettingsGestures()
     }
     
     func setupUser() {
-        // TODO
         let user: User = DataSource.shared.currentUser
         self.imageView.downloaded(from: user.imageUrl)
         self.userFullNameLabel.text = user.getFullName()
+    }
+    
+    private func setupSettingsGestures() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedSettings))
+        tapGesture.numberOfTapsRequired = 1
+        self.settingsButton.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc private func tappedSettings() {
+        let vc = UserSettingsViewController(nibName: "UserSettingsViewController", bundle: nil)
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true, completion: nil)
     }
     
     private func setupActiveAuctionsTableView() {
