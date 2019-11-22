@@ -12,11 +12,6 @@ class DataSource {
     
     static let shared: DataSource = DataSource()
     
-    private init () {
-        allUsers = createUsers()
-        currentUser = nil
-    }
-    
     var currentUser: User!
     var allUsers: [User] = []
     var allFavouriteAuctions: [Auction] = []
@@ -26,18 +21,6 @@ class DataSource {
     func getUserById(id: String) -> User {
         let res = allUsers.filter{ a in a.id == id }
         return res[0]
-    }
-    
-    private func createUsers() -> [User] {
-        return [User(username: "alesha", email: "olshevsky.aleksey@gmail.com", firstName: "Aleksey", lastName: "Olshevsky", phone: "228", birhday: Date(), cardNumber: "12-12-12", address: "Platonova 228")]
-    }
-    
-    private func createRaisers() -> [Raiser] {
-        var tempRaisers: [Raiser] = []
-        for _ in 0...2 {
-            tempRaisers.append(Raiser(startPrice: 10, endPrice: 10 + Int.random(in: 10 ... 100), date: Date()))
-        }
-        return tempRaisers
     }
     
     private func createAuctions() -> [Auction] {
@@ -63,6 +46,11 @@ class DataSource {
 //        }
 
         return tempAuctions
+    }
+    
+    func updateAuction(auction: Auction) {
+        allAuctions.removeAll(where: { a in a.id == auction.id })
+        allAuctions.append(auction)
     }
     
     func setupFavoriteAuctions(auctions: [Auction]) {

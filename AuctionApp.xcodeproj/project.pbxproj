@@ -518,6 +518,15 @@
 			path = PlaceBet;
 			sourceTree = "<group>";
 		};
+		0ABA2B71238870F900902A9E /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				0A5B9FE32377582F0092DB1E /* AuctionInfoViewController.swift */,
+				0A5B9FE42377582F0092DB1E /* AuctionInfoViewController.xib */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
 		0AD3C9EF237D32A900CA2617 /* FirebaseStorage */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,10 +573,9 @@
 		0AF09D81236F504700A3D820 /* AuctionInfo */ = {
 			isa = PBXGroup;
 			children = (
+				0ABA2B71238870F900902A9E /* Info */,
 				0AAF5A5223787ECB002EB24F /* PlaceBet */,
 				0A1E34DE2381EA7900C4D9A4 /* InfoDate */,
-				0A5B9FE32377582F0092DB1E /* AuctionInfoViewController.swift */,
-				0A5B9FE42377582F0092DB1E /* AuctionInfoViewController.xib */,
 			);
 			path = AuctionInfo;
 			sourceTree = "<group>";
