@@ -12,19 +12,19 @@ import Foundation
 class Raiser: Codable {
     
     var userId: String
-    var startPrice: Int
-    var endPrice: Int
+    var startPrice: Float
+    var endPrice: Float
     var date: Date
     
-    init(startPrice: Int, endPrice: Int, date: Date) {
+    init(startPrice: Float, endPrice: Float, date: Date) {
         self.startPrice = startPrice
         self.endPrice = endPrice
         self.date = date
         self.userId = DataSource.shared.currentUser.id
     }
     
-    func getCount() -> Int {
-        return self.startPrice - self.endPrice
+    func getCount() -> Float {
+        return self.endPrice - self.startPrice
     }
     
     enum CodingKeys: String, CodingKey {
@@ -37,8 +37,8 @@ class Raiser: Codable {
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.userId = try container.decode(String.self, forKey: .userId)
-        self.startPrice = try container.decode(Int.self, forKey: .startPrice)
-        self.endPrice = try container.decode(Int.self, forKey: .endPrice)
+        self.startPrice = try container.decode(Float.self, forKey: .startPrice)
+        self.endPrice = try container.decode(Float.self, forKey: .endPrice)
         let decodeDate = try container.decode(String.self, forKey: .date)
         self.date = DateUtils.getDateFormatter().date(from: decodeDate)!
     }

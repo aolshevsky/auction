@@ -8,7 +8,11 @@
 
 import UIKit
 
-class AuctionInfoViewController: UIViewController {
+protocol BetVCDelegate: class {
+    func setupInfoData()
+}
+
+class AuctionInfoViewController: UIViewController, BetVCDelegate {
 
     @IBOutlet weak var titleTextField: UILabel!
     @IBOutlet weak var statusTextField: UILabel!
@@ -23,6 +27,7 @@ class AuctionInfoViewController: UIViewController {
     @IBOutlet weak var raiserTableView: UITableView!
     
     var auction: Auction!
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +36,11 @@ class AuctionInfoViewController: UIViewController {
         setupRaiserTableView()
     }
     
+    internal func setupInfoData() {
+        user = DataSource.shared.getUserById(id: auction.ownerId)
+        self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.currentPrice)
+        raiserTableView.reloadData()
+    }
     
     private func setupCreatorTableView() {
         creatorTableView.register(UINib(nibName: "CreatorTableViewCell", bundle: nil), forCellReuseIdentifier: "CreatorTableViewCell")
@@ -68,16 +78,17 @@ class AuctionInfoViewController: UIViewController {
     
     @objc private func tappedBet() {
         let vc = PlaceBetViewController(nibName: "PlaceBetViewController", bundle: nil)
-        vc.commonInit(auction: self.auction)
         vc.modalPresentationStyle = .popover
+        vc.delegate = self
         let popOverVC = vc.popoverPresentationController
         popOverVC?.delegate = self
         popOverVC?.sourceView = self.placeBetButton
         popOverVC?.sourceRect = CGRect(x: self.placeBetButton.bounds.midX, y: self.placeBetButton.bounds.minY, width: 0, height: self.placeBetButton.bounds.height)
         vc.preferredContentSize = CGSize(width: 210, height: 230)
         self.present(vc, animated: true)
-    }    
-    
+        vc.commonInit(auction: &self.auction)
+    }
+        
     func commonInit(auction: Auction) {
         self.auction = auction
         self.titleTextField.text = auction.title
@@ -86,6 +97,7 @@ class AuctionInfoViewController: UIViewController {
         self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.currentPrice)
         self.imageView.downloaded(from: auction.imageUrl)
         
+        setupInfoData()
         styleInit()
     }
     
@@ -121,29 +133,26 @@ extension AuctionInfoViewController: UIPopoverPresentationControllerDelegate {
 
 extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == creatorTableView {
             return 1
         } else if tableView == raiserTableView {
-            return DataSource.shared.allRaisers.count
+            return self.auction.raisers.count
         }
         return 0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // TODO: Get from database
         if tableView == creatorTableView {
-            let user = DataSource.shared.allUsers[0]
             let cell = tableView.dequeueReusableCell(withIdentifier: "CreatorTableViewCell") as! CreatorTableViewCell
-            cell.setUser(user: user)
+            cell.setUser(user: self.user)
             return cell
         } else if tableView == raiserTableView {
-            let raiser = DataSource.shared.allRaisers[indexPath.section]
+            let raiser = self.auction.raisers[indexPath.section]
             let cell = tableView.dequeueReusableCell(withIdentifier: "RaiserTableViewCell") as! RaiserTableViewCell
             cell.setRaiser(raiser: raiser)
             return cell
@@ -154,9 +163,9 @@ extension AuctionInfoViewController: UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var user: User!
         if tableView == creatorTableView {
-            user = DataSource.shared.allUsers[0]
+            user = self.user
         } else if tableView == raiserTableView {
-            user = DataSource.shared.getUserById(id: DataSource.shared.allRaisers[indexPath.section].userId)
+            user = DataSource.shared.getUserById(id: self.auction.raisers[indexPath.section].userId)
         }
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = UserInfoViewController(nibName: "UserInfoViewController", bundle: nil)

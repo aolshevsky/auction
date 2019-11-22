@@ -65,6 +65,5 @@ class AuctionTableViewCell: UITableViewCell {
         } else {
             RequestBuilder.shared.postFavorite(auctionId: cellAuction.id)
         }
-        //cellAuction.isLiked = !cellAuction.isLiked
     }
 }
