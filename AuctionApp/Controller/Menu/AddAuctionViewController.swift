@@ -51,13 +51,13 @@ class AddAuctionViewController: UIViewController {
         return true
     }
     
-    //NumberUtils.convetStringToFloat(value: self.priceTextField.text!)
     @objc private func tappedAddAuction() {
         if !validateNewAuction() { return }
         let storagePath = Images.auctionDatabasePath + self.titleTextField.text! + Images.auctionImageType
         if let image = self.auctionImageView.image {
             PostStorage.uploadImage(for: image, child: storagePath, completion: { (imageUrl) in
-                let auction: Auction = Auction(imageUrl: imageUrl, title: self.titleTextField.text!, price: NumberUtils.convetStringToFloat(value: self.priceTextField.text!)!, isLiked: false)
+                let auction: Auction = Auction(imageUrl: imageUrl, title: self.titleTextField.text!, price: NumberUtils.convetStringToFloat(value: self.priceTextField.text!)!)
+                RequestBuilder.shared.postAuction(auction: auction) { (auction) in }
                 print("Url:", auction.imageUrl)
             })
         }

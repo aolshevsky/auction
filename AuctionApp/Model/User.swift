@@ -14,7 +14,6 @@ class User: Codable {
     var id: String
     
     var imageUrl: String
-    var image: UIImage
     
     var firstName: String
     var lastName: String
@@ -32,7 +31,6 @@ class User: Codable {
     init (username: String, email: String, firstName: String, lastName: String, phone: String, birhday: Date, cardNumber: String, address: String) {
         self.id = ""
         self.imageUrl = String()
-        self.image = Images.userBaseImages.randomElement()!!
         self.email = email
         self.username = username
         self.firstName = firstName
@@ -93,6 +91,6 @@ class User: Codable {
         self.registrationDate = DateUtils.getDateFormatter().date(from: decodeRegDate)!
         self.cardNumber = try container.decode(String.self, forKey: .cardNumber)
         // missing
-        self.image = UIImage()
+        self.imageUrl = "https://firebasestorage.googleapis.com/v0/b/auction-42d96.appspot.com/o/users%2Fade4cd46-cf09-4533-adc8-ed773563bf71.png?alt=media&token=4f09175e-f867-42c7-b6d8-cb98f396f0b7"
     }
 }

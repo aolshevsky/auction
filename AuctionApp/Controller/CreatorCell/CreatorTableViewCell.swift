@@ -28,9 +28,7 @@ class CreatorTableViewCell: UITableViewCell {
     
     func setUser(user: User) {
         self.cellUser = user
-        // TODO
-        // self.creatorImageView.downloaded(from: user.imageUrl)
-        self.creatorImageView.image = user.image
+        self.creatorImageView.downloaded(from: user.imageUrl)
         self.fullNameTextField.text = user.getFullName()
         self.descriptionTextField.text = user.email
     }

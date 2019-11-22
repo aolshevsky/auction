@@ -17,5 +17,6 @@ struct Images {
     static let man2 = UIImage(named: "man_2")
     static let userBaseImages = Set(arrayLiteral: Images.man, Images.man1, Images.man2)
     static let auctionDatabasePath: String = "auctions/"
+    static let userDatabasePath: String = "users/"
     static let auctionImageType: String = ".png"
 }

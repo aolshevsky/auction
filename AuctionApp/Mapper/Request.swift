@@ -18,7 +18,7 @@ class Request {
     
     static let shared: Request = Request()
     
-    let hostName: String = "https://390dad1b.ngrok.io"
+    let hostName: String = "https://d1994811.ngrok.io"
     var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiYTg1OWRlODEtYjkxZC00ODZmLThmM2MtYmMzOGY2NzkxYzIzIiwiaWF0IjoiMTEvMjAvMjAxOSAxOToxMjoyMCIsIm5iZiI6MTU3NDI3NzE0MCwiZXhwIjoxNjEwMjc3MTQwLCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.EwMhARyWIKP32DVF9VBgztWxpb7O4FTuAsv17rPI5Xk"
     
     private func getBearerAuthHeader() -> String {
