@@ -79,6 +79,7 @@ class RequestBuilder {
         baseHTTPRequest(url: "\(request.hostName)/api/auctions/", httpMethod: "POST", params: auctionData, completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<Auction>.self, from: data) ?? nil
             guard let auction = data?.result else { return }
+            DataSource.shared.allAuctions.append(auction)
             completion(auction)
         })
     }
@@ -101,10 +102,6 @@ class RequestBuilder {
             completion(auctions)
         })
     }
-    
-//    func getFavorites(id: String) {
-//        baseGetRequest(url: "\(request.hostName)/api/favorites/\(id)")
-//    }
 
     func postFavorite(auctionId: String) {
         let params = ["auctionId": auctionId]
@@ -118,10 +115,6 @@ class RequestBuilder {
             DataSource.shared.updateFavoriteAuction(auctionId: auctionId)
         })
     }
-
-//    func deleteAllFavorites(id: String) {
-//        baseHTTPRequest(url: "\(request.hostName)/api/favorites/all/\(id)", httpMethod: "DELETE")
-//    }
     
     // MARK: Profile
     func getProfile() {
@@ -129,6 +122,8 @@ class RequestBuilder {
             let data = self.decodeJSON(type: RequestResult<User>.self, from: data) ?? nil
             guard let user = data?.result else { return }
             DataSource.shared.currentUser = user
+//            let storagePath = Images.userDatabasePath + user.id + Images.auctionImageType
+//            PostStorage.uploadImage(for: user.image, child: storagePath, completion: { (test) in })
         })
     }
 
@@ -136,6 +131,15 @@ class RequestBuilder {
         user.firstName = "alesha"
         let userData = try! JSONEncoder().encode(user)
         baseHTTPRequest(url: "\(request.hostName)/api/me/", httpMethod: "PUT", params: userData, completion: { (data) in })
+    }
+    
+    // MARK: User
+    func getAllUsers() {
+        baseGetRequest(url: "\(request.hostName)/api/users", completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<[User]>.self, from: data) ?? nil
+            guard let users = data?.result else { return }
+            DataSource.shared.allUsers = users
+        })
     }
     
 }

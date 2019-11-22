@@ -27,10 +27,8 @@ class RaiserTableViewCell: UITableViewCell {
     
     func setRaiser(raiser: Raiser) {
         self.cellRaiser = raiser
-        // TODO
-        // self.raiserImageView.downloaded(from: raiser.user.imageUrl)
         let user = DataSource.shared.getUserById(id: raiser.userId)
-        self.raiserImageView.image = user.image
+        self.raiserImageView.downloaded(from: user.imageUrl)
         self.fullNameTextField.text = user.getFullName()
         self.raiseCountTextField.text = NumberUtils.convertFloatPriceToString(value: Float(raiser.getCount()))
     }

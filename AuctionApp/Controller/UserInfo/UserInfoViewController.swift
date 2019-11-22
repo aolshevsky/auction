@@ -36,7 +36,7 @@ class UserInfoViewController: UIViewController {
         self.emailLabel.text = user.email
         // TODO: count up
         self.buyAuctionCount.text = String(6)
-        self.imageView.image = user.image
+        self.imageView.downloaded(from: user.imageUrl)
     }
     
     private func setupCreatedAuctionTableView() {
