@@ -60,6 +60,11 @@ class AuctionTableViewCell: UITableViewCell {
     }
         
     @objc func switchToggled(animatedSwitch: AnimatedSwitch) {
-        cellAuction.isLiked = !cellAuction.isLiked
+        if cellAuction.isLiked {
+            RequestBuilder.shared.deleteFavorite(auctionId: cellAuction.id)
+        } else {
+            RequestBuilder.shared.postFavorite(auctionId: cellAuction.id)
+        }
+        //cellAuction.isLiked = !cellAuction.isLiked
     }
 }
