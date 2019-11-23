@@ -11,12 +11,16 @@ import UIKit
 class UserSettingsViewController: UIViewController {
     
     @IBOutlet weak var settingsTableView: UITableView!
+    
     let menuSettings: [String] = ["Общая информация", "Изменение пароля", "Пополнение счета"]
-    let settingViewControllers = []
+    let settingViewControllers = [MainInfoViewController(nibName: "MainInfoViewController", bundle: nil),
+                                  ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil),
+                                  CardViewController(nibName: "CardViewController", bundle: nil),]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.closeBackButtonPressed))
+        setupActiveAuctionsTableView()
     }
     
     private func setupActiveAuctionsTableView() {
@@ -48,11 +52,9 @@ extension UserSettingsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let setting = self.menuSettings[indexPath.section]
-        let vc =
-        let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
-        vc.modalPresentationStyle = .popover
-        self.present(vc, animated: true, completion: nil)
-        vc.commonInit(auction: auction)
+        let vc = self.settingViewControllers[indexPath.section]
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true, completion: nil)
     }
 }

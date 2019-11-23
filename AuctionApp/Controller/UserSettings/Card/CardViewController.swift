@@ -12,5 +12,10 @@ class CardViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(self.closeBackButtonPressed))
     }
+    
+    @objc func closeBackButtonPressed(){
+           self.dismiss(animated: false, completion: nil)
+       }
 }
