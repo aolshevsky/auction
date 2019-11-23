@@ -68,7 +68,7 @@ class User: Codable {
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.firstName, forKey: .firstName)
-        try container.encode(self.lastName, forKey: .firstName)
+        try container.encode(self.lastName, forKey: .lastName)
         try container.encode(self.imageUrl, forKey: .imageUrl)
         try container.encode(DateUtils.dateToString(date: self.birthday), forKey: .birthday)
         try container.encode(self.address, forKey: .address)

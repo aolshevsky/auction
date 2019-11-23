@@ -29,9 +29,9 @@ class ProfileViewController: UIViewController {
     }
     
     func setupUser() {
-//        let user: User = DataSource.shared.currentUser
-//        self.imageView.downloaded(from: user.imageUrl)
-//        self.userFullNameLabel.text = user.getFullName()
+        let user: User = DataSource.shared.currentUser
+        self.imageView.downloaded(from: user.imageUrl)
+        self.userFullNameLabel.text = user.getFullName()
     }
     
     private func setupSettingsGestures() {
