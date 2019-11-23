@@ -122,6 +122,7 @@
 		0ABA2B8A2388A70C00902A9E /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0ABA2B882388A70C00902A9E /* CardViewController.xib */; };
 		0AD3C9F1237D32CC00CA2617 /* StorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F0237D32CC00CA2617 /* StorageService.swift */; };
 		0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F2237D35D700CA2617 /* PostService.swift */; };
+		0AEE58C32389509B00131E16 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE58C22389509B00131E16 /* Delegates.swift */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
 		0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D75236F312D00A3D820 /* LoginViewController.swift */; };
 		0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D77236F350100A3D820 /* BaseAuth.swift */; };
@@ -249,6 +250,7 @@
 		0ABA2B882388A70C00902A9E /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
 		0AD3C9F0237D32CC00CA2617 /* StorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageService.swift; sourceTree = "<group>"; };
 		0AD3C9F2237D35D700CA2617 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
+		0AEE58C22389509B00131E16 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		0AF09D73236F278B00A3D820 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AF09D75236F312D00A3D820 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AF09D77236F350100A3D820 /* BaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuth.swift; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 			children = (
 				0A5B9FE72377634A0092DB1E /* Mapper */,
 				0A0450282373694700138964 /* Extensions-Utilities */,
+				0AEE58C12389505000131E16 /* Delegates */,
 				0A1A618A23721B3C00E3477F /* Model */,
 				0A95678B236F063900274A07 /* Controller */,
 				0A04502C23737D8300138964 /* View */,
@@ -604,6 +607,14 @@
 				0AD3C9F2237D35D700CA2617 /* PostService.swift */,
 			);
 			path = FirebaseStorage;
+			sourceTree = "<group>";
+		};
+		0AEE58C12389505000131E16 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				0AEE58C22389509B00131E16 /* Delegates.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		0AF09D72236F184E00A3D820 /* Auth */ = {
@@ -898,6 +909,7 @@
 				0A045030237386CD00138964 /* Raiser.swift in Sources */,
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
 				0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */,
+				0AEE58C32389509B00131E16 /* Delegates.swift in Sources */,
 				0AA35CE8237B5BDC004A93DE /* AddAuctionViewController.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
 				0AAF5A512378629A002EB24F /* DataSource.swift in Sources */,

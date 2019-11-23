@@ -41,7 +41,7 @@ class AddAuctionViewController: UIViewController {
         self.addButton.addGestureRecognizer(tapGesture)
     }
     
-    private func validateNewAuction()  -> Bool {
+    private func validateNewAuction() -> Bool {
         // validation
         if let title = titleTextField.text, let price = priceTextField.text, let description = descriptionTextField.text, title.isEmpty || price.isEmpty || description.isEmpty || !self.isSetImage {
             displayAlertMessage(vc: self, message: "All fields are required")
@@ -53,7 +53,7 @@ class AddAuctionViewController: UIViewController {
     
     @objc private func tappedAddAuction() {
         if !validateNewAuction() { return }
-        let storagePath = Images.auctionDatabasePath + self.titleTextField.text! + Images.auctionImageType
+        let storagePath = DbConstant.getAuctionPath(id: String(self.titleTextField.text.hashValue))
         if let image = self.auctionImageView.image {
             PostStorage.uploadImage(for: image, child: storagePath, completion: { (imageUrl) in
                 let auction: Auction = Auction(imageUrl: imageUrl, title: self.titleTextField.text!, price: NumberUtils.convetStringToFloat(value: self.priceTextField.text!)!)

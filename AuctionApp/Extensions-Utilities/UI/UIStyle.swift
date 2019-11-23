@@ -11,9 +11,13 @@ import UIKit
 
 class UIStyle {
     
-    static func applyBaseLabelStyle(label: UILabel!, size: CGFloat, color: UIColor! = .darkGray) {
-        label.font = UIFont(name: "Menlo", size: size)
+    static func applyBaseLabelStyle(label: UILabel!, size: CGFloat, color: UIColor! = .darkGray, font: String = "Menlo") {
+        label.font = UIFont(name: font, size: size)
         label.textColor = color
+    }
+    
+    static func applyBaseLabelStyle(labels: [UILabel?], size: CGFloat, color: UIColor! = .darkGray, font: String = "Menlo") {
+        labels.forEach { label in UIStyle.applyBaseLabelStyle(label: label, size: size, color: color, font: font)}
     }
     
     static func applyCornerRadius(view: UIView!, radius: CGFloat = 15) {
