@@ -9,6 +9,10 @@
 import Foundation
 
 
-protocol UserChangeInfo {
+protocol UserChangeInfoDelegate: class {
     func updateUserInfo()
+}
+
+protocol BetVCDelegate: class {
+    func setupInfoData()
 }

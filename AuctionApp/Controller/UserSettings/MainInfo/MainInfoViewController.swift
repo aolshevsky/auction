@@ -28,6 +28,7 @@ class MainInfoViewController: UIViewController {
     
     private var datePicker: UIDatePicker?
     private var imagePicker = UIImagePickerController()
+    private var isSetImage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,25 @@ class MainInfoViewController: UIViewController {
         setupSaveChangesGestures()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        setupUser()
+    }
+    
     private func validateChangedInfo()  -> Bool {
         if let firstName = firstNameTF.text, let secondName = secondNameTF.text, let birthday = birthdayTF.text, let address = addressTF.text, let phone = phoneTF.text, firstName.isEmpty || secondName.isEmpty || birthday.isEmpty || address.isEmpty || phone.isEmpty {
                displayAlertMessage(vc: self, message: "All fields are required")
                return false
            }
-           
-           return true
-       }
+        return true
+    }
+    
+    private func haveUnSavedInfo() -> Bool {
+        let user = DataSource.shared.currentUser
+        if let firstName = firstNameTF.text, let secondName = secondNameTF.text, let birthday = birthdayTF.text, let address = addressTF.text, let phone = phoneTF.text, firstName != user?.firstName || secondName != user?.lastName || birthday != DateUtils.dateToString(date: user?.birthday) || address != user?.address || phone != user?.phone || self.isSetImage {
+            return true
+        }
+        return false
+    }
     
     private func setupSaveChangesGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedSaveChanges))
@@ -62,18 +74,36 @@ class MainInfoViewController: UIViewController {
         user?.birthday = DateUtils.getDateFormatter().date(from: birthdayTF.text!)!
         user?.address = addressTF.text!
         user?.phone = phoneTF.text!
-        if let image = userImageView.image {
-            PostStorage.uploadImage(for: image, child: DbConstant.getUserPath(id: user!.id), completion: { (imageUrl) in
+        if self.isSetImage {
+            PostStorage.uploadImage(for: userImageView.image!, child: DbConstant.getUserPath(id: user!.id), completion: { (imageUrl) in
                 user?.imageUrl = imageUrl
                 RequestBuilder.shared.updateProfile(user: user!)
                 DataSource.shared.currentUser = user
+                DataSource.shared.updateCurrentUser()
             })
+        } else {
+            RequestBuilder.shared.updateProfile(user: user!)
+            DataSource.shared.currentUser = user
+            DataSource.shared.updateCurrentUser()
         }
         self.dismiss(animated: true, completion: nil)
     }
     
-    @objc func closeBackButtonPressed(){
-           self.dismiss(animated: false, completion: nil)
+    @objc func closeBackButtonPressed() {
+        let alert = UIAlertController(title: "Предупреждение", message: "Присутствуют не сохраненные данные. Желаете сохранить?", preferredStyle: UIAlertController.Style.alert)
+
+        alert.addAction(UIAlertAction(title: "Сохранить", style: UIAlertAction.Style.default, handler: { action in
+            self.tappedSaveChanges()
+        }))
+        alert.addAction(UIAlertAction(title: "Нет", style: UIAlertAction.Style.destructive, handler: { action in
+            self.dismiss(animated: false, completion: nil)
+        }))
+        
+        if self.haveUnSavedInfo() {
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            self.dismiss(animated: false, completion: nil)
+        }
     }
     
     func setupUser() {
@@ -141,6 +171,7 @@ extension MainInfoViewController {
             imagePicker.sourceType = UIImagePickerController.SourceType.camera
             imagePicker.allowsEditing = true
             self.present(imagePicker, animated: true, completion: nil)
+            self.isSetImage = true
         }
         else
         {
@@ -156,6 +187,7 @@ extension MainInfoViewController {
         imagePicker.allowsEditing = true
         imagePicker.delegate = self
         self.present(imagePicker, animated: true, completion: nil)
+        self.isSetImage = true
     }
 }
 
