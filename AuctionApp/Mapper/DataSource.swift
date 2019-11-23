@@ -23,6 +23,11 @@ class DataSource {
         return res[0]
     }
     
+    func updateCurrentUser() {
+        allUsers.removeAll(where: { u in u.id == currentUser.id })
+        allUsers.append(currentUser)
+    }
+    
     func updateAuction(auction: Auction) {
         allAuctions.removeAll(where: { a in a.id == auction.id })
         allAuctions.append(auction)

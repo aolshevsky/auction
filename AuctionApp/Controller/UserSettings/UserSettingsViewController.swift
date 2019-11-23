@@ -15,7 +15,9 @@ class UserSettingsViewController: UIViewController {
     let menuSettings: [String] = ["Общая информация", "Изменение пароля", "Пополнение счета"]
     let settingViewControllers = [MainInfoViewController(nibName: "MainInfoViewController", bundle: nil),
                                   ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil),
-                                  CardViewController(nibName: "CardViewController", bundle: nil),]
+                                  CardViewController(nibName: "CardViewController", bundle: nil)]
+    
+    weak var delegate: UserChangeInfoDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +33,7 @@ class UserSettingsViewController: UIViewController {
     
     @objc func closeBackButtonPressed(){
         self.dismiss(animated: false, completion: nil)
+        delegate.updateUserInfo()
     }
 }
 

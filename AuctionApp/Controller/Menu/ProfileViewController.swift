@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     
     @IBOutlet weak var userFullNameLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
@@ -28,6 +28,10 @@ class ProfileViewController: UIViewController {
         setupSettingsGestures()
     }
     
+    func updateUserInfo() {
+        setupUser()
+    }
+    
     func setupUser() {
         let user: User = DataSource.shared.currentUser
         self.imageView.downloaded(from: user.imageUrl)
@@ -42,6 +46,7 @@ class ProfileViewController: UIViewController {
     
     @objc private func tappedSettings() {
         let vc = UserSettingsViewController(nibName: "UserSettingsViewController", bundle: nil)
+        vc.delegate = self
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         self.present(navVC, animated: true, completion: nil)

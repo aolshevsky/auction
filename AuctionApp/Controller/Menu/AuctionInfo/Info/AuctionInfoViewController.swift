@@ -8,9 +8,6 @@
 
 import UIKit
 
-protocol BetVCDelegate: class {
-    func setupInfoData()
-}
 
 class AuctionInfoViewController: UIViewController, BetVCDelegate {
 

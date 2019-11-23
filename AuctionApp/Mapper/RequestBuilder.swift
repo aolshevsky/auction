@@ -121,7 +121,6 @@ class RequestBuilder {
     }
 
     func updateProfile(user: User) {
-        user.firstName = "alesha"
         let userData = try! JSONEncoder().encode(user)
         baseHTTPRequest(url: "\(request.hostName)/api/me/", httpMethod: "PUT", params: userData, completion: { (data) in })
     }
