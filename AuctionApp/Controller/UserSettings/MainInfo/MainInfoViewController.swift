@@ -32,7 +32,7 @@ class MainInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.closeBackButtonPressed))
+        setupCancelBtn()
         styleInit()
         setupUser()
         setupDatePicker()
@@ -44,9 +44,9 @@ class MainInfoViewController: UIViewController {
         setupUser()
     }
     
-    private func validateChangedInfo()  -> Bool {
+    private func validateChangedInfo() -> Bool {
         if let firstName = firstNameTF.text, let secondName = secondNameTF.text, let birthday = birthdayTF.text, let address = addressTF.text, let phone = phoneTF.text, firstName.isEmpty || secondName.isEmpty || birthday.isEmpty || address.isEmpty || phone.isEmpty {
-               displayAlertMessage(vc: self, message: "All fields are required")
+               displayAlertMessage(vc: self, message: "Все поля должны быть заполенены")
                return false
            }
         return true
@@ -58,6 +58,10 @@ class MainInfoViewController: UIViewController {
             return true
         }
         return false
+    }
+    
+    private func setupCancelBtn() {
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(self.closeBackButtonPressed))
     }
     
     private func setupSaveChangesGestures() {
@@ -77,14 +81,10 @@ class MainInfoViewController: UIViewController {
         if self.isSetImage {
             PostStorage.uploadImage(for: userImageView.image!, child: DbConstant.getUserPath(id: user!.id), completion: { (imageUrl) in
                 user?.imageUrl = imageUrl
-                RequestBuilder.shared.updateProfile(user: user!)
-                DataSource.shared.currentUser = user
-                DataSource.shared.updateCurrentUser()
+                DataSource.shared.fullUpdateUser(user: user!)
             })
         } else {
-            RequestBuilder.shared.updateProfile(user: user!)
-            DataSource.shared.currentUser = user
-            DataSource.shared.updateCurrentUser()
+            DataSource.shared.fullUpdateUser(user: user!)
         }
         self.dismiss(animated: true, completion: nil)
     }
