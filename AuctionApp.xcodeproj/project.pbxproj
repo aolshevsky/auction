@@ -124,6 +124,7 @@
 		0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD3C9F2237D35D700CA2617 /* PostService.swift */; };
 		0AEE58C32389509B00131E16 /* Delegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE58C22389509B00131E16 /* Delegates.swift */; };
 		0AEE58C62389776D00131E16 /* ChangePassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE58C52389776D00131E16 /* ChangePassword.swift */; };
+		0AEE58C823897F4300131E16 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEE58C723897F4300131E16 /* Login.swift */; };
 		0AF09D74236F278B00A3D820 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D73236F278B00A3D820 /* RegisterViewController.swift */; };
 		0AF09D76236F312D00A3D820 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D75236F312D00A3D820 /* LoginViewController.swift */; };
 		0AF09D78236F350100A3D820 /* BaseAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF09D77236F350100A3D820 /* BaseAuth.swift */; };
@@ -253,6 +254,7 @@
 		0AD3C9F2237D35D700CA2617 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		0AEE58C22389509B00131E16 /* Delegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegates.swift; sourceTree = "<group>"; };
 		0AEE58C52389776D00131E16 /* ChangePassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePassword.swift; sourceTree = "<group>"; };
+		0AEE58C723897F4300131E16 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		0AF09D73236F278B00A3D820 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		0AF09D75236F312D00A3D820 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0AF09D77236F350100A3D820 /* BaseAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAuth.swift; sourceTree = "<group>"; };
@@ -624,6 +626,7 @@
 			isa = PBXGroup;
 			children = (
 				0AEE58C52389776D00131E16 /* ChangePassword.swift */,
+				0AEE58C723897F4300131E16 /* Login.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -901,6 +904,7 @@
 				0A1E34E12381EABB00C4D9A4 /* AuctionDateInfoViewController.swift in Sources */,
 				0A04502A2373696A00138964 /* Constants.swift in Sources */,
 				0A95677A236F033E00274A07 /* ViewController.swift in Sources */,
+				0AEE58C823897F4300131E16 /* Login.swift in Sources */,
 				0A5741262385FB7500F2DC60 /* Token.swift in Sources */,
 				0A95678D236F066400274A07 /* AuthViewController.swift in Sources */,
 				0A04502E23737E7A00138964 /* User.swift in Sources */,

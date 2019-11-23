@@ -36,18 +36,6 @@ class RequestBuilder {
         }
     }
     
-    func getToken(completion: @escaping () -> ()) {
-        let params = ["username": "admin", "password": "123qweA!"]
-        let url: String = "\(request.hostName)/api/auth/token"
-        baseHTTPRequest(url: url, httpMethod: "POST", params: request.createRequestBody(params: params), completion: { (data) in
-            let data = self.decodeJSON(type: RequestResult<Token>.self, from: data) ?? nil
-            guard let token = data?.result?.token else { return }
-            self.request.token = token
-            print("Token: ", token)
-            completion()
-        })
-    }
-    
     // MARK: Auctions
     func getAuctions(completion: @escaping ([Auction]) -> ()) {
         baseGetRequest(url: "\(request.hostName)/api/auctions", completion: { (data) in
@@ -144,11 +132,23 @@ class RequestBuilder {
     }
     
     // MARK: Authentication
-    func changePassword(changePass: ChangePassword, completion: @escaping (RequestResult<String>) -> ()) {
+    func changePassword(changePass: ChangePassword, completion: @escaping (RequestResult<Int>) -> ()) {
         let changePassData = try! JSONEncoder().encode(changePass)
-        baseHTTPRequest(url: "\(request.hostName)/api/me/", httpMethod: "POST", params: changePassData, completion: { (data) in
-            let data = self.decodeJSON(type: RequestResult<String>.self, from: data) ?? nil
+        baseHTTPRequest(url: "\(request.hostName)/api/auth/changepassword", httpMethod: "POST", params: changePassData, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<Int>.self, from: data) ?? nil
             completion(data!)
+        })
+    }
+    
+    func getToken(login: Login, completion: @escaping () -> ()) {
+        let loginData = try! JSONEncoder().encode(login)
+        let url: String = "\(request.hostName)/api/auth/token"
+        baseHTTPRequest(url: url, httpMethod: "POST", params: loginData, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<Token>.self, from: data) ?? nil
+            guard let token = data?.result?.token else { return }
+            self.request.token = token
+            print("Token: ", token)
+            completion()
         })
     }
 }

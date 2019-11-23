@@ -17,12 +17,19 @@ class ChangePasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        styleInit()
         setupCancelBtn()
         setupSaveChangesGestures()
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print("Change Pass")
+        currentPassTF.text = ""
+        newPassTF.text = ""
+        confirmPassTF.text = ""
+    }
+    
+    private func styleInit() {
+        UIStyle.applyCornerRadius(view: self.changeBtn)
     }
     
     private func setupCancelBtn() {
