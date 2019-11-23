@@ -23,6 +23,12 @@ class DataSource {
         return res[0]
     }
     
+    func fullUpdateUser(user: User) {
+        RequestBuilder.shared.updateProfile(user: user)
+        DataSource.shared.currentUser = user
+        DataSource.shared.updateCurrentUser()
+    }
+    
     func updateCurrentUser() {
         allUsers.removeAll(where: { u in u.id == currentUser.id })
         allUsers.append(currentUser)

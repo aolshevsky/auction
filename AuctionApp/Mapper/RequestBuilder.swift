@@ -143,4 +143,12 @@ class RequestBuilder {
         })
     }
     
+    // MARK: Authentication
+    func changePassword(changePass: ChangePassword, completion: @escaping (RequestResult<String>) -> ()) {
+        let changePassData = try! JSONEncoder().encode(changePass)
+        baseHTTPRequest(url: "\(request.hostName)/api/me/", httpMethod: "POST", params: changePassData, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<String>.self, from: data) ?? nil
+            completion(data!)
+        })
+    }
 }
