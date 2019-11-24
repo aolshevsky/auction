@@ -78,7 +78,7 @@ class RequestBuilder {
         baseGetRequest(url: "\(request.hostName)/api/favorites", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
             guard let auctions = data?.result else { return }
-            DataSource.shared.allFavouriteAuctions = auctions
+            // DataSource.shared.allFavouriteAuctions = auctions
             DataSource.shared.setupFavoriteAuctions(auctions: auctions)
             completion(auctions)
         })
@@ -121,6 +121,11 @@ class RequestBuilder {
             DataSource.shared.allUsers = users
             print("Users count: ", users.count)
         })
+    }
+    
+    func updateBalance(cardBalance: CardBalance) {
+        let cardBalanceData = try! JSONEncoder().encode(cardBalance)
+        baseHTTPRequest(url: "\(request.hostName)/api/me/balance", httpMethod: "POST", params: cardBalanceData, completion: { (data) in })
     }
     
     func getUser(id: String, completion: @escaping (User) -> ()) {

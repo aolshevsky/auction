@@ -8,57 +8,36 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="186" id="KGk-i7-Jjw" customClass="AuctionTableViewCell" customModule="AuctionApp" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="461" height="185"/>
+        <tableViewCell contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" indentationWidth="10" rowHeight="120" id="KGk-i7-Jjw" customClass="AuctionTableViewCell" customModule="AuctionApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="409" height="128"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="461" height="185"/>
+                <rect key="frame" x="0.0" y="0.0" width="409" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Yn9-dq-I4r">
-                        <rect key="frame" x="12" y="16" width="155.5" height="105.5"/>
-                        <constraints>
-                            <constraint firstAttribute="width" secondItem="Yn9-dq-I4r" secondAttribute="height" multiplier="16:9" constant="-32" id="rA8-so-3es"/>
-                        </constraints>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yn9-dq-I4r">
+                        <rect key="frame" x="12" y="16" width="100" height="100"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45 $" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enr-UX-AZo">
-                        <rect key="frame" x="283.5" y="95" width="105" height="20.5"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20.5" id="H9d-1M-aqC"/>
-                            <constraint firstAttribute="width" constant="105" id="SWD-8x-wx1"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adD-2R-kvX">
-                        <rect key="frame" x="202" y="16" width="213" height="29"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adD-2R-kvX">
+                        <rect key="frame" x="120" y="16" width="209" height="29"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="KohinoorBangla-Light" family="Kohinoor Bangla" pointSize="21"/>
                         <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTH-9V-GMN" customClass="AnimatedButton" customModule="Lottie">
-                        <rect key="frame" x="397" y="-15" width="61" height="60"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="61" id="5tN-74-CoH"/>
-                            <constraint firstAttribute="height" constant="60" id="G0S-Qf-yjz"/>
-                        </constraints>
+                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vTH-9V-GMN" customClass="AnimatedButton" customModule="Lottie">
+                        <rect key="frame" x="321" y="0.0" width="61" height="60"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="45 $" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enr-UX-AZo">
+                        <rect key="frame" x="277" y="89" width="105" height="20.5"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <fontDescription key="fontDescription" name="KohinoorDevanagari-Regular" family="Kohinoor Devanagari" pointSize="20"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
-                <constraints>
-                    <constraint firstAttribute="trailingMargin" secondItem="enr-UX-AZo" secondAttribute="trailing" constant="-12" id="2Kz-NY-yCG"/>
-                    <constraint firstItem="adD-2R-kvX" firstAttribute="trailing" secondItem="enr-UX-AZo" secondAttribute="trailing" constant="17.5" id="2j0-Mf-TOm"/>
-                    <constraint firstItem="adD-2R-kvX" firstAttribute="leading" secondItem="Yn9-dq-I4r" secondAttribute="trailing" constant="25.5" id="5wn-NT-Vxq"/>
-                    <constraint firstItem="vTH-9V-GMN" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="bottom" constant="-55" id="6rN-zE-tG1"/>
-                    <constraint firstItem="Yn9-dq-I4r" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="7Ml-WX-nol"/>
-                    <constraint firstItem="enr-UX-AZo" firstAttribute="leading" secondItem="Yn9-dq-I4r" secondAttribute="trailing" constant="116" id="GBy-lm-JD6"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="enr-UX-AZo" secondAttribute="bottom" constant="8" id="GxF-fl-1GV"/>
-                    <constraint firstItem="enr-UX-AZo" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="bottom" constant="55" id="OnA-A4-qzR"/>
-                    <constraint firstItem="Yn9-dq-I4r" firstAttribute="top" secondItem="adD-2R-kvX" secondAttribute="top" id="cbm-RB-HaX"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="vTH-9V-GMN" secondAttribute="trailing" constant="-17" id="hGU-Y6-NoA"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Yn9-dq-I4r" secondAttribute="bottom" constant="2" id="nrk-lY-XKf"/>
-                    <constraint firstItem="Yn9-dq-I4r" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="qUi-CD-LdT"/>
-                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="animView" destination="vTH-9V-GMN" id="knA-pn-d2N"/>
@@ -66,7 +45,7 @@
                 <outlet property="priceLabel" destination="enr-UX-AZo" id="TMV-jE-Wcz"/>
                 <outlet property="titleLabel" destination="adD-2R-kvX" id="FS5-iO-J94"/>
             </connections>
-            <point key="canvasLocation" x="103.62318840579711" y="89.397321428571431"/>
+            <point key="canvasLocation" x="65.94202898550725" y="69.642857142857139"/>
         </tableViewCell>
     </objects>
 </document>

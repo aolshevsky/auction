@@ -29,6 +29,12 @@ class DataSource {
         DataSource.shared.updateCurrentUser()
     }
     
+    func updateUserBalance(cardBalance: CardBalance) {
+        RequestBuilder.shared.updateBalance(cardBalance: cardBalance)
+        DataSource.shared.currentUser.balance += cardBalance.income
+        DataSource.shared.updateCurrentUser()
+    }
+    
     func updateCurrentUser() {
         allUsers.removeAll(where: { u in u.id == currentUser.id })
         allUsers.append(currentUser)
@@ -45,9 +51,61 @@ class DataSource {
     
     func updateFavoriteAuction(auctionId: String) {
         if let auction = allAuctions.first(where: { a in a.id == auctionId }) {
-            print("Change all auction liked!")
+            print("Change \(auctionId) auction liked!")
             auction.isLiked = !auction.isLiked
+            auction.isLiked ? allFavouriteAuctions.append(auction) :
+                allFavouriteAuctions.removeAll(where: { a in a.id == auction.id })
         }
+    }
+    
+    // For search
+    func getActiveAuctions() -> [Auction] {
+        return allAuctions.filter{ a in a.status == AuctionStatus.opened.rawValue }
+    }
+    
+    func getClosedAuctions() -> [Auction] {
+        return allAuctions.filter{ a in a.status == AuctionStatus.closed.rawValue }
+    }
+    
+    func getLastRaiseActiveAuctions(userId: String) -> [Auction] {
+        let activeAuctions = getActiveAuctions(userId: userId)
+        return activeAuctions.filter{ a in isLastRaiseAuction(userId: userId, auction: a)}
+    }
+    
+    func getNonLastRaiseActiveAuctions(userId: String) -> [Auction] {
+        let activeAuctions = getActiveAuctions(userId: userId)
+        return activeAuctions.filter{ a in !isLastRaiseAuction(userId: userId, auction: a)}
+    }
+    
+    func getActiveAuctions(userId: String) -> [Auction] {
+        let activeAuctions = getActiveAuctions()
+        return activeAuctions.filter{ a in isUserRaiseAuction(userId: userId, auction: a)}
+    }
+    
+    func getClosedAuctions(userId: String) -> [Auction] {
+        let closedAuctions = getClosedAuctions()
+        return closedAuctions.filter{ a in isUserRaiseAuction(userId: userId, auction: a)}
+    }
+    
+    func getLastRaiseClosedAuctions(userId: String) -> [Auction] {
+        let activeAuctions = getClosedAuctions(userId: userId)
+        return activeAuctions.filter{ a in isLastRaiseAuction(userId: userId, auction: a)}
+    }
+    
+    func isInCollection(auction: Auction, auctions: [Auction]) -> Bool {
+        return auctions.contains(where: { a in a.id == auction.id })
+    }
+    
+    private func isLastRaiseAuction(userId: String, auction: Auction) -> Bool {
+        if let raisers = auction.raisers, !raisers.isEmpty {
+            return raisers.last?.userId == userId
+        }
+        return false
+    }
+    
+    private func isUserRaiseAuction(userId: String, auction: Auction) -> Bool {
+        let userRaises = auction.raisers.filter{ r in r.userId == userId}
+        return !userRaises.isEmpty
     }
     
     func getFilterFavouritesAuctioun() -> [Auction] {

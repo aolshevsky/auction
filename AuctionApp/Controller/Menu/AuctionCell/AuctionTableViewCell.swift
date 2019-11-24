@@ -21,12 +21,15 @@ class AuctionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        starImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapStarImage)))
-//        starImageView.isUserInteractionEnabled = true
+        styleInit()
     }
     
     func setStarAnimation(state: Bool) {
         addSwitchAnimation(filename: "sparkness", state: state)
+    }
+    
+    func styleInit() {
+        UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 10)
     }
     
     
@@ -36,7 +39,6 @@ class AuctionTableViewCell: UITableViewCell {
         titleLabel.text = auction.title
         priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
         setStarAnimation(state: auction.isLiked)
-        auctionImageView.layer.cornerRadius = 40
     }
     
     

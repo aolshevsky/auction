@@ -10,7 +10,7 @@ import Foundation
 
 
 enum AuctionStatus: String {
-    case opened = "Opened", closed = "Closed"
+    case opened = "Open", closed = "Closed"
     
     static let allValues = [opened, closed]
 }
