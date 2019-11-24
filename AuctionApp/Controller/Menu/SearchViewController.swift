@@ -25,10 +25,15 @@ class SearchViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        allAuctions = DataSource.shared.allAuctions
-        DispatchQueue.main.async { self.tableView.reloadData() }
+        updateAuctions()
     }
     
+    func updateAuctions() {
+        RequestBuilder.shared.getAuctions(status: AuctionStatus.opened.rawValue) { (auctions) in
+            self.allAuctions = DataSource.shared.markAuctionAsFavorite(auctions: auctions)
+            DispatchQueue.main.async { self.tableView.reloadData() }
+        }
+    }
 }
 
 extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
