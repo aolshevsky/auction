@@ -33,7 +33,7 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        RequestBuilder.shared.getProfile(completion: { () in
+        RequestBuilder.shared.getProfile(completion: { (data) in
             DispatchQueue.main.async {
                 self.setupUser()
             }

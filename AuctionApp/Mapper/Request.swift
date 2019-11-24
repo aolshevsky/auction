@@ -19,13 +19,19 @@ class Request {
     static let shared: Request = Request()
     
     let hostName: String = "https://202a8198.ngrok.io"
-    var token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIzZjhiZDYwYy0zYzM1LTQ0ZjgtOGQ4MS0wNzA3MDAxOTNmOWYiLCJ1bmlxdWVfbmFtZSI6ImFkbWluIiwianRpIjoiYTg1OWRlODEtYjkxZC00ODZmLThmM2MtYmMzOGY2NzkxYzIzIiwiaWF0IjoiMTEvMjAvMjAxOSAxOToxMjoyMCIsIm5iZiI6MTU3NDI3NzE0MCwiZXhwIjoxNjEwMjc3MTQwLCJpc3MiOiJNZSIsImF1ZCI6IkF1ZGllbmNlIn0.EwMhARyWIKP32DVF9VBgztWxpb7O4FTuAsv17rPI5Xk"
+    var token: String = ""
     
     private func getBearerAuthHeader() -> String {
         return "Bearer \(token)"
     }
     
-    private init () {}
+    private init () {
+        let defaults = UserDefaults.standard
+        if let token = defaults.string(forKey: DefaultsKeys.token) {
+            self.token = token
+        }
+        // defaults.removeObject(forKey: DefaultsKeys.token)
+    }
      
     func createRequestBody(params: ParamsDict) -> Data {
         guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else { return Data()}

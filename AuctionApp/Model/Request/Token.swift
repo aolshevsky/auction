@@ -9,10 +9,6 @@
 import Foundation
 
 
-struct Token: Decodable {
+struct Token: Codable {
     var token: String
-    
-    enum CodingKeys: String, CodingKey {
-        case token = "token"
-    }
 }
