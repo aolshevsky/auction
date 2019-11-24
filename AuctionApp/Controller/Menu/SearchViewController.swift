@@ -58,8 +58,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Cell UI
         cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.borderWidth = 0.3
-        cell.layer.cornerRadius = 25
+        cell.layer.borderWidth = 0.2
+        cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
         
         return cell

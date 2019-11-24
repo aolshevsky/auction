@@ -24,14 +24,14 @@ class AddAuctionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupStyle()
         setupDatePicker()
         setupImagePicker()
-        setupStyle()
         setupAddGestures()
     }
     
     private func setupStyle() {
-        UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 25)
+        UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 75)
         UIStyle.applyCornerRadius(view: self.addButton)
     }
     

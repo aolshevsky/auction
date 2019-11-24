@@ -15,12 +15,15 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     @IBOutlet weak var activeAuctionsTableView: UITableView!
     @IBOutlet weak var closedAuctionsTableView: UITableView!
     @IBOutlet weak var settingsButton: UIButton!
+    @IBOutlet weak var currentBalance: UILabel!
     
-    var allAuctions: [Auction] = []
+    var activeAuctions: [Auction] = []
+    var lastRaiseActiveAuctions: [Auction] = []
+    var closedAuctions: [Auction] = []
+    var lastRaiseClosedAuctions: [Auction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.allAuctions = DataSource.shared.allAuctions
         styleInit()
         setupUser()
         setupActiveAuctionsTableView()
@@ -36,6 +39,11 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
         let user: User = DataSource.shared.currentUser
         self.imageView.downloaded(from: user.imageUrl)
         self.userFullNameLabel.text = user.getFullName()
+        self.currentBalance.text = NumberUtils.convertFloatPriceToString(value: user.balance)
+        self.activeAuctions = DataSource.shared.getActiveAuctions(userId: user.id)
+        self.lastRaiseActiveAuctions = DataSource.shared.getLastRaiseActiveAuctions(userId: user.id)
+        self.closedAuctions = DataSource.shared.getClosedAuctions(userId: user.id)
+        self.lastRaiseClosedAuctions = DataSource.shared.getLastRaiseClosedAuctions(userId: user.id)
     }
     
     private func setupSettingsGestures() {
@@ -78,22 +86,29 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == activeAuctionsTableView {
-            return allAuctions.count
+            return activeAuctions.count
         } else if tableView == closedAuctionsTableView {
-            return allAuctions.count
+            return closedAuctions.count
         }
         return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Get from database
         var auction: Auction!
+        var lastRaiseAuctions: [Auction]!
         if tableView == activeAuctionsTableView {
-            auction = allAuctions[indexPath.section]
+            auction = activeAuctions[indexPath.section]
+            lastRaiseAuctions = lastRaiseActiveAuctions
         } else if tableView == closedAuctionsTableView {
-            auction = allAuctions[indexPath.section]
+            auction = closedAuctions[indexPath.section]
+            lastRaiseAuctions = lastRaiseClosedAuctions
         }
         let cell = activeAuctionsTableView.dequeueReusableCell(withIdentifier: "ActiveUserAuctionTableViewCell") as! ActiveUserAuctionTableViewCell
+        if DataSource.shared.isInCollection(auction: auction, auctions: lastRaiseAuctions) {
+            cell.backgroundColor = UIColor(red: 0, green: 1, blue: 0, alpha: 0.05)
+        } else {
+            cell.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.05)
+        }
         cell.setUserAuction(auction: auction)
         return cell
     }
@@ -101,9 +116,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         var auction: Auction!
         if tableView == activeAuctionsTableView {
-            auction = allAuctions[indexPath.section]
+            auction = activeAuctions[indexPath.section]
         } else if tableView == closedAuctionsTableView {
-            auction = allAuctions[indexPath.section]
+            auction = closedAuctions[indexPath.section]
         }
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)

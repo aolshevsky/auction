@@ -20,7 +20,7 @@ class FavouriteViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        auctions = DataSource.shared.getFilterFavouritesAuctioun()
+        auctions = DataSource.shared.allFavouriteAuctions
         DispatchQueue.main.async { self.tableView.reloadData() }
     }
 }
@@ -53,8 +53,8 @@ extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
         
         // Cell UI
         cell.layer.borderColor = UIColor.lightGray.cgColor
-        cell.layer.borderWidth = 0.3
-        cell.layer.cornerRadius = 25
+        cell.layer.borderWidth = 0.2
+        cell.layer.cornerRadius = 10
         cell.clipsToBounds = true
         
         return cell
