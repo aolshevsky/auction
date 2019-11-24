@@ -21,6 +21,7 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     var lastRaiseActiveAuctions: [Auction] = []
     var closedAuctions: [Auction] = []
     var lastRaiseClosedAuctions: [Auction] = []
+    //var allMyAuctions: [Auction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,14 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
         setupActiveAuctionsTableView()
         setupClosedAuctionsTableView()
         setupSettingsGestures()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        RequestBuilder.shared.getProfile(completion: { () in
+            DispatchQueue.main.async {
+                self.setupUser()
+            }
+        })
     }
     
     func updateUserInfo() {
@@ -40,6 +49,7 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
         self.imageView.downloaded(from: user.imageUrl)
         self.userFullNameLabel.text = user.getFullName()
         self.currentBalance.text = NumberUtils.convertFloatPriceToString(value: user.balance)
+        //self.allMyAuctions =  DataSource.shared.getMyActiveAuctions() +  DataSource.shared.getMyClosedAuctions()
         self.activeAuctions = DataSource.shared.getActiveAuctions(userId: user.id)
         self.lastRaiseActiveAuctions = DataSource.shared.getLastRaiseActiveAuctions(userId: user.id)
         self.closedAuctions = DataSource.shared.getClosedAuctions(userId: user.id)
@@ -109,6 +119,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             cell.backgroundColor = UIColor(red: 1, green: 0, blue: 0, alpha: 0.05)
         }
+//        else if DataSource.shared.isInCollection(auction: auction, auctions: allMyAuctions) {
+//            cell.backgroundColor = UIColor(red: 0, green: 0, blue: 1, alpha: 0.05)
+//        }
         cell.setUserAuction(auction: auction)
         return cell
     }

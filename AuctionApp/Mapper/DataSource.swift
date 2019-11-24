@@ -58,6 +58,17 @@ class DataSource {
         }
     }
     
+    func markAuctionAsFavorite(auctions: [Auction]) -> [Auction] {
+        func mark(auction: Auction) -> Auction {
+            if let auc = allFavouriteAuctions.first(where: { a in a.id == auction.id }) {
+                return auc
+            }
+            return auction
+        }
+        
+        return auctions.map(mark)
+    }
+    
     // For search
     func getActiveAuctions() -> [Auction] {
         return allAuctions.filter{ a in a.status == AuctionStatus.opened.rawValue }
@@ -65,6 +76,14 @@ class DataSource {
     
     func getClosedAuctions() -> [Auction] {
         return allAuctions.filter{ a in a.status == AuctionStatus.closed.rawValue }
+    }
+    
+    func getMyActiveAuctions() -> [Auction] {
+        return getActiveAuctions().filter { a in a.ownerId == self.currentUser.id}
+    }
+
+    func getMyClosedAuctions() -> [Auction] {
+        return getClosedAuctions().filter { a in a.ownerId == self.currentUser.id}
     }
     
     func getLastRaiseActiveAuctions(userId: String) -> [Auction] {

@@ -30,6 +30,7 @@ class AuctionTableViewCell: UITableViewCell {
     
     func styleInit() {
         UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 10)
+        self.auctionImageView.contentMode = .scaleAspectFill
     }
     
     
@@ -37,8 +38,9 @@ class AuctionTableViewCell: UITableViewCell {
         cellAuction = auction
         auctionImageView.downloaded(from: auction.imageUrl)
         titleLabel.text = auction.title
-        priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
+        priceLabel.text = NumberUtils.convertFloatPriceToString(value: auction.currentPrice)
         setStarAnimation(state: auction.isLiked)
+        styleInit()
     }
     
     

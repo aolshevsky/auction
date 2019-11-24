@@ -46,6 +46,21 @@ class RequestBuilder {
         })
     }
     
+    func getAuctions(userId: String? = nil, status: String? = nil, completion: @escaping ([Auction]) -> ()) {
+        var suff = "?"
+        if let userId = userId, !userId.isEmpty {
+            suff += "userId=\(userId)"
+        }
+        if let status = status, !status.isEmpty {
+            suff += "status=\(status)"
+        }
+        baseGetRequest(url: "\(request.hostName)/api/auctions" + suff, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
+            guard let auctions = data?.result else { return }
+            completion(auctions)
+        })
+    }
+    
     func getAuction(id: String, completion: @escaping (Auction) -> ()) {
         baseGetRequest(url: "\(request.hostName)/api/auctions/\(id)", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<Auction>.self, from: data) ?? nil
@@ -98,11 +113,12 @@ class RequestBuilder {
     }
     
     // MARK: Profile
-    func getProfile() {
+    func getProfile(completion: @escaping () -> ()) {
         baseGetRequest(url: "\(request.hostName)/api/me/", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<User>.self, from: data) ?? nil
             guard let user = data?.result else { return }
             DataSource.shared.currentUser = user
+            completion()
 //            let storagePath = Images.userDatabasePath + user.id + Images.auctionImageType
 //            PostStorage.uploadImage(for: user.image, child: storagePath, completion: { (test) in })
         })

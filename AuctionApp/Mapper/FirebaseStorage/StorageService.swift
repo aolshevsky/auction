@@ -39,7 +39,7 @@ struct StorageService {
     static func downloadImage(imageView: UIImageView, reference: StorageReference) {
         reference.getData(maxSize: 10000, completion: { (data, error) in
             if error != nil {
-                print(" we couldnt upload the img")
+                print(" we couldn't upload the img")
             } else {
                 if let imgData = data,let img = UIImage(data: imgData) {
                     imageView.image = img

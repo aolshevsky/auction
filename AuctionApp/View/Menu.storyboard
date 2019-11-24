@@ -252,7 +252,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="u5k-gC-tFz"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Search" image="house" catalog="system" id="k23-eJ-eUe"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="k23-eJ-eUe"/>
                     <connections>
                         <outlet property="tableView" destination="zcN-Gd-AZi" id="gQ6-vD-U2v"/>
                     </connections>

@@ -17,12 +17,21 @@ class UserInfoViewController: UIViewController {
     @IBOutlet weak var createdAuctionTableView: UITableView!
     
     var allAuctions: [Auction] = []
+    var user: User!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.allAuctions = DataSource.shared.allAuctions
         styleInit()
         setupCreatedAuctionTableView()
+    }
+    
+    private func setupAuctions() {
+        RequestBuilder.shared.getAuctions(userId: user.id, completion: { (auctions) in
+            self.allAuctions = auctions
+            DispatchQueue.main.async {
+                self.createdAuctionTableView.reloadData()
+            }
+        })
     }
     
     private func styleInit() {
@@ -32,11 +41,13 @@ class UserInfoViewController: UIViewController {
     }
     
     func setupUser(user: User) {
+        self.user = user
         self.fullNameLabel.text = user.getFullName()
         self.emailLabel.text = user.email
         // TODO: count up
         self.buyAuctionCount.text = String(6)
         self.imageView.downloaded(from: user.imageUrl)
+        setupAuctions()
     }
     
     private func setupCreatedAuctionTableView() {
