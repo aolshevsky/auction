@@ -60,8 +60,8 @@ class DataSource {
     
     func markAuctionAsFavorite(auctions: [Auction]) -> [Auction] {
         func mark(auction: Auction) -> Auction {
-            if let auc = allFavouriteAuctions.first(where: { a in a.id == auction.id }) {
-                return auc
+            if allFavouriteAuctions.first(where: { a in a.id == auction.id }) != nil {
+                auction.isLiked = true
             }
             return auction
         }
@@ -69,8 +69,13 @@ class DataSource {
         return auctions.map(mark)
     }
     
-    // For search
-    func getActiveAuctions() -> [Auction] {
+    func filterAuctions(auctions: [Auction], searchText: String) -> [Auction] {
+        return auctions.filter { a in
+            a.title.lowercased().contains(searchText) || a.description.lowercased().contains(searchText)
+        }
+    }
+    
+    private func getActiveAuctions() -> [Auction] {
         return allAuctions.filter{ a in a.status == AuctionStatus.opened.rawValue }
     }
     

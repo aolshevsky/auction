@@ -15,20 +15,40 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let login = Login(username: "admin", password: "123qweA@")
-        RequestBuilder.shared.getToken(login: login, completion: { () in RequestBuilder.shared.getProfile(){} })
-
-        PostStorage.uploadImage(for: UIImage(named: "star")!, child: "images/opana.png", completion: {(val) in print("Finish")})
-        //Request.inst.initToken(username: "admin", password: "123qweA!", completion: { () in })
     }
 
     @IBAction func moveButton(_ sender: Any) {
+        RequestBuilder.shared.isValidToken { (isValid) in
+            DispatchQueue.main.async {
+                isValid ? self.toMenuPage() : self.toLoginPage()
+            }
+        }
+    }
+    
+    
+    private func toLoginPage() {
         let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
         let vc =  storyboard.instantiateInitialViewController() as? AuthViewController
         if let vc = vc {
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         }
+    }
+    
+    private func toMenuPage() {
+        RequestBuilder.shared.getAuctions(completion: { (auctions) in })
+        RequestBuilder.shared.getAllUsers()
+        RequestBuilder.shared.getAllFavorites(completion: { (auctions) in
+            print("Favorite auction: ", auctions.count)
+            DispatchQueue.main.async {
+                let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+                let vc =  storyboard.instantiateInitialViewController() as? UITabBarController
+
+                if let vc = vc {
+                    self.present(vc, animated: false)
+                }
+            }
+        })
     }
 }
 

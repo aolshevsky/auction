@@ -13,15 +13,33 @@ class FavouriteViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     var auctions: [Auction] = []
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         tableView.register(UINib(nibName: "AuctionTableViewCell", bundle: nil), forCellReuseIdentifier: "AuctionTableViewCell")
+        tableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(refreshAuctionsData), for: .valueChanged)
+        refreshControl.tintColor = UIColor(red:0.25, green:0.72, blue:0.85, alpha:1.0)
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Favorite Auctions...", attributes: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        fetchAuctions()
+    }
+    
+    @objc func refreshAuctionsData() {
+        fetchAuctions()
+    }
+    
+    func fetchAuctions() {
         auctions = DataSource.shared.allFavouriteAuctions
-        DispatchQueue.main.async { self.tableView.reloadData() }
+        self.refreshControl.endRefreshing()
+        self.tableView.reloadData()
     }
 }
 

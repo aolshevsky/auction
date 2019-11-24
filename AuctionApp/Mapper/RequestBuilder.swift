@@ -46,13 +46,16 @@ class RequestBuilder {
         })
     }
     
-    func getAuctions(userId: String? = nil, status: String? = nil, completion: @escaping ([Auction]) -> ()) {
+    func getAuctions(userId: String? = nil, status: String? = nil, filter: String? = nil, completion: @escaping ([Auction]) -> ()) {
         var suff = "?"
         if let userId = userId, !userId.isEmpty {
             suff += "userId=\(userId)"
         }
         if let status = status, !status.isEmpty {
             suff += "status=\(status)"
+        }
+        if let filter = filter, !filter.isEmpty {
+            suff += "filter=\(filter)"
         }
         baseGetRequest(url: "\(request.hostName)/api/auctions" + suff, completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
@@ -93,7 +96,6 @@ class RequestBuilder {
         baseGetRequest(url: "\(request.hostName)/api/favorites", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
             guard let auctions = data?.result else { return }
-            // DataSource.shared.allFavouriteAuctions = auctions
             DataSource.shared.setupFavoriteAuctions(auctions: auctions)
             completion(auctions)
         })
@@ -113,14 +115,12 @@ class RequestBuilder {
     }
     
     // MARK: Profile
-    func getProfile(completion: @escaping () -> ()) {
+    func getProfile(completion: @escaping (RequestResult<User>) -> ()) {
         baseGetRequest(url: "\(request.hostName)/api/me/", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<User>.self, from: data) ?? nil
             guard let user = data?.result else { return }
             DataSource.shared.currentUser = user
-            completion()
-//            let storagePath = Images.userDatabasePath + user.id + Images.auctionImageType
-//            PostStorage.uploadImage(for: user.image, child: storagePath, completion: { (test) in })
+            completion(data!)
         })
     }
 
@@ -153,6 +153,14 @@ class RequestBuilder {
     }
     
     // MARK: Authentication
+    func isValidToken(completion: @escaping (Bool) -> ()) {
+        baseGetRequest(url: "\(request.hostName)/api/auth/token/validate", completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<Bool>.self, from: data) ?? nil
+            guard let isValidate = data?.result else { return }
+            completion(isValidate)
+        })
+    }
+    
     func changePassword(changePass: ChangePassword, completion: @escaping (RequestResult<Int>) -> ()) {
         let changePassData = try! JSONEncoder().encode(changePass)
         baseHTTPRequest(url: "\(request.hostName)/api/auth/changepassword", httpMethod: "POST", params: changePassData, completion: { (data) in
@@ -161,7 +169,7 @@ class RequestBuilder {
         })
     }
     
-    func getToken(login: Login, completion: @escaping () -> ()) {
+    func getToken(login: Login, completion: @escaping (RequestResult<Token>) -> ()) {
         let loginData = try! JSONEncoder().encode(login)
         let url: String = "\(request.hostName)/api/auth/token"
         baseHTTPRequest(url: url, httpMethod: "POST", params: loginData, completion: { (data) in
@@ -169,7 +177,7 @@ class RequestBuilder {
             guard let token = data?.result?.token else { return }
             self.request.token = token
             print("Token: ", token)
-            completion()
+            completion(data!)
         })
     }
 }

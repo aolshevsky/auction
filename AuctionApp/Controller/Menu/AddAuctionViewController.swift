@@ -31,7 +31,7 @@ class AddAuctionViewController: UIViewController {
     }
     
     private func setupStyle() {
-        UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 75)
+        UIStyle.applyCornerRadius(view: self.auctionImageView, radius: 10)
         UIStyle.applyCornerRadius(view: self.addButton)
     }
     
@@ -57,7 +57,9 @@ class AddAuctionViewController: UIViewController {
         if let image = self.auctionImageView.image {
             PostStorage.uploadImage(for: image, child: storagePath, completion: { (imageUrl) in
                 let auction: Auction = Auction(imageUrl: imageUrl, title: self.titleTextField.text!, price: NumberUtils.convetStringToFloat(value: self.priceTextField.text!)!)
-                RequestBuilder.shared.postAuction(auction: auction) { (auction) in }
+                RequestBuilder.shared.postAuction(auction: auction) { (auction) in
+                    self.tabBarController?.selectedIndex = 0
+                }
                 print("Url:", auction.imageUrl)
             })
         }

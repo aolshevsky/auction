@@ -198,7 +198,7 @@ extension MainInfoViewController {
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .date
         datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
-        datePicker?.date = Date()
+        datePicker?.date = DataSource.shared.currentUser.birthday
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(gestureRecognizer:)))
         view.addGestureRecognizer(tapGesture)
