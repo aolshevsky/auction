@@ -10,6 +10,7 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var userEmailtextField: UITextField!
     @IBOutlet weak var userPasswordTextField: UITextField!
     @IBOutlet weak var repeatPasswordTextField: UITextField!
@@ -23,24 +24,36 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func registerButtonTapped(_ sender: Any) {
-        let userEmail = userEmailtextField.text
-        let userPassword = userPasswordTextField.text
-        let userRepeatPassword = repeatPasswordTextField.text
+        let username = usernameTextField.text
+        let email = userEmailtextField.text
+        let password = userPasswordTextField.text
+        let confirmPassword = repeatPasswordTextField.text
         
         // Check for empty field
-        if let userEmail = userEmail, let userPassword = userPassword, let userRepeatPassword = userRepeatPassword, userEmail.isEmpty || userPassword.isEmpty || userRepeatPassword.isEmpty {
-            displayAlertMessage(vc: self, message: "All fields are required")
+        if let email = email, let password = password, let confirmPassword = confirmPassword, let username = username, username.isEmpty || email.isEmpty || password.isEmpty || confirmPassword.isEmpty {
+            displayAlertMessage(vc: self, message: "Все поля обязательно должны быть заполнены")
             return
         }
         
         // Check if passwords match
-        if userRepeatPassword != userRepeatPassword {
-            displayAlertMessage(vc: self, message: "Passwords don't match")
+        if password != confirmPassword {
+            displayAlertMessage(vc: self, message: "Пароли не совпадают")
         }
         
-        // Store data
-        
-        // Success
-       
+        let register = RegisterValidation(username: username!, email: email!, password: password!, passwordConfirmation: confirmPassword!)
+        RequestBuilder.shared.validateRegister(register: register) { (result) in
+            result.code == 200 ? self.toContinueRegister(): displayAlertMessage(vc: self, message: result.message)
+        }
+    }
+    
+    func toContinueRegister() {
+        print("Continue...")
+    }
+    
+    private func continueRegisterRedirect() {
+        let vc = FinalRegisterViewController(nibName: "FinalRegisterViewController", bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+        vc.modalPresentationStyle = .popover
+        self.present(vc, animated: true, completion: nil)
     }
 }

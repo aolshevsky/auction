@@ -25,7 +25,6 @@ class LoginViewController: UIViewController {
         let userEmail = useremailTextField.text
         let userPassword = userPasswordTextField.text
         
-        // "123qweA@"
         if let username = userEmail, let password = userPassword, !username.isEmpty, !password.isEmpty {
             let login = Login(username: username, password: password)
             RequestBuilder.shared.getToken(login: login, completion: { (data) in
@@ -38,7 +37,8 @@ class LoginViewController: UIViewController {
     }
     
     private func toMenuPage() {
-        RequestBuilder.shared.getAuctions(completion: { (auctions) in })
+        RequestBuilder.shared.getProfile { (data) in }
+        RequestBuilder.shared.getAuctions { (auctions) in }
         RequestBuilder.shared.getAllUsers()
         RequestBuilder.shared.getAllFavorites(completion: { (auctions) in
             print("Favorite auctions count: ", auctions.count)

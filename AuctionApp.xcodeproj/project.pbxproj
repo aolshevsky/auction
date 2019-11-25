@@ -88,6 +88,7 @@
 		0A5B9FE9237766380092DB1E /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FE8237766380092DB1E /* DateUtils.swift */; };
 		0A5B9FED237768590092DB1E /* AuctionStatusEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */; };
 		0A635561237302210068A57B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A635560237302210068A57B /* MainViewController.swift */; };
+		0A65F839238BD68300131167 /* FinalRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65F838238BD68300131167 /* FinalRegisterViewController.swift */; };
 		0A82DF052379FC6700E864E8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF042379FC6700E864E8 /* ProfileViewController.swift */; };
 		0A82DF08237A0F1B00E864E8 /* PlaceBetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */; };
 		0A82DF09237A0F1B00E864E8 /* PlaceBetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */; };
@@ -219,6 +220,7 @@
 		0A5B9FE8237766380092DB1E /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		0A5B9FEC237768590092DB1E /* AuctionStatusEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuctionStatusEnum.swift; sourceTree = "<group>"; };
 		0A635560237302210068A57B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0A65F838238BD68300131167 /* FinalRegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalRegisterViewController.swift; sourceTree = "<group>"; };
 		0A82DF042379FC6700E864E8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		0A82DF06237A0F1B00E864E8 /* PlaceBetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceBetViewController.swift; sourceTree = "<group>"; };
 		0A82DF07237A0F1B00E864E8 /* PlaceBetViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaceBetViewController.xib; sourceTree = "<group>"; };
@@ -643,6 +645,7 @@
 				0A95678C236F066400274A07 /* AuthViewController.swift */,
 				0AF09D75236F312D00A3D820 /* LoginViewController.swift */,
 				0AF09D73236F278B00A3D820 /* RegisterViewController.swift */,
+				0A65F838238BD68300131167 /* FinalRegisterViewController.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -932,6 +935,7 @@
 				0AAF5A4323776C8F002EB24F /* NumberUtils.swift in Sources */,
 				0AD3C9F3237D35D700CA2617 /* PostService.swift in Sources */,
 				0AEE58C32389509B00131E16 /* Delegates.swift in Sources */,
+				0A65F839238BD68300131167 /* FinalRegisterViewController.swift in Sources */,
 				0AEE58C62389776D00131E16 /* ChangePassword.swift in Sources */,
 				0AA35CE8237B5BDC004A93DE /* AddAuctionViewController.swift in Sources */,
 				0A956778236F033E00274A07 /* SceneDelegate.swift in Sources */,
