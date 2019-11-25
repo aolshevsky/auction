@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func moveButton(_ sender: Any) {
+        toLoginPage()
+        return
         RequestBuilder.shared.isValidToken { (isValid) in
             DispatchQueue.main.async {
                 isValid ? self.toMenuPage() : self.toLoginPage()
@@ -36,7 +38,8 @@ class ViewController: UIViewController {
     }
     
     private func toMenuPage() {
-        RequestBuilder.shared.getAuctions(completion: { (auctions) in })
+       RequestBuilder.shared.getProfile { (data) in }
+        RequestBuilder.shared.getAuctions { (auctions) in }
         RequestBuilder.shared.getAllUsers()
         RequestBuilder.shared.getAllFavorites(completion: { (auctions) in
             print("Favorite auction: ", auctions.count)

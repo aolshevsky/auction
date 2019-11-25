@@ -11,7 +11,7 @@ import UIKit
 
 class UIStyle {
     
-    static func applyBaseLabelStyle(label: UILabel!, size: CGFloat, color: UIColor! = .darkGray, font: String = "Kohinoor Devanagari Light") {
+    static func applyBaseLabelStyle(label: UILabel!, size: CGFloat, color: UIColor! = .darkGray, font: String = "Kohinoor Devanagari") {
         label.font = UIFont(name: font, size: size)
         label.textColor = color
     }

@@ -153,6 +153,14 @@ class RequestBuilder {
     }
     
     // MARK: Authentication
+    func validateRegister(register: RegisterValidation,  completion: @escaping (RequestResult<Int>) -> ()) {
+        let registerData = try! JSONEncoder().encode(register)
+        baseHTTPRequest(url: "\(request.hostName)/api/auth/register/validate", httpMethod: "POST", params: registerData, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<Int>.self, from: data) ?? nil
+            completion(data!)
+        })
+    }
+    
     func isValidToken(completion: @escaping (Bool) -> ()) {
         baseGetRequest(url: "\(request.hostName)/api/auth/token/validate", completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<Bool>.self, from: data) ?? nil

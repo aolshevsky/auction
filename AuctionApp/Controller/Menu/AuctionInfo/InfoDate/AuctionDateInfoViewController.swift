@@ -35,9 +35,9 @@ class AuctionDateInfoViewController: UIViewController {
     }
 
     private func styleInit() {
-        UIStyle.applyBaseLabelStyle(label: self.createdDateLable, size: 10)
-        UIStyle.applyBaseLabelStyle(label: self.endDateLabel, size: 10)
-        UIStyle.applyBaseLabelStyle(label: self.createdDateTextField, size: 10, color: .lightGray)
-        UIStyle.applyBaseLabelStyle(label: self.endDateTextField, size: 10, color: .lightGray)
+        UIStyle.applyBaseLabelStyle(label: self.createdDateLable, size: 12)
+        UIStyle.applyBaseLabelStyle(label: self.endDateLabel, size: 12)
+        UIStyle.applyBaseLabelStyle(label: self.createdDateTextField, size: 12, color: .lightGray)
+        UIStyle.applyBaseLabelStyle(label: self.endDateTextField, size: 12, color: .lightGray)
     }
 }

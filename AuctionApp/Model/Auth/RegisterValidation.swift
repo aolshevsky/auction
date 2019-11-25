@@ -11,6 +11,7 @@ import Foundation
 
 struct RegisterValidation: Codable {
     var username: String
+    var email: String
     var password: String
     var passwordConfirmation: String
 }

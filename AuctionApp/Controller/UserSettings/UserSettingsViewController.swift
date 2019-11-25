@@ -12,7 +12,7 @@ class UserSettingsViewController: UIViewController {
     
     @IBOutlet weak var settingsTableView: UITableView!
     
-    let menuSettings: [String] = ["Общая информация", "Изменение пароля", "Пополнение счета"]
+    let menuSettings: [String] = ["Общая информация", "Изменение пароля", "Пополнение счета", "Сменить пользователя"]
     let settingViewControllers = [MainInfoViewController(nibName: "MainInfoViewController", bundle: nil),
                                   ChangePasswordViewController(nibName: "ChangePasswordViewController", bundle: nil),
                                   CardViewController(nibName: "CardViewController", bundle: nil)]
@@ -35,6 +35,15 @@ class UserSettingsViewController: UIViewController {
         self.dismiss(animated: false, completion: nil)
         delegate.updateUserInfo()
     }
+    
+    private func logoutRedirect() {
+        let storyboard = UIStoryboard(name: "AuthViewController", bundle: nil)
+        let vc =  storyboard.instantiateInitialViewController() as? AuthViewController
+
+        if let vc = vc {
+            present(vc, animated: false)
+        }
+    }
 }
 
 extension UserSettingsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -55,6 +64,11 @@ extension UserSettingsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if indexPath.section == 4 {
+            let defaults = UserDefaults.standard
+            defaults.removeObject(forKey: DefaultsKeys.token)
+            logoutRedirect()
+        }
         let vc = self.settingViewControllers[indexPath.section]
         let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
