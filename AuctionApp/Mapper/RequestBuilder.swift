@@ -29,11 +29,9 @@ class RequestBuilder {
     }
     
     private func baseHTTPRequest(url: String, httpMethod: String="POST", isAuth: Bool=true, params: Data=Data(), completion: @escaping (Data?) -> ()) {
-        DispatchQueue.main.async {
-            self.request.httpRequest(url: url, params: params, httpMethod: httpMethod, isAuth: isAuth, completion: { (statusCode, data) in
-                completion(data)
-            })
-        }
+        request.httpRequest(url: url, params: params, httpMethod: httpMethod, isAuth: isAuth, completion: { (statusCode, data) in
+            completion(data)
+        })
     }
     
     // MARK: Auctions
@@ -42,6 +40,14 @@ class RequestBuilder {
             let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
             guard let auctions = data?.result else { return }
             DataSource.shared.allAuctions = auctions
+            completion(auctions)
+        })
+    }
+    
+    func getOwnedAuctions(userId: String, completion: @escaping ([Auction]) -> ()) {
+        baseGetRequest(url: "\(request.hostName)/api/auctions/owned/\(userId)", completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<[Auction]>.self, from: data) ?? nil
+            guard let auctions = data?.result else { return }
             completion(auctions)
         })
     }
@@ -86,9 +92,15 @@ class RequestBuilder {
         baseHTTPRequest(url: "\(request.hostName)/api/auctions/\(id)", httpMethod: "DELETE", completion: { (data) in })
     }
     
-    func postRaiseAuction(auctionId: String, raiser: Raiser) {
+    func postRaiseAuction(auctionId: String, raiser: Raiser, completion: @escaping (RequestResult<Int>) -> ()) {
         let raiserData = try! JSONEncoder().encode(raiser)
-        baseHTTPRequest(url: "\(request.hostName)/api/auctions/\(auctionId)/raise", httpMethod: "POST", params: raiserData, completion: { (data) in })
+        baseHTTPRequest(url: "\(request.hostName)/api/auctions/\(auctionId)/raise", httpMethod: "POST", params: raiserData, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<Int>.self, from: data) ?? nil
+            if let data = data {
+                return completion(data)
+            }
+            return completion(RequestResult(code: 500, message: "Ошибка сервера", status: "", result: 0))
+        })
     }
 
     // MARK: Favorites
@@ -153,11 +165,28 @@ class RequestBuilder {
     }
     
     // MARK: Authentication
+    func authRegister(user: SenderUser, completion: @escaping (RequestResult<Int>) -> ()) {
+        let userData = try! JSONEncoder().encode(user)
+        //print("User data:", String(data: userData, encoding: String.Encoding.utf8))
+        baseHTTPRequest(url: "\(request.hostName)/api/auth/register", httpMethod: "POST", params: userData, completion: { (data) in
+            let data = self.decodeJSON(type: RequestResult<Int>.self, from: data) ?? nil
+            if let data = data {
+                completion(data)
+                return
+            }
+            completion(RequestResult(code: 500, message: "Ошибка сервера", status: "", result: 0))
+        })
+    }
+    
     func validateRegister(register: RegisterValidation,  completion: @escaping (RequestResult<Int>) -> ()) {
         let registerData = try! JSONEncoder().encode(register)
         baseHTTPRequest(url: "\(request.hostName)/api/auth/register/validate", httpMethod: "POST", params: registerData, completion: { (data) in
             let data = self.decodeJSON(type: RequestResult<Int>.self, from: data) ?? nil
-            completion(data!)
+            if let data = data {
+                completion(data)
+                return
+            }
+            completion(RequestResult(code: 500, message: "Ошибка сервера", status: "", result: 0))
         })
     }
     

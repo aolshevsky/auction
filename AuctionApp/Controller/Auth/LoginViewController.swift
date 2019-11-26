@@ -22,6 +22,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func loginButtonTapped(_ sender: Any) {
+        self.showSpinner(onView: self.view)
         let userEmail = useremailTextField.text
         let userPassword = userPasswordTextField.text
         
@@ -29,7 +30,7 @@ class LoginViewController: UIViewController {
             let login = Login(username: username, password: password)
             RequestBuilder.shared.getToken(login: login, completion: { (data) in
                 if data.code == 200 {
-                    self.setupToken(token: data.result!.token)
+                    Token.setupToken(token: data.result!.token)
                     self.toMenuPage()
                 }
             })
@@ -43,14 +44,10 @@ class LoginViewController: UIViewController {
         RequestBuilder.shared.getAllFavorites(completion: { (auctions) in
             print("Favorite auctions count: ", auctions.count)
             DispatchQueue.main.async {
+                self.removeSpinner()
                 self.mainMenuRedirect()
             }
         })
-    }
-    
-    private func setupToken(token: String) {
-        let defaults = UserDefaults.standard
-        defaults.set(token, forKey: DefaultsKeys.token)
     }
     
     private func mainMenuRedirect() {

@@ -19,7 +19,7 @@ struct PostStorage {
         DispatchQueue.main.async {
             let imageRef = Storage.storage().reference().child(child)
             StorageService.uploadImage(image: image, at: imageRef, completion: { (url) in
-                print("A ny ka", url as Any)
+                print("Upload image: ", url as Any)
                 completion(url!)
             })
         }

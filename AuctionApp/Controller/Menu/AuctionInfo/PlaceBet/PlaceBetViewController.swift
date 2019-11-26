@@ -38,15 +38,27 @@ class PlaceBetViewController: UIViewController {
         self.betButton.addGestureRecognizer(tapGesture)
     }
     
+//    private func haveMoney(current: Float) {
+//        return DataSource.shared.currentUser.balance
+//    }
+    
     @objc private func tappedBet() {
         let currentPrice = calculateNewPrice(percent: slider.value)
+        
         let raiser = Raiser(startPrice: self.auction!.currentPrice, endPrice: currentPrice, date: Date())
-        RequestBuilder.shared.postRaiseAuction(auctionId: auction.id, raiser: raiser)
-        auction.currentPrice = currentPrice
-        auction.raisers.append(raiser)
-        DataSource.shared.updateAuction(auction: auction)
-        self.dismiss(animated: true, completion: nil)
-        delegate?.setupInfoData()
+        RequestBuilder.shared.postRaiseAuction(auctionId: auction.id, raiser: raiser, completion: { (data) in
+            DispatchQueue.main.async {
+                if data.code == 200 {
+                    self.auction.currentPrice = currentPrice
+                    self.auction.raisers.append(raiser)
+                    DataSource.shared.updateAuction(auction: self.auction)
+                    self.dismiss(animated: true, completion: nil)
+                    self.delegate?.setupInfoData()
+                } else {
+                    displayAlertMessage(vc: self, message: data.message)
+                }
+            }
+        })
     }
     
     func commonInit(auction: inout Auction) {

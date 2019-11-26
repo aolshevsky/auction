@@ -64,10 +64,11 @@ extension UserSettingsViewController: UITableViewDelegate, UITableViewDataSource
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        if indexPath.section == 4 {
+        if indexPath.section == 3 {
             let defaults = UserDefaults.standard
             defaults.removeObject(forKey: DefaultsKeys.token)
             logoutRedirect()
+            return
         }
         let vc = self.settingViewControllers[indexPath.section]
         let navVC = UINavigationController(rootViewController: vc)
