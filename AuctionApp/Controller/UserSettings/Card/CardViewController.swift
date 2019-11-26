@@ -53,7 +53,7 @@ class CardViewController: UIViewController {
             betMoneyTF.text = ""
             
         } else {
-            displayAlertMessage(vc: self, message: "Поле должно быть заполнено")
+            displayAlertMessage(vc: self, message: "Поле должно быть заполнено и иметь числовой формат")
         }
     }
     

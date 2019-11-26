@@ -20,4 +20,5 @@ struct SenderUser: Codable {
     var imageUrl : String
     var username : String
     var password : String
+    var cardNumber: String
 }

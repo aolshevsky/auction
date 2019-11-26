@@ -54,7 +54,7 @@ class FinalRegisterViewController: UIViewController {
         if !validateChangedInfo() { return }
         self.showSpinner(onView: self.view)
         PostStorage.uploadImage(for: imageView.image!, child: DbConstant.getUserPath(id: registerData.username), completion: { (imageUrl) in
-            let senderUser = SenderUser(email: self.registerData.email, passwordConfirmation: self.registerData.passwordConfirmation, birthday: self.birthdayTF.text!, address: self.addressTF.text!, firstName: self.firstNameTF.text!, lastName: self.lastNameTF.text!, phoneNumber: self.phoneTF.text!, imageUrl: imageUrl, username: self.registerData.username, password: self.registerData.password)
+            let senderUser = SenderUser(email: self.registerData.email, passwordConfirmation: self.registerData.passwordConfirmation, birthday: self.birthdayTF.text!, address: self.addressTF.text!, firstName: self.firstNameTF.text!, lastName: self.lastNameTF.text!, phoneNumber: self.phoneTF.text!, imageUrl: imageUrl, username: self.registerData.username, password: self.registerData.password, cardNumber: self.cardNumberTF.text!)
             RequestBuilder.shared.authRegister(user: senderUser) { (data) in
                 if data.code == 200 {
                     let login = Login(username: self.registerData.username, password: self.registerData.password)
@@ -95,7 +95,6 @@ class FinalRegisterViewController: UIViewController {
     }
 
     private func mainMenuRedirect() {
-        print("RE")
         let storyboard = UIStoryboard(name: "Menu", bundle: nil)
         let vc =  storyboard.instantiateInitialViewController() as? UITabBarController
 
