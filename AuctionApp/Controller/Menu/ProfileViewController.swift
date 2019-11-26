@@ -21,7 +21,6 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     var lastRaiseActiveAuctions: [Auction] = []
     var closedAuctions: [Auction] = []
     var lastRaiseClosedAuctions: [Auction] = []
-    //var allMyAuctions: [Auction] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +32,12 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        RequestBuilder.shared.getProfile(completion: { (data) in
+        RequestBuilder.shared.getProfile(completion: { (data) in })
+        RequestBuilder.shared.getAuctions { (auctions) in
             DispatchQueue.main.async {
                 self.setupUser()
             }
-        })
+        }
     }
     
     func updateUserInfo() {
@@ -49,11 +49,12 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
         self.imageView.downloaded(from: user.imageUrl)
         self.userFullNameLabel.text = user.getFullName()
         self.currentBalance.text = NumberUtils.convertFloatPriceToString(value: user.balance)
-        //self.allMyAuctions =  DataSource.shared.getMyActiveAuctions() +  DataSource.shared.getMyClosedAuctions()
         self.activeAuctions = DataSource.shared.getActiveAuctions(userId: user.id)
         self.lastRaiseActiveAuctions = DataSource.shared.getLastRaiseActiveAuctions(userId: user.id)
         self.closedAuctions = DataSource.shared.getClosedAuctions(userId: user.id)
         self.lastRaiseClosedAuctions = DataSource.shared.getLastRaiseClosedAuctions(userId: user.id)
+        self.activeAuctionsTableView.reloadData()
+        self.closedAuctionsTableView.reloadData()
     }
     
     private func setupSettingsGestures() {

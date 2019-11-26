@@ -30,6 +30,7 @@ class UserInfoViewController: UIViewController {
             self.allAuctions = auctions
             DispatchQueue.main.async {
                 self.createdAuctionTableView.reloadData()
+                self.removeSpinner()
             }
         })
     }
@@ -41,11 +42,15 @@ class UserInfoViewController: UIViewController {
     }
     
     func setupUser(user: User) {
+        self.showSpinner(onView: self.view)
         self.user = user
         self.fullNameLabel.text = user.getFullName()
         self.emailLabel.text = user.email
-        // TODO: count up
-        self.buyAuctionCount.text = String(6)
+        RequestBuilder.shared.getOwnedAuctions(userId: user.id, completion: { (auctions) in
+            DispatchQueue.main.async {
+                self.buyAuctionCount.text = String(auctions.count)
+            }
+        })
         self.imageView.downloaded(from: user.imageUrl)
         setupAuctions()
     }
@@ -73,7 +78,6 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Get from database
         if tableView == createdAuctionTableView {
             let auction = allAuctions[indexPath.section]
             let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveUserAuctionTableViewCell") as! ActiveUserAuctionTableViewCell
@@ -83,16 +87,4 @@ extension UserInfoViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        var auction: Auction!
-//        if tableView == createdAuctionTableView {
-//            auction = allAuctions[indexPath.section]
-//        }
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let vc = AuctionInfoViewController(nibName: "AuctionInfoViewController", bundle: nil)
-//        vc.modalPresentationStyle = .popover
-//        self.present(vc, animated: true, completion: nil)
-//        vc.commonInit(auction: auction)
-//    }
 }

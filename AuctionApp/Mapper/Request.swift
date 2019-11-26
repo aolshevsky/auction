@@ -51,8 +51,7 @@ class Request {
 //                print(response)
 //            }
             guard let data = data,
-            let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                error == nil else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
+                let httpURLResponse = response as? HTTPURLResponse else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
 
             return completion(httpURLResponse.statusCode, data)
         }.resume()
@@ -73,8 +72,7 @@ class Request {
 //               print(response)
 //           }
            guard let data = data,
-           let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-           error == nil else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
+            let httpURLResponse = response as? HTTPURLResponse else { return completion((response as? HTTPURLResponse)!.statusCode, Data())}
 
             return completion(httpURLResponse.statusCode, data)
         }.resume()

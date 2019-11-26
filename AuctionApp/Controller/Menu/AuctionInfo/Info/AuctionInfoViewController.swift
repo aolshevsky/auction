@@ -15,6 +15,7 @@ class AuctionInfoViewController: UIViewController, BetVCDelegate {
     @IBOutlet weak var statusTextField: UILabel!
     //@IBOutlet weak var descriptionTextField: UILabel!
     @IBOutlet weak var currentPriceTextField: UILabel!
+    @IBOutlet weak var startPriceTextField: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var placeBetButton: UIButton!
     @IBOutlet weak var dateInfoButton: UIButton!
@@ -92,6 +93,7 @@ class AuctionInfoViewController: UIViewController, BetVCDelegate {
         self.statusTextField.text = auction.status
         self.descriptionTextView.text = auction.description
         self.currentPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.currentPrice)
+        self.startPriceTextField.text = NumberUtils.convertFloatPriceToString(value: auction.startPrice)
         self.imageView.downloaded(from: auction.imageUrl)
         
         setupInfoData()
@@ -105,10 +107,10 @@ class AuctionInfoViewController: UIViewController, BetVCDelegate {
             self.placeBetButton.isEnabled = false
         }
         UIStyle.applyBaseLabelStyle(label: self.titleTextField, size: 22)
-        UIStyle.applyBaseLabelStyle(label: self.statusTextField, size: 16)
-        UIStyle.applyBaseLabelStyle(label: self.currentPriceTextField, size: 17, color: .lightGray)
+        UIStyle.applyLabelOnlyFontSize(label: self.currentPriceTextField, size: 17)
+        UIStyle.applyLabelOnlyFontSize(label: self.startPriceTextField, size: 17)
         UIStyle.applyCornerRadius(view: self.imageView, radius: 20)
-        resizeDescriptionViewFrame()
+        // resizeDescriptionViewFrame()
     }
     
     func resizeDescriptionViewFrame() {

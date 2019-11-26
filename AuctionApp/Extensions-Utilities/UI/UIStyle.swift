@@ -16,6 +16,10 @@ class UIStyle {
         label.textColor = color
     }
     
+    static func applyLabelOnlyFontSize(label: UILabel!, size: CGFloat, font: String = "Kohinoor Devanagari") {
+        label.font = UIFont(name: font, size: size)
+    }
+    
     static func applyBaseLabelStyle(labels: [UILabel?], size: CGFloat, color: UIColor! = .darkGray, font: String = "Menlo") {
         labels.forEach { label in UIStyle.applyBaseLabelStyle(label: label, size: size, color: color, font: font)}
     }

@@ -40,20 +40,25 @@ class RegisterViewController: UIViewController {
             displayAlertMessage(vc: self, message: "Пароли не совпадают")
         }
         
+        self.showSpinner(onView: self.view)
         let register = RegisterValidation(username: username!, email: email!, password: password!, passwordConfirmation: confirmPassword!)
         RequestBuilder.shared.validateRegister(register: register) { (result) in
-            result.code == 200 ? self.toContinueRegister(): displayAlertMessage(vc: self, message: result.message)
+            result.code == 200 ? self.continueRegisterRedirect(register: register): DispatchQueue.main.async {
+                displayAlertMessage(vc: self, message: result.message)
+                self.removeSpinner()
+            }
         }
     }
     
-    func toContinueRegister() {
-        print("Continue...")
-    }
     
-    private func continueRegisterRedirect() {
-        let vc = FinalRegisterViewController(nibName: "FinalRegisterViewController", bundle: nil)
-        self.navigationController?.pushViewController(vc, animated: true)
-        vc.modalPresentationStyle = .popover
-        self.present(vc, animated: true, completion: nil)
+    private func continueRegisterRedirect(register: RegisterValidation) {
+        DispatchQueue.main.async {
+            self.removeSpinner()
+            let vc = FinalRegisterViewController(nibName: "FinalRegisterViewController", bundle: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+            vc.modalPresentationStyle = .popover
+            self.present(vc, animated: true, completion: nil)
+            vc.setupRegister(registerValid: register)
+        }
     }
 }

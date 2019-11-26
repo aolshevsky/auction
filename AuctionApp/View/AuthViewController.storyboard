@@ -71,7 +71,7 @@
                                 <rect key="frame" x="20" y="524" width="361" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Register" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vlE-AJ-bcm" userLabel="RegisterLabel">
                                 <rect key="frame" x="129" y="78" width="157" height="50"/>
@@ -107,7 +107,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerButtonTapped:" destination="exf-bA-RVB" eventType="touchUpInside" id="c9I-FH-rB8"/>
-                                    <segue destination="pgr-EQ-HaH" kind="modal" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="H2S-If-Qpv"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usX-R7-3T7">
@@ -132,23 +131,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SQT-RP-YAb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1515.9420289855075" y="906.69642857142856"/>
-        </scene>
-        <!--Final Register View Controller-->
-        <scene sceneID="pbX-5q-o2i">
-            <objects>
-                <viewController storyboardIdentifier="FinalRegisterViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pgr-EQ-HaH" customClass="FinalRegisterViewController" customModule="AuctionApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6aC-UJ-w8d">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="nti-7n-nGj"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="fBR-GF-s0a"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XcW-Iz-0zm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2525" y="907"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Lzt-Oq-FxN">
