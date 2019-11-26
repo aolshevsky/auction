@@ -89,6 +89,7 @@ class AuctionInfoViewController: UIViewController, BetVCDelegate {
         
     func commonInit(auction: Auction) {
         self.auction = auction
+        self.auction.raisers.reverse()
         self.titleTextField.text = auction.title
         self.statusTextField.text = auction.status
         self.descriptionTextView.text = auction.description

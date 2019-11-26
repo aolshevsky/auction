@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataSource.shared.allFavouriteAuctions = []
     }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -32,8 +33,18 @@ class LoginViewController: UIViewController {
                 if data.code == 200 {
                     Token.setupToken(token: data.result!.token)
                     self.toMenuPage()
+                } else {
+                    DispatchQueue.main.async {
+                        displayAlertMessage(vc: self, message: data.message)
+                        self.removeSpinner()
+                    }
                 }
             })
+        } else {
+            DispatchQueue.main.async {
+                displayAlertMessage(vc: self, message: "Все поля должны быть заполнены")
+                self.removeSpinner()
+            }
         }
     }
     

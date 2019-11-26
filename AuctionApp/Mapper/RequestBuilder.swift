@@ -209,12 +209,17 @@ class RequestBuilder {
     func getToken(login: Login, completion: @escaping (RequestResult<Token>) -> ()) {
         let loginData = try! JSONEncoder().encode(login)
         let url: String = "\(request.hostName)/api/auth/token"
-        baseHTTPRequest(url: url, httpMethod: "POST", params: loginData, completion: { (data) in
-            let data = self.decodeJSON(type: RequestResult<Token>.self, from: data) ?? nil
-            guard let token = data?.result?.token else { return }
-            self.request.token = token
-            print("Token: ", token)
-            completion(data!)
+        baseHTTPRequest(url: url, httpMethod: "POST", params: loginData, completion: { (result) in
+            let data = self.decodeJSON(type: RequestResult<Token>.self, from: result) ?? nil
+            if let data = data {
+                guard let token = data.result?.token else { return }
+                self.request.token = token
+                print("Token: ", token)
+                completion(data)
+                return
+            }
+            completion(RequestResult(code: 500, message: "Неверный логин или пароль", status: "", result: Token(token: "")))
+            
         })
     }
 }

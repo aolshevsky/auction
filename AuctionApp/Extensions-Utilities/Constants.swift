@@ -29,4 +29,5 @@ struct DbConstant {
 struct UserConstant {
     static let minAge: Int = 12
     static let maxBalanceBet: Int = 5000
+    static let minBalanceBet: Int = 5
 }

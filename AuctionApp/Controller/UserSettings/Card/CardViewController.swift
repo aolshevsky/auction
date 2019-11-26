@@ -43,17 +43,24 @@ class CardViewController: UIViewController {
     @objc func tappedBetMoney() {
         let balance = DataSource.shared.currentUser.balance
         let betValue = NumberUtils.convetStringToFloat(value: betMoneyTF.text)
+        if betValue == 0 {
+            displayAlertMessage(vc: self, message: "Поле должно быть заполнено и иметь числовой формат")
+            return
+        }
         if let betValue = betValue, Int(betValue) > UserConstant.maxBalanceBet {
             displayAlertMessage(vc: self, message: "Максимальная сумма на которую можно увеличить баланс за одну транзакцию составляет: \(UserConstant.maxBalanceBet) $")
             return
         }
+        
+        if let betValue = betValue, Int(betValue) < UserConstant.minBalanceBet {
+            displayAlertMessage(vc: self, message: "Минимальная сумма на которую можно увеличить баланс за одну транзакцию составляет: \(UserConstant.minBalanceBet) $")
+            return
+        }
+        
         if let betValue = betValue, !betValue.isZero {
             DataSource.shared.updateUserBalance(cardBalance: CardBalance(income: betValue))
             currentMoneyLB.text = NumberUtils.convertFloatPriceToString(value: balance+betValue)
             betMoneyTF.text = ""
-            
-        } else {
-            displayAlertMessage(vc: self, message: "Поле должно быть заполнено и иметь числовой формат")
         }
     }
     

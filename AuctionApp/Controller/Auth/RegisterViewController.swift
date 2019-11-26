@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataSource.shared.allFavouriteAuctions = []
     }
     
     override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

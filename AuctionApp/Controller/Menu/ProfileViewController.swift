@@ -32,16 +32,17 @@ class ProfileViewController: UIViewController, UserChangeInfoDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        updateUserInfo()
+        
+    }
+    
+    func updateUserInfo() {
         RequestBuilder.shared.getProfile(completion: { (data) in })
         RequestBuilder.shared.getAuctions { (auctions) in
             DispatchQueue.main.async {
                 self.setupUser()
             }
         }
-    }
-    
-    func updateUserInfo() {
-        setupUser()
     }
     
     func setupUser() {

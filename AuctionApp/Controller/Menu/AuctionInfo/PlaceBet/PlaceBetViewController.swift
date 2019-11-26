@@ -32,6 +32,10 @@ class PlaceBetViewController: UIViewController {
         styleInit()
     }
     
+    private func setupSlider() {
+        self.slider.minimumValue = max(self.minBetPercent / 100, 1 / price) * 100
+    }
+    
     private func setupBetGestures() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tappedBet))
         tapGesture.numberOfTapsRequired = 1
@@ -50,7 +54,7 @@ class PlaceBetViewController: UIViewController {
             DispatchQueue.main.async {
                 if data.code == 200 {
                     self.auction.currentPrice = currentPrice
-                    self.auction.raisers.append(raiser)
+                    self.auction.raisers.insert(raiser, at: 0)
                     DataSource.shared.updateAuction(auction: self.auction)
                     self.dismiss(animated: true, completion: nil)
                     self.delegate?.setupInfoData()
@@ -65,6 +69,7 @@ class PlaceBetViewController: UIViewController {
         self.price = auction.currentPrice
         self.auction = auction
         setNewPrice(newPrice: calculateNewPrice(percent: slider.value))
+        setupSlider()
     }
     
     // move from here

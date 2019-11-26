@@ -47,18 +47,26 @@ class AddAuctionViewController: UIViewController {
             displayAlertMessage(vc: self, message: "All fields are required")
             return false
         }
+        if NumberUtils.convetStringToFloat(value: priceTextField.text) == 0 {
+            displayAlertMessage(vc: self, message: "Цена должна иметь числовой формат")
+            return false
+        }
         
         return true
     }
     
     @objc private func tappedAddAuction() {
         if !validateNewAuction() { return }
+        self.showSpinner(onView: self.view)
         let storagePath = DbConstant.getAuctionPath(id: String(self.titleTextField.text.hashValue))
         if let image = self.auctionImageView.image {
             PostStorage.uploadImage(for: image, child: storagePath, completion: { (imageUrl) in
                 let auction: Auction = Auction(imageUrl: imageUrl, title: self.titleTextField.text!, price: NumberUtils.convetStringToFloat(value: self.priceTextField.text!)!)
                 RequestBuilder.shared.postAuction(auction: auction) { (auction) in
-                    self.tabBarController?.selectedIndex = 0
+                    DispatchQueue.main.async {
+                        self.tabBarController?.selectedIndex = 0
+                        self.removeSpinner()
+                    }
                 }
                 print("Url:", auction.imageUrl)
             })
